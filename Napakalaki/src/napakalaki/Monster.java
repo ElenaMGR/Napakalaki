@@ -34,7 +34,7 @@ public class Monster {
         return combatLevel;
     }
 
-    //Métodos
+    //Método que muestra el estado de Monster
     @Override
     public String toString() {
         return "Name = " + name + " CombatLevel = " + Integer.toString(combatLevel)
