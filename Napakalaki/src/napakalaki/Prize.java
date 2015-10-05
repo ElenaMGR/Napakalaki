@@ -13,7 +13,7 @@ public class Prize {
     private int treasures;
     private int level;
     //Constructor
-    Prize(int treasures, int level){
+    public Prize(int treasures, int level){
         this.treasures=treasures;
         this.level=level;
     }
