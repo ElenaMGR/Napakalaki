@@ -20,7 +20,7 @@ public class PruebaNapakalaki {
         // TODO code application logic here
         
         // Prueba de funcionamiento de las clases
-        Prize prize = new Prize(1, 1);
+        Prize prize1 = new Prize(1, 1);
         
         BadConsequence bc = new BadConsequence("Mal rollo - const 1", true);
         BadConsequence bc1 = new BadConsequence("Mal Rollo - const 2", 2, 1, 1);
@@ -31,9 +31,9 @@ public class PruebaNapakalaki {
         svt.add(TreasureKind.BOTHHANDS);
         BadConsequence bc2 = new BadConsequence("mal rollo - const 3", 3,svt , sht);
         
-        Monster mons = new Monster("Monstruo", 4, bc1, prize);
+        Monster mons = new Monster("Monstruo", 4, bc1, prize1);
         
-        System.out.println(prize.toString());
+        System.out.println(prize1.toString());
         System.out.println(bc.toString());
         System.out.println(bc1.toString());
         System.out.println(bc2.toString());
@@ -42,8 +42,13 @@ public class PruebaNapakalaki {
         // Fin de prueba
         
         
+        ArrayList<Monster> monstruos = new ArrayList();
+        BadConsequence badConsequence;
+        Prize prize;
         
-    
+        badConsequence = new BadConsequence("Pierdes tu armadura visible y otra oculta", 0, svt, svt);
+        prize = new Prize(4,2);
+        monstruos.add(new Monster("El rey de rosa", 13, badConsequence, prize));
     }
     
 }
