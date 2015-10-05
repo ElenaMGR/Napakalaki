@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
@@ -15,6 +17,8 @@ public class BadConsequence {
     private int nVisibleTreasures;  //Representa el número de tesoros visibles que se pierden
     private int nHiddenTreasures;   //Representa el número de tesoros ocultos que se pierden
     private boolean death;          //Representa un mal rollo de tipo muerte
+    private ArrayList<TreasureKind> specificHiddenTreasures = new ArrayList();
+    private ArrayList<TreasureKind> specificVisibleTreasures = new ArrayList();
     
     //Constructores
     public BadConsequence(String text, int levels, int nVisible, int nHidden){
@@ -26,6 +30,13 @@ public class BadConsequence {
     public BadConsequence(String text, boolean death){
         this.text=text;
         this.death=death;
+    }
+    public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
+            ArrayList<TreasureKind> tHidden){
+        this.text=text;
+        this.levels=levels;
+        specificHiddenTreasures=tHidden;
+        specificVisibleTreasures=tVisible;
     }
 
     //Métodos Get
