@@ -60,4 +60,13 @@ public class BadConsequence {
         return death;
     }
     
+    //Método que muestra el estado de BadConsequence
+    @Override
+    public String toString(){
+        return "Text = " + text + " levels = " + Integer.toString(levels) + " nVisibleTreasures = " +
+                Integer.toString(nVisibleTreasures) + " nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +
+                " death = " + Boolean.toString(death) + " specificHiddenTreasures = " +
+                specificHiddenTreasures.toString() + " specificVisibleTreasures = " +
+                specificVisibleTreasures.toString();
+    }
 }
