@@ -38,6 +38,6 @@ public class Monster {
     @Override
     public String toString() {
         return "Name = " + name + " CombatLevel = " + Integer.toString(combatLevel)
-                + " Pride :" + price.toString() + " BadConsequence =" + bc.toString();
+                + " Pride =" + price.toString() + " BadConsequence =" + bc.toString();
     }
 }
