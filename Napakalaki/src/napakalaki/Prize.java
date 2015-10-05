@@ -25,4 +25,9 @@ public class Prize {
         return level;
     }
     
+    //Método que muestra el estado de Prize
+    public String toString(){
+        return "Treasures = " + Integer.toString(treasures) + " levels = " + Integer.toString(level);
+    }
+    
 }
