@@ -15,9 +15,11 @@ public class Monster {
 
     private String name;
     private int combatLevel;
+    private BadConsequence bc;
+    private Prize price;
 
     //Constructor
-    public Monster(String name, int combatLevel) {    
+    public Monster(String name, int level, BadConsequence bc, Prize price) {    
         this.name = name;
         this.combatLevel = combatLevel;
     }
