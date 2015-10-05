@@ -10,8 +10,23 @@ package napakalaki;
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class Monster {
+
     // Variables 
+
     private String name;
     private int combatLevel;
-    
+
+    //Constructor
+    public Monster(String name, int combatLevel) {    
+        this.name = name;
+        this.combatLevel = combatLevel;
+    }
+
+    //Métodos get
+    public String getName() {
+        return name;
+    }
+    public int getCombatLevel(){
+        return combatLevel;
+    }
 }
