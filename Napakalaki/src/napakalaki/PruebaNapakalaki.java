@@ -144,7 +144,16 @@ public class PruebaNapakalaki {
         badConsequence = new BadConsequence("La familia te atrapa", true);
         prize = new Prize(4,1);
         monstruos.add(new Monster("Familia feliz", 1, badConsequence, prize));
+        // Fin de cartas de monstruos
         
+        //Consultas de Monstruos
+        //Tiene un nivel de combate superior a 10.
+        System.out.println("Monstruos con un nivel de combate >10");
+        for(int i=0;i < monstruos.size();i++){
+            if(monstruos.get(i).getCombatLevel() > 10){
+                System.out.println(monstruos.get(i).getName());
+            }
+        }
     }
     
 }
