@@ -21,11 +21,28 @@ public class PruebaNapakalaki {
         
         // Prueba de funcionamiento de las clases
         Prize prize = new Prize(1, 1);
+        
         BadConsequence bc = new BadConsequence("Mal rollo - const 1", true);
         BadConsequence bc1 = new BadConsequence("Mal Rollo - const 2", 2, 1, 1);
-        ArrayList<TreasureKind> specificHiddenTreasures = new ArrayList();
-        specificHiddenTreasures.add(TreasureKind.ARMOR);
-        BadConsequence bc2 = new BadConsequence("mal rollo - const 3", 3, null, null);
+        ArrayList<TreasureKind> sht = new ArrayList();
+        ArrayList<TreasureKind> svt = new ArrayList();
+        sht.add(TreasureKind.ARMOR);
+        sht.add(TreasureKind.HELMET);
+        svt.add(TreasureKind.BOTHHANDS);
+        BadConsequence bc2 = new BadConsequence("mal rollo - const 3", 3,svt , sht);
+        
+        Monster mons = new Monster("Monstruo", 4, bc1, prize);
+        
+        System.out.println(prize.toString());
+        System.out.println(bc.toString());
+        System.out.println(bc1.toString());
+        System.out.println(bc2.toString());
+        System.out.println(mons.toString());
+        System.out.println("fin.");
+        
+        
+        
+    
     }
     
 }
