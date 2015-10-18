@@ -65,7 +65,7 @@ public class PruebaNapakalaki {
         
         
         //Su buen rollo indique una ganancia de niveles superior a 1.
-        System.out.println("Monstruos con un ganancia de niveles superior a 1.");
+        System.out.println("Monstruos con un buen rollo con ganancia de niveles superior a 1.");
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getPrize().getLevel() > 1){
                 System.out.println(monstruos.get(i).toString());
