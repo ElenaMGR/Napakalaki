@@ -43,7 +43,6 @@ public class PruebaNapakalaki {
         
         ArrayList<Monster> monstruos = new ArrayList<>(loadMonster());
         
-        
         //Consultas de Monstruos
         //Tiene un nivel de combate superior a 10.
         System.out.println("Monstruos con un nivel de combate > 10");
@@ -59,9 +58,7 @@ public class PruebaNapakalaki {
             if(monstruos.get(i).getBadConsequence().getLevels()>0 && 
                     monstruos.get(i).getBadConsequence().isDeath()==false &&
                     monstruos.get(i).getBadConsequence().getnHiddenTreasures()==0 &&
-                    monstruos.get(i).getBadConsequence().getnVisibleTreasures()==0 &&
-                    monstruos.get(i).getBadConsequence().getSpecificHiddenTreasures()==null &&
-                    monstruos.get(i).getBadConsequence().getSpecificVisibleTreasures()==null){
+                    monstruos.get(i).getBadConsequence().getnVisibleTreasures()==0){
                 System.out.println(monstruos.get(i).toString());
             }
         }
