@@ -154,6 +154,12 @@ public class PruebaNapakalaki {
                 System.out.println(monstruos.get(i).getName());
             }
         }
+        
+        //Tengan un mal rollo que implique sólo pérdida de niveles.
+        System.out.println("Monstruos con un mal rollo de perdida de niveles.");
+        for(int i=0;i<monstruos.size();i++){
+            // Añadir la comprobacion.
+        }
     }
     
 }
