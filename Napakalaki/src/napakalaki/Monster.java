@@ -37,6 +37,10 @@ public class Monster {
     public BadConsequence getBadConsequence(){
         return bc;
     }
+    
+    public Prize getPrize(){
+        return price;
+    }
 
     //Método que muestra el estado de Monster
     @Override
