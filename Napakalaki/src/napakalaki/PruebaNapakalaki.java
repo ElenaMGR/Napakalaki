@@ -196,7 +196,14 @@ public class PruebaNapakalaki {
         //Tengan un mal rollo que implique sólo pérdida de niveles.
         System.out.println("Monstruos con un mal rollo de perdida de niveles.");
         for(int i=0;i<monstruos.size();i++){
-            // Añadir la comprobacion.
+            if(monstruos.get(i).getBadConsequence().getLevels()>0 && 
+                    monstruos.get(i).getBadConsequence().isDeath()==false &&
+                    monstruos.get(i).getBadConsequence().getnHiddenTreasures()==0 &&
+                    monstruos.get(i).getBadConsequence().getnVisibleTreasures()==0 &&
+                    monstruos.get(i).getBadConsequence().getSpecificHiddenTreasures()==null &&
+                    monstruos.get(i).getBadConsequence().getSpecificVisibleTreasures()==null){
+                System.out.println(monstruos.get(i).toString());
+            }
         }
         
         
