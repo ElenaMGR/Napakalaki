@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class BadConsequence {
     private String text;            //Representa lo que dice un mal rollo
-    private int levels=0;             //Representa los niveles que se pierden    
+    private int levels;             //Representa los niveles que se pierden    
     private int nVisibleTreasures;  //Representa el número de tesoros visibles que se pierden
     private int nHiddenTreasures;   //Representa el número de tesoros ocultos que se pierden
     private boolean death;          //Representa un mal rollo de tipo muerte
@@ -26,10 +26,18 @@ public class BadConsequence {
         this.levels=levels;
         nVisibleTreasures=nVisible;
         nHiddenTreasures=nHidden;
+        death=false;
+        specificHiddenTreasures=null;
+        specificVisibleTreasures=null;
     }
     public BadConsequence(String text, boolean death){
         this.text=text;
         this.death=death;
+        specificHiddenTreasures=null;
+        specificVisibleTreasures=null;
+        nVisibleTreasures=0;
+        nHiddenTreasures=0;
+        levels=0;
     }
     public BadConsequence(String text, int levels, ArrayList<TreasureKind> tVisible,
             ArrayList<TreasureKind> tHidden){
@@ -37,6 +45,9 @@ public class BadConsequence {
         this.levels=levels;
         specificHiddenTreasures=tHidden;
         specificVisibleTreasures=tVisible;
+        nVisibleTreasures=0;
+        nHiddenTreasures=0;
+        death=false;
     }
 
     //Métodos Get
@@ -58,6 +69,14 @@ public class BadConsequence {
 
     public boolean isDeath() {
         return death;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
     }
     
     //Método que muestra el estado de BadConsequence
