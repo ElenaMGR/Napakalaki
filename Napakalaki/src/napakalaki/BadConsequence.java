@@ -66,7 +66,7 @@ public class BadConsequence {
         return "Text = " + text + " levels = " + Integer.toString(levels) + " nVisibleTreasures = " +
                 Integer.toString(nVisibleTreasures) + " nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +
                 " death = " + Boolean.toString(death) + " specificHiddenTreasures = " +
-                specificHiddenTreasures.toString() + " specificVisibleTreasures = " +
-                specificVisibleTreasures.toString();
+                specificHiddenTreasures + " specificVisibleTreasures = " +
+                specificVisibleTreasures;
     }
 }
