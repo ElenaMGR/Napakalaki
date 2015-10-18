@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class BadConsequence {
     private String text;            //Representa lo que dice un mal rollo
-    private int levels;             //Representa los niveles que se pierden    
+    private int levels=0;             //Representa los niveles que se pierden    
     private int nVisibleTreasures;  //Representa el número de tesoros visibles que se pierden
     private int nHiddenTreasures;   //Representa el número de tesoros ocultos que se pierden
     private boolean death;          //Representa un mal rollo de tipo muerte
