@@ -189,10 +189,7 @@ public class PruebaNapakalaki {
         System.out.println("Monstruos con un nivel de combate > 10");
         for(int i=0;i < monstruos.size();i++){
             if(monstruos.get(i).getCombatLevel() > 10){
-                System.out.println(monstruos.get(i).getName()+ " -- Nivel de Combate: " + 
-                        monstruos.get(i).getCombatLevel() + " -- Buen rollo: "+ 
-                        monstruos.get(i).getPrize().toString() + " -- Mal rollo: " + 
-                        monstruos.get(i).getBadConsequence().toString());
+                System.out.println(monstruos.get(i).toString());
             }
         }
         

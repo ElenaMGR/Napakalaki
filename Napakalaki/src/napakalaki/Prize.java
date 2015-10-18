@@ -28,7 +28,7 @@ public class Prize {
     //Método que muestra el estado de Prize
     @Override
     public String toString(){
-        return "Treasures = " + Integer.toString(treasures) + " levels = " + Integer.toString(level);
+        return "Treasures = " + Integer.toString(treasures) + " , levels = " + Integer.toString(level);
     }
     
 }
