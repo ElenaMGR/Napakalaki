@@ -45,8 +45,14 @@ public class BadConsequence {
         this.levels=levels;
         specificHiddenTreasures=tHidden;
         specificVisibleTreasures=tVisible;
-        nVisibleTreasures=specificVisibleTreasures.size();
-        nHiddenTreasures=specificHiddenTreasures.size();
+        if (tVisible!=null)
+            nVisibleTreasures=specificVisibleTreasures.size();
+        else
+            nVisibleTreasures=0;
+        if (tHidden!=null)
+            nHiddenTreasures=specificHiddenTreasures.size();  
+        else
+            nHiddenTreasures=0;
         death=false;
     }
 
