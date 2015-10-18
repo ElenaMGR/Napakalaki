@@ -68,7 +68,7 @@ public class PruebaNapakalaki {
         System.out.println("Monstruos con un ganancia de niveles superior a 1.");
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getPrize().getLevel() > 1){
-                System.out.println(monstruos.get(i).getName());
+                System.out.println(monstruos.get(i).toString());
             }
         }
     }
