@@ -45,7 +45,7 @@ public class Monster {
     //Método que muestra el estado de Monster
     @Override
     public String toString() {
-        return "Name = " + name + " , CombatLevel = " + Integer.toString(combatLevel)
-                + " , Pride =" + price.toString() + " , BadConsequence =" + bc.toString();
+        return "Name = " + name + " --- CombatLevel = " + Integer.toString(combatLevel)
+                + " --- Pride =" + price.toString() + " --- BadConsequence =" + bc.toString();
     }
 }
