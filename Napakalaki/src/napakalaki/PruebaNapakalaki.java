@@ -20,7 +20,7 @@ public class PruebaNapakalaki {
         // TODO code application logic here
         
         // Prueba de funcionamiento de las clases
-        Prize prize1 = new Prize(1, 1);
+        /*Prize prize1 = new Prize(1, 1);
         
         BadConsequence bc = new BadConsequence("Mal rollo - const 1", true);
         BadConsequence bc1 = new BadConsequence("Mal Rollo - const 2", 2, 1, 1);
@@ -38,7 +38,7 @@ public class PruebaNapakalaki {
         System.out.println(bc1.toString());
         System.out.println(bc2.toString());
         System.out.println(mons.toString());
-        System.out.println("fin.");
+        System.out.println("fin.");*/
         // Fin de prueba
         
         // Cartas de Monstruos
@@ -186,10 +186,13 @@ public class PruebaNapakalaki {
         
         //Consultas de Monstruos
         //Tiene un nivel de combate superior a 10.
-        System.out.println("Monstruos con un nivel de combate >10");
+        System.out.println("Monstruos con un nivel de combate > 10");
         for(int i=0;i < monstruos.size();i++){
             if(monstruos.get(i).getCombatLevel() > 10){
-                System.out.println(monstruos.get(i).getName());
+                System.out.println(monstruos.get(i).getName()+ " -- Nivel de Combate: " + 
+                        monstruos.get(i).getCombatLevel() + " -- Buen rollo: "+ 
+                        monstruos.get(i).getPrize().toString() + " -- Mal rollo: " + 
+                        monstruos.get(i).getBadConsequence().toString());
             }
         }
         
