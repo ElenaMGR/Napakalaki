@@ -53,6 +53,7 @@ public class PruebaNapakalaki {
         }
         
         //Tengan un mal rollo que implique sólo pérdida de niveles.
+        System.out.println();
         System.out.println("Monstruos con un mal rollo con sólo perdida de niveles.");
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getBadConsequence().getLevels()>0 && 
@@ -65,13 +66,26 @@ public class PruebaNapakalaki {
         
         
         //Su buen rollo indique una ganancia de niveles superior a 1.
+        System.out.println();
         System.out.println("Monstruos con un buen rollo con ganancia de niveles superior a 1.");
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getPrize().getLevel() > 1){
                 System.out.println(monstruos.get(i).toString());
             }
         }
-    }
+        
+        //Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles 
+        //y/o ocultos
+        System.out.println();
+        System.out.println("Monstruos que su mal rollo suponga la pérdida de un "
+                + "determinado tipo de tesoros");
+        for(int i=0;i<monstruos.size();i++){
+            if(monstruos.get(i).getBadConsequence().getSpecificHiddenTreasures()!=null 
+                    || monstruos.get(i).getBadConsequence().getSpecificVisibleTreasures()!=null){
+                System.out.println(monstruos.get(i).toString());
+            }
+        }
+    }   
     
     /**
      * Cargamos las cartas de monstruos
