@@ -33,6 +33,10 @@ public class Monster {
     public int getCombatLevel() {
         return combatLevel;
     }
+    
+    public BadConsequence getBadConsequence(){
+        return bc;
+    }
 
     //Método que muestra el estado de Monster
     @Override
