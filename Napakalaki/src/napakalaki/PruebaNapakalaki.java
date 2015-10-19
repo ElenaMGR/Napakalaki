@@ -41,51 +41,109 @@ public class PruebaNapakalaki {
         System.out.println("fin.");*/
         // Fin de prueba
         
-        ArrayList<Monster> monstruos = new ArrayList<>(loadMonster());
+        ArrayList<Monster> monstruos = new ArrayList();
+        ArrayList<Monster> consulta = new ArrayList();
+        monstruos = loadMonster();
         
-        //Consultas de Monstruos
-        //Tiene un nivel de combate superior a 10.
-        System.out.println("Monstruos con un nivel de combate > 10");
-        for(int i=0;i < monstruos.size();i++){
-            if(monstruos.get(i).getCombatLevel() > 10){
-                System.out.println(monstruos.get(i).toString());
-            }
+        System.out.println("Consulta monstruos que tiene un nivel de combate superior a 10.");
+        consulta = combatLvlG10(monstruos);
+        for(int i=0;i<consulta.size();i++){
+            System.out.println(consulta.get(i).toString());
+        }
+        System.out.println("--------------------------------------------\n");
+        System.out.println("Consulta monstruos que tengan un mal rollo que implique "
+                + "sólo pérdida de niveles.");
+        consulta = BadCLoselvl(monstruos);
+        for(int i=0;i<consulta.size();i++){
+            System.out.println(consulta.get(i).toString());
+        }
+        System.out.println("--------------------------------------------\n");
+        System.out.println("Consulta monstruos que su buen rollo indique una "
+                + "ganancia de niveles superior a 1.");
+        consulta = prizeWinLvl(monstruos);
+        for(int i=0;i<consulta.size();i++){
+            System.out.println(consulta.get(i).toString());
+        }
+        System.out.println("--------------------------------------------\n");
+        System.out.println("Consulta monstruos que su mal rollo suponga la"
+                + " pérdida de un determinado tipo de tesoros ya sea visibles y/o ocultos");
+        consulta = BadCLoseUnDeterminadoTesoro(monstruos);
+        for(int i=0;i<consulta.size();i++){
+            System.out.println(consulta.get(i).toString());
         }
         
-        //Tengan un mal rollo que implique sólo pérdida de niveles.
-        System.out.println();
-        System.out.println("Monstruos con un mal rollo con sólo perdida de niveles.");
+        
+        
+    }
+    
+    /**
+     * Consulta monstruos que tiene un nivel de combate superior a 10.
+     * 
+     * @return ArrayList<Monster> monstruos que cumplen la condicion
+     */
+    static private ArrayList<Monster> combatLvlG10(ArrayList<Monster> monstruos){
+        ArrayList<Monster> resultado = new ArrayList();
+        for(int i=0;i < monstruos.size();i++){
+            if(monstruos.get(i).getCombatLevel() > 10){
+                resultado.add(monstruos.get(i));
+            }
+        }
+        return resultado;
+    }
+    
+    
+    /**
+     * Consulta monstruos que tengan un mal rollo que implique sólo pérdida 
+     * de niveles.
+     * 
+     * @return ArrayList<Monster> monstruos que cumplen la condicion
+     */
+    static private ArrayList<Monster> BadCLoselvl(ArrayList<Monster> monstruos){
+        ArrayList<Monster> resultado = new ArrayList();
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getBadConsequence().getLevels()>0 && 
                     monstruos.get(i).getBadConsequence().isDeath()==false &&
                     monstruos.get(i).getBadConsequence().getnHiddenTreasures()==0 &&
                     monstruos.get(i).getBadConsequence().getnVisibleTreasures()==0){
-                System.out.println(monstruos.get(i).toString());
+                resultado.add(monstruos.get(i));
             }
         }
-        
-        
-        //Su buen rollo indique una ganancia de niveles superior a 1.
-        System.out.println();
-        System.out.println("Monstruos con un buen rollo con ganancia de niveles superior a 1.");
+       return resultado;
+    }   
+    
+    /**
+     * Consulta monstruos que su buen rollo indique una ganancia de niveles 
+     * superior a 1.
+     * 
+     * @return ArrayList<Monster> monstruos que cumplen la condicion
+     */
+    static private ArrayList<Monster> prizeWinLvl(ArrayList<Monster> monstruos){
+        ArrayList<Monster> resultado = new ArrayList();
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getPrize().getLevel() > 1){
-                System.out.println(monstruos.get(i).toString());
+                resultado.add(monstruos.get(i));
             }
         }
-        
-        //Su mal rollo suponga la pérdida de un determinado tipo de tesoros ya sea visibles 
-        //y/o ocultos
-        System.out.println();
-        System.out.println("Monstruos que su mal rollo suponga la pérdida de un "
-                + "determinado tipo de tesoros");
+        return resultado;
+    }
+    
+    /**
+     * Consulta monstruos que su mal rollo suponga la pérdida de un determinado 
+     * tipo de tesoros ya sea visibles y/o ocultos
+     * 
+     * @return ArrayList<Monster> monstruos que cumplen la condicion
+     */
+    static private ArrayList<Monster> BadCLoseUnDeterminadoTesoro(ArrayList<Monster> monstruos){
+        ArrayList<Monster> resultado = new ArrayList();
         for(int i=0;i<monstruos.size();i++){
             if(monstruos.get(i).getBadConsequence().getSpecificHiddenTreasures()!=null 
                     || monstruos.get(i).getBadConsequence().getSpecificVisibleTreasures()!=null){
-                System.out.println(monstruos.get(i).toString());
+                resultado.add(monstruos.get(i));
             }
         }
-    }   
+        return resultado;
+    }
+    
     
     /**
      * Cargamos las cartas de monstruos
