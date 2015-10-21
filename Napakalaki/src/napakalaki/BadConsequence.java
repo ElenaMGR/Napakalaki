@@ -27,14 +27,14 @@ public class BadConsequence {
         nVisibleTreasures=nVisible;
         nHiddenTreasures=nHidden;
         death=false;
-        specificHiddenTreasures=null;
-        specificVisibleTreasures=null;
+        specificHiddenTreasures=new ArrayList();
+        specificVisibleTreasures=new ArrayList();
     }
     public BadConsequence(String text, boolean death){
         this.text=text;
         this.death=death;
-        specificHiddenTreasures=null;
-        specificVisibleTreasures=null;
+        specificHiddenTreasures=new ArrayList();
+        specificVisibleTreasures=new ArrayList();
         nVisibleTreasures=0;
         nHiddenTreasures=0;
         levels=0;
@@ -45,11 +45,11 @@ public class BadConsequence {
         this.levels=levels;
         specificHiddenTreasures=tHidden;
         specificVisibleTreasures=tVisible;
-        if (tVisible!=null)
+        if (!tVisible.isEmpty())
             nVisibleTreasures=specificVisibleTreasures.size();
         else
             nVisibleTreasures=0;
-        if (tHidden!=null)
+        if (!tHidden.isEmpty())
             nHiddenTreasures=specificHiddenTreasures.size();  
         else
             nHiddenTreasures=0;
