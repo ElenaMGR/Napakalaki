@@ -83,9 +83,9 @@ public class PruebaNapakalaki {
      */
     static private ArrayList<Monster> combatLvlG10(ArrayList<Monster> monstruos){
         ArrayList<Monster> resultado = new ArrayList();
-        for(int i=0;i < monstruos.size();i++){
-            if(monstruos.get(i).getCombatLevel() > 10){
-                resultado.add(monstruos.get(i));
+        for (Monster monstruo : monstruos) {
+            if (monstruo.getCombatLevel() > 10) {
+                resultado.add(monstruo);
             }
         }
         return resultado;
@@ -100,12 +100,14 @@ public class PruebaNapakalaki {
      */
     static private ArrayList<Monster> BadCLoselvl(ArrayList<Monster> monstruos){
         ArrayList<Monster> resultado = new ArrayList();
-        for(int i=0;i<monstruos.size();i++){
-            if(monstruos.get(i).getBadConsequence().getLevels()>0 && 
-                    monstruos.get(i).getBadConsequence().isDeath()==false &&
-                    monstruos.get(i).getBadConsequence().getnHiddenTreasures()==0 &&
-                    monstruos.get(i).getBadConsequence().getnVisibleTreasures()==0){
-                resultado.add(monstruos.get(i));
+        for (Monster monstruo : monstruos) {
+            if (monstruo.getBadConsequence().getLevels() > 0 && 
+                    monstruo.getBadConsequence().isDeath() == false &&
+                    monstruo.getBadConsequence().getnHiddenTreasures() == 0 &&
+                    monstruo.getBadConsequence().getnVisibleTreasures() == 0 &&
+                    monstruo.getBadConsequence().getSpecificHiddenTreasures().isEmpty() &&
+                    monstruo.getBadConsequence().getSpecificVisibleTreasures().isEmpty()) {
+                resultado.add(monstruo);
             }
         }
        return resultado;
@@ -119,9 +121,9 @@ public class PruebaNapakalaki {
      */
     static private ArrayList<Monster> prizeWinLvl(ArrayList<Monster> monstruos){
         ArrayList<Monster> resultado = new ArrayList();
-        for(int i=0;i<monstruos.size();i++){
-            if(monstruos.get(i).getPrize().getLevel() > 1){
-                resultado.add(monstruos.get(i));
+        for (Monster monstruo : monstruos) {
+            if (monstruo.getPrize().getLevel() > 1) {
+                resultado.add(monstruo);
             }
         }
         return resultado;
@@ -135,10 +137,10 @@ public class PruebaNapakalaki {
      */
     static private ArrayList<Monster> BadCLoseUnDeterminadoTesoro(ArrayList<Monster> monstruos){
         ArrayList<Monster> resultado = new ArrayList();
-        for(int i=0;i<monstruos.size();i++){
-            if(!monstruos.get(i).getBadConsequence().getSpecificHiddenTreasures().isEmpty()
-                    || !monstruos.get(i).getBadConsequence().getSpecificVisibleTreasures().isEmpty()){
-                resultado.add(monstruos.get(i));
+        for (Monster monstruo : monstruos) {
+            if (!monstruo.getBadConsequence().getSpecificHiddenTreasures().isEmpty() ||
+                !monstruo.getBadConsequence().getSpecificVisibleTreasures().isEmpty()) {
+                resultado.add(monstruo);
             }
         }
         return resultado;
