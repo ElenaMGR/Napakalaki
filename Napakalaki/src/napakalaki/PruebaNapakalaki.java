@@ -198,7 +198,7 @@ public class PruebaNapakalaki {
         /*****************************************************/
         
         badConsequence = new BadConsequence("Pierdes todos tus tesoros visibles" 
-                , 0, TreasureKind.values().length, 0);
+                , 0, (TreasureKind.values().length)+1, 0);
         prize = new Prize(3,1);
         monstruos.add(new Monster("El gorrón en el umbral", 10, badConsequence, prize));
         /*****************************************************/
