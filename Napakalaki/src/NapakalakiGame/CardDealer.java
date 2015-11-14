@@ -6,6 +6,7 @@
 package NapakalakiGame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -217,12 +218,14 @@ public class CardDealer {
         // Fin de cartas de monstruos
     }
     
+    //Baraja el mazo de cartas de tesoros unusedTreasures
     private void shuffleTreasures(){
-        
+       Collections.shuffle(unusedTreasures);
     }
     
+    //Baraja el mazo de cartas de monstruos unusedMonsters
     private void shuffleMonster(){
-        
+        Collections.shuffle(usedMonsters);
     }
     
     //Métodos públicos
