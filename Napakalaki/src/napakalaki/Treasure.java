@@ -9,10 +9,10 @@ package napakalaki;
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
-class Treasure {
-    private String name;
-    private int bonus;
+public class Treasure {
     
+    private String name;
+    private int bonus; 
     private TreasureKind type;
     
     // Constructores
@@ -22,6 +22,7 @@ class Treasure {
         type        = t;
     }
     
+    //Métodos get
     public String getName(){
         return name;
     }
