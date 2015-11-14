@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
-class Player {
+public class Player {
     
     static final int MAXLEVEL = 10;
     
@@ -20,17 +20,23 @@ class Player {
     private boolean dead;
     private boolean canISteal;
     
-    ArrayList<Treasure> hiddenTreasures;
-    ArrayList<Treasure> visibleTreasure;
+    private ArrayList<Treasure> hiddenTreasures;
+    private ArrayList<Treasure> visibleTreasure;
     
     private BadConsequence pendingBadConsequence;
+    
+    private Player enemy;
     
     
     public Player(String name){
         this.name=name;
-        dead = false;
-        canISteal = false;
-        
+        level=0;
+        dead = true;
+        canISteal = true;
+        hiddenTreasures = new ArrayList();
+        visibleTreasure = new ArrayList();
+        pendingBadConsequence = null;
+        enemy = null;
     }
     
     public String getName(){
@@ -42,7 +48,7 @@ class Player {
     }
     
     private int getCombatLevel(){
-        return 1;
+        return level;
     }
     
     private void incrementLevels(int i){
@@ -65,7 +71,7 @@ class Player {
         
     }
     
-    private boolean canMAkeTreasure(Treasure t){
+    private boolean canMakeTreasureVisible(Treasure t){
         return false;
     }
     
@@ -82,11 +88,11 @@ class Player {
     }
     
     public ArrayList<Treasure> getHiddenTreasures(){
-        return null;
+        return hiddenTreasures;
     }
     
     public ArrayList<Treasure> getVisibleTreasures(){
-        return null;
+        return visibleTreasure;
     }
     
     public CombatResult combat(Monster m){
@@ -115,7 +121,7 @@ class Player {
     }
     
     public int getLevels(){
-        return 0;
+        return level;
     }
     
     public Treasure stealTreasure(){
@@ -145,12 +151,6 @@ class Player {
     public void discardAllTreasures(){
         
     }
-    
-    
-    
-    
-    
-    
-    
+        
     
 }
