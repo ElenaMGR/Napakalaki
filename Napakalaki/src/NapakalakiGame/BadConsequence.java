@@ -92,8 +92,8 @@ public class BadConsequence {
     //vacío, eso significa que el conjunto de atributos del mal rollo indica 
     //que no se pierden tesoros
     public boolean isEmpty(){
-        Boolean vacio = false;
-        if((nVisibleTreasures==0) && (nHiddenTreasures==0) && 
+        boolean vacio = false;
+        if(!death && (levels==0) && (nVisibleTreasures==0) && (nHiddenTreasures==0) && 
                 (specificHiddenTreasures.isEmpty()) && (specificVisibleTreasures.isEmpty())){
             vacio=true;
         }
