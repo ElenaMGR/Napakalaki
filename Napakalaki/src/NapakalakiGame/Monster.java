@@ -38,11 +38,12 @@ public class Monster {
         return badConsequence;
     }
     
+    //Devuelve el número de niveles ganados proporcionados por su buen rollo
     public int getLevelsGained(){
         return prize.getLevels();
     }
     
-    
+    //Devuelve el número de tesoros ganados proporcionados por su buen rollo
     public int getTreasuresGained(){
         return prize.getTreasures();
     }
