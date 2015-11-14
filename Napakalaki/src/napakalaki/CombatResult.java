@@ -7,8 +7,8 @@ package napakalaki;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public enum CombatResult {
-    
+    WINGAME, WIN, LOSE
 }
