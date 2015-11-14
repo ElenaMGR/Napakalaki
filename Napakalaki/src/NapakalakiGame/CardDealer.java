@@ -29,4 +29,42 @@ public class CardDealer {
         return instance;
     }
     
+    //Métodos privados
+    private void initTreasureCardDeck() {
+        
+    }
+    
+    private void initMonsterCardDeck() {
+        
+    }
+    
+    private void shuffleTreasures(){
+        
+    }
+    
+    private void shuffleMonster(){
+        
+    }
+    
+    //Métodos públicos
+    public Treasure nextTreasure(){
+        return usedTreasures.get(0);
+    }
+    
+    public Monster nextMonster(){
+        return usedMonsters.get(0);
+    }
+    
+    public void giveTreasureBack(Treasure t){
+        
+    }
+    
+    public void giveMonsterBack(Monster m){
+        
+    }
+    
+    public void initCards(){
+        
+    }
+    
 }
