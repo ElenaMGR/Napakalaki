@@ -55,9 +55,9 @@ public class BadConsequence {
     }
 
     //Métodos Get
-    /*public String getText() {
+    public String getText() {
         return text;
-    }*/
+    }
 
     public int getLevels() {
         return levels;
@@ -71,9 +71,9 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
 
-//    public boolean isDeath() {
-//        return death;
-//    }
+    public boolean isDeath() {
+        return death;
+    }
     
     public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
         return specificHiddenTreasures;
@@ -91,9 +91,7 @@ public class BadConsequence {
         return false;
     }
     
-    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){
-        
-        
+    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){     
         return null;
     }
     
