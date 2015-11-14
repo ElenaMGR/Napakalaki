@@ -14,15 +14,15 @@ public class Monster {
     // Variables 
     private String name;
     private int combatLevel;
-    private BadConsequence bc;
-    private Prize price;
+    private BadConsequence badConsequence;
+    private Prize prize;
 
     //Constructor
-    public Monster(String name, int level, BadConsequence bc, Prize price) {
-        this.name = name;
-        combatLevel = level;
-        this.bc = bc;
-        this.price = price;
+    public Monster(String n, int l, BadConsequence b, Prize p) {
+        name = n;
+        combatLevel = l;
+        badConsequence = b;
+        prize = p;
     }
 
     //Métodos get
@@ -35,17 +35,17 @@ public class Monster {
     }
     
     public BadConsequence getBadConsequence(){
-        return bc;
+        return badConsequence;
     }
     
     public Prize getPrize(){
-        return price;
+        return prize;
     }
 
     //Método que muestra el estado de Monster
     @Override
     public String toString() {
         return "Name = " + name + " --- CombatLevel = " + Integer.toString(combatLevel)
-                + " --- Pride =" + price.toString() + " --- BadConsequence =" + bc.toString();
+                + " --- Pride =" + prize.toString() + " --- BadConsequence =" + badConsequence.toString();
     }
 }
