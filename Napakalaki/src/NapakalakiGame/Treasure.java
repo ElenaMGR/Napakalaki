@@ -23,14 +23,19 @@ public class Treasure {
     }
     
     //Métodos get
+    
+    //Devuelve name de Treasure
     public String getName(){
         return name;
     }
     
+    //Devuelve bonus de Treasure
     public int getBonus(){
         return bonus;
     }
     
+    
+    //Devuelve type de Treasure
     public TreasureKind getType(){
         return type;
     }  
