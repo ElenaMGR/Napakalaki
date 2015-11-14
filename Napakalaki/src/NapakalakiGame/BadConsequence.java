@@ -87,8 +87,17 @@ public class BadConsequence {
     
     public void substracHiddenTreasure(Treasure t){}
     
+    
+    //Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
+    //vacío, eso significa que el conjunto de atributos del mal rollo indica 
+    //que no se pierden tesoros
     public boolean isEmpty(){
-        return false;
+        Boolean vacio = false;
+        if((nVisibleTreasures==0) && (nHiddenTreasures==0) && 
+                (specificHiddenTreasures.isEmpty()) && (specificVisibleTreasures.isEmpty())){
+            vacio=true;
+        }
+        return vacio;
     }
     
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){     
