@@ -33,8 +33,6 @@ public class Treasure {
     
     public TreasureKind getType(){
         return type;
-    }
-    
-    
+    }  
     
 }
