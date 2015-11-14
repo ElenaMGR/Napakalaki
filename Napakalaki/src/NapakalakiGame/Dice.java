@@ -5,6 +5,8 @@
  */
 package NapakalakiGame;
 
+import static java.lang.Math.random;
+
 /**
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
@@ -21,7 +23,8 @@ public class Dice {
         return instance;
     }
     
+    //Genera un número aleatorio entre 1 y 6 
     public int nextNumber(){
-        return 1;
+        return (int) (random()*6 + 1);
     }
 }
