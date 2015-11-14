@@ -10,5 +10,5 @@ package napakalaki;
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public enum TreasureKind {
-    ARMOR, ONEHAND, BOTHHANDS, HELMET, SHOES
+    ARMOR, ONEHAND, BOTHHANDS, HELMET, SHOE
 }
