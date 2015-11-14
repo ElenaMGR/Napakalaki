@@ -38,8 +38,13 @@ public class Monster {
         return badConsequence;
     }
     
-    public Prize getPrize(){
-        return prize;
+    public int getLevelsGainad(){
+        return prize.getLevels();// se arregla cuando se actualice la clase Prize
+    }
+    
+    
+    public int getTreasuresGained(){
+        return prize.getTreasures();
     }
 
     //Método que muestra el estado de Monster
