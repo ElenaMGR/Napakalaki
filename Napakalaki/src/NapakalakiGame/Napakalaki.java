@@ -16,7 +16,6 @@ public class Napakalaki {
     private static final Napakalaki instance = new Napakalaki();
     
     //Atributos de referencia
-    private CombatResult combatResult;
     private Player currentPlayer;
     private ArrayList<Player> players;
     private CardDealer dealer;
@@ -24,7 +23,6 @@ public class Napakalaki {
     //El constructor privado asegura que no se puede instancia
     //desde otras clases
     private Napakalaki(){ 
-        combatResult = null;
         currentPlayer = null;
         players = null;
         dealer = null;
@@ -54,6 +52,7 @@ public class Napakalaki {
     } 
     
     public CombatResult developCombat(){
+        CombatResult combatResult = null;
         return combatResult;
     }
     
