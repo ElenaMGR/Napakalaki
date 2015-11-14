@@ -11,24 +11,24 @@ package napakalaki;
  */
 public class Prize {
     private int treasures;
-    private int level;
+    private int levels;
     //Constructor
-    public Prize(int treasures, int level){
-        this.treasures=treasures;
-        this.level=level;
+    public Prize(int t, int l){
+        treasures=t;
+        levels=l;
     }
     //Métodos get
     public int getTreasures(){
         return treasures;
     }
-    public int getLevel(){
-        return level;
+    public int getLevels(){
+        return levels;
     }
     
     //Método que muestra el estado de Prize
     @Override
     public String toString(){
-        return "Treasures = " + Integer.toString(treasures) + " , levels = " + Integer.toString(level);
+        return "Treasures = " + Integer.toString(treasures) + " , levels = " + Integer.toString(levels);
     }
     
 }
