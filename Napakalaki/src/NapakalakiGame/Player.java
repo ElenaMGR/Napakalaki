@@ -100,11 +100,12 @@ public class Player {
     // Cambia el estado de jugador a muerto, modificando el correspondiente
     // atributo. 
     private void dieIfNoTreasures(){
-        dead = true;
+        if( hiddenTreasures.isEmpty() && visibleTreasure.isEmpty())
+            dead = true;
     }
     
     // Devuelve true si el jugador está muerto, false en caso contrario
-    public boolean IsDead(){  
+    public boolean isDead(){  
         return dead;
     }
     
@@ -137,7 +138,7 @@ public class Player {
     // y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
     public boolean validState(){
         boolean state=false;
-        if(pendingBadConsequence.isEmpty() && (hiddenTreasures.size() > 4) )
+        if(pendingBadConsequence.isEmpty() && !(hiddenTreasures.size() > 4) )
             state = true;
         return state;
     }
