@@ -7,7 +7,7 @@ package napakalaki;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 class CardDealer {
     
