@@ -103,8 +103,8 @@ public class PruebaNapakalaki {
         for (Monster monstruo : monstruos) {
             if (monstruo.getBadConsequence().getLevels() > 0 && 
                     monstruo.getBadConsequence().isDeath() == false &&
-                    monstruo.getBadConsequence().getnHiddenTreasures() == 0 &&
-                    monstruo.getBadConsequence().getnVisibleTreasures() == 0 &&
+                    monstruo.getBadConsequence().getNHiddenTreasures() == 0 &&
+                    monstruo.getBadConsequence().getNVisibleTreasures() == 0 &&
                     monstruo.getBadConsequence().getSpecificHiddenTreasures().isEmpty() &&
                     monstruo.getBadConsequence().getSpecificVisibleTreasures().isEmpty()) {
                 resultado.add(monstruo);
@@ -122,7 +122,7 @@ public class PruebaNapakalaki {
     static private ArrayList<Monster> prizeWinLvl(ArrayList<Monster> monstruos){
         ArrayList<Monster> resultado = new ArrayList();
         for (Monster monstruo : monstruos) {
-            if (monstruo.getPrize().getLevel() > 1) {
+            if (monstruo.getLevelsGained() > 1) {
                 resultado.add(monstruo);
             }
         }
@@ -179,7 +179,7 @@ public class PruebaNapakalaki {
         /*****************************************************/
         
         svt = new ArrayList();
-        svt.add(TreasureKind.SHOES);
+        svt.add(TreasureKind.SHOE);
         badConsequence = new BadConsequence("El primordial bostezo"
                 + "contagioso. Pierdes el calzado visible", 0, svt, new ArrayList());
         prize = new Prize(1,1);
