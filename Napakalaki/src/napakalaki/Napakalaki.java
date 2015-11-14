@@ -15,9 +15,20 @@ public class Napakalaki {
     
     private static final Napakalaki instance = new Napakalaki();
     
+    //Atributos de referencia
+    private CombatResult combatResult;
+    private Player currentPlayer;
+    private ArrayList<Player> players;
+    private CardDealer dealer;
+    
     //El constructor privado asegura que no se puede instancia
     //desde otras clases
-    private Napakalaki(){ }
+    private Napakalaki(){ 
+        combatResult = null;
+        currentPlayer = null;
+        players = null;
+        dealer = null;
+    }
     
     
     //Métodos privados
@@ -26,8 +37,7 @@ public class Napakalaki {
     }
     
     private Player nextPlayer(){
-        Player p = new Player();
-        return p;
+        return players.get(0);
     }
     
     private Boolean nextTurnAllowed(){
@@ -44,8 +54,7 @@ public class Napakalaki {
     } 
     
     public CombatResult developCombat(){
-        CombatResult cr = null;
-        return cr;
+        return combatResult;
     }
     
     public void discardVisibleTreasures ( ArrayList<Treasure> treasures){
@@ -64,9 +73,8 @@ public class Napakalaki {
         
     }
     
-    public Player getCurrentPlayer (){
-        Player p = new Player();
-        return p;
+    public Player getCurrentPlayer (){     
+        return currentPlayer;
     }
        
     public Monster getCurrentMonster(){
