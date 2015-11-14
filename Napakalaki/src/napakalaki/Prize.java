@@ -12,11 +12,13 @@ package napakalaki;
 public class Prize {
     private int treasures;
     private int levels;
+    
     //Constructor
     public Prize(int t, int l){
         treasures=t;
         levels=l;
     }
+    
     //Métodos get
     public int getTreasures(){
         return treasures;
