@@ -24,7 +24,12 @@ public class CardDealer {
     
     //El constructor privado asegura que no se puede instanciar
     //desde otras clases
-    private CardDealer () {}
+    private CardDealer () {
+        unusedMonsters = new ArrayList();
+        usedMonsters = new ArrayList();
+        unusedTreasures = new ArrayList();
+        usedTreasures = new ArrayList();
+    }
     
     public static CardDealer getInstace(){
         return instance;
@@ -34,7 +39,6 @@ public class CardDealer {
     
     //Inicializa el mazo de cartas Tesoros (unusedTreasures)
     private void initTreasureCardDeck() {
-        unusedTreasures = new ArrayList();
         unusedTreasures.add(new Treasure ("¡Sí mi amo!",4,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure ("Botas de investigación",3,TreasureKind.SHOE));
         unusedTreasures.add(new Treasure ("Capucha de Cthulhu",3,TreasureKind.HELMET));   
@@ -71,7 +75,6 @@ public class CardDealer {
     
     //Inicializa el mazo de cartas de Mostruos (unusedMonsters)
     private void initMonsterCardDeck() {
-        unusedMonsters = new ArrayList();
         BadConsequence badConsequence;
         Prize prize;
         ArrayList<TreasureKind> sht = new ArrayList();
@@ -225,10 +228,11 @@ public class CardDealer {
     
     //Baraja el mazo de cartas de monstruos unusedMonsters
     private void shuffleMonster(){
-        Collections.shuffle(usedMonsters);
+        Collections.shuffle(unusedMonsters);
     }
     
     //Métodos públicos
+    
     public Treasure nextTreasure(){
         return usedTreasures.get(0);
     }
@@ -237,12 +241,14 @@ public class CardDealer {
         return usedMonsters.get(0);
     }
     
+    //Introduce en e mazo de descartes de tesoros (usedTreasures) el tesoro t
     public void giveTreasureBack(Treasure t){
-        
+        usedTreasures.add(t);
     }
     
+    //Introduce en el mazo de descartes de monstruos (usedMonster) al monstruo m
     public void giveMonsterBack(Monster m){
-        
+        usedMonsters.add(m);
     }
     
     public void initCards(){
