@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
