@@ -38,8 +38,8 @@ public class Monster {
         return badConsequence;
     }
     
-    public int getLevelsGainad(){
-        return prize.getLevels();// se arregla cuando se actualice la clase Prize
+    public int getLevelsGained(){
+        return prize.getLevels();
     }
     
     
@@ -51,6 +51,6 @@ public class Monster {
     @Override
     public String toString() {
         return "Name = " + name + " --- CombatLevel = " + Integer.toString(combatLevel)
-                + " --- Pride =" + prize.toString() + " --- BadConsequence =" + badConsequence.toString();
+                + " --- Prize =" + prize.toString() + " --- BadConsequence =" + badConsequence.toString();
     }
 }
