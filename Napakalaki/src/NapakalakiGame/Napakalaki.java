@@ -25,7 +25,7 @@ public class Napakalaki {
     private Napakalaki(){ 
         currentPlayer = null;
         players = null;
-        dealer = null;
+        dealer = CardDealer.getInstace();
     }
     
     
