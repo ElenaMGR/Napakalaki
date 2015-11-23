@@ -124,13 +124,7 @@ public class Napakalaki {
     
     /* Devuelve true si el parametro resutl es WINGAME, en caso contrario devuelve false */
     public boolean endOfGame (CombatResult result){
-        boolean end;
-        if (result==CombatResult.WINGAME)
-            end = true;
-        else
-            end = false;
-        
-        return end;
+        return (result==CombatResult.WINGAME);
     }
     
 }
