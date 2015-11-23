@@ -30,8 +30,13 @@ public class Napakalaki {
     
     
     //Métodos privados
-    private void initPlayers (String[] names){
-        
+    
+    /* Inicializa el array de jugadores, creando tantos jugadores como
+       elementos hay en names
+    */
+    private void initPlayers (ArrayList<String> names){
+        for (int i=0; i<names.size(); i++)
+            players.add(new Player(names.get(i)));
     }
     
     private Player nextPlayer(){
