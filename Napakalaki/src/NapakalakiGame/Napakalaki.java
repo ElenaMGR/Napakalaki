@@ -52,9 +52,10 @@ public class Napakalaki {
                    next = (i + 1) % (players.size()- 1);
                 }
             }
+            
         }
-        Player next_players = players.get(next);
-        return next_players;
+        Player next_player = players.get(next);
+        return next_player;
     }
     
     /* Comprueba si el jugador activo cumple con las reglas del juego
