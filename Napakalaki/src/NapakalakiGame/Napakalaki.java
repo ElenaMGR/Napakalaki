@@ -18,6 +18,7 @@ public class Napakalaki {
     //Atributos de referencia
     private Player currentPlayer;
     private ArrayList<Player> players;
+    private Monster currentMonster;
     private CardDealer dealer;
     
     //El constructor privado asegura que no se puede instancia
@@ -77,13 +78,13 @@ public class Napakalaki {
         
     }
     
+    // Devuelve el jugador actual
     public Player getCurrentPlayer (){     
         return currentPlayer;
     }
        
     public Monster getCurrentMonster(){
-        Monster m = null;
-        return m;
+        return currentMonster;
     }
     
     public Boolean nextTurn(){
