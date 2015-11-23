@@ -95,7 +95,13 @@ public class BadConsequence {
         }
     }
     
-    public void substracHiddenTreasure(Treasure t){}
+    public void substracHiddenTreasure(Treasure t){
+        if(nHiddenTreasures != 0){ // Si es un numero se reduce en 1
+            nHiddenTreasures--;
+        }else{ // Si es un tesoro especifico se elimina
+            specificHiddenTreasures.remove(t.getType());
+        }
+    }
     
     
     //Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
