@@ -23,9 +23,9 @@ public class Napakalaki {
     
     //El constructor privado asegura que no se puede instancia
     //desde otras clases
-    private Napakalaki(){ 
-        currentPlayer = null;
-        players = null;
+    private Napakalaki(){
+        currentPlayer = new Player("");
+       //players = null;
         dealer = CardDealer.getInstace();
     }
     
@@ -41,7 +41,20 @@ public class Napakalaki {
     }
     
     private Player nextPlayer(){
-        return players.get(0);
+        int next;
+        //Player next_player;
+        if(currentPlayer.getName().equals("")){ // Si es la primera jugada
+           next = (int) (Math.random()*players.size() - 1);
+        }else{
+            next = 0;
+            for(int i=0;i<players.size();i++){
+                if(players.get(i).getName().equals(currentPlayer.getName())){
+                   next = (i + 1) % (players.size()- 1);
+                }
+            }
+        }
+        Player next_players = players.get(next);
+        return next_players;
     }
     
     // Comprueba si el jugador activo cumple con las reglas del juego para poder terminar su turno
