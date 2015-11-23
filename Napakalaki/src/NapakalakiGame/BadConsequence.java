@@ -83,7 +83,17 @@ public class BadConsequence {
         return specificVisibleTreasures;
     }
     
-    public void substracVisibleTreasure(Treasure t){}
+    /**
+     * Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
+     * @param t 
+     */
+    public void substracVisibleTreasure(Treasure t){
+        if(nVisibleTreasures != 0){ // Si es un numero se reduce en 1
+            nVisibleTreasures--;
+        }else{ // Si es un tesoro especifico se elimina
+            specificVisibleTreasures.remove(t.getType());
+        }
+    }
     
     public void substracHiddenTreasure(Treasure t){}
     
