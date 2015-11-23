@@ -44,8 +44,9 @@ public class Napakalaki {
         return players.get(0);
     }
     
+    // Comprueba si el jugador activo cumple con las reglas del juego para poder terminar su turno
     private Boolean nextTurnAllowed(){
-        return true;
+        return currentPlayer.validState();
     }
     
     private void setEnemies(){
@@ -82,7 +83,8 @@ public class Napakalaki {
     public Player getCurrentPlayer (){     
         return currentPlayer;
     }
-       
+    
+    // Devuelve el mostrue en juego
     public Monster getCurrentMonster(){
         return currentMonster;
     }
