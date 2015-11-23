@@ -57,7 +57,10 @@ public class Napakalaki {
         return next_players;
     }
     
-    // Comprueba si el jugador activo cumple con las reglas del juego para poder terminar su turno
+    /* Comprueba si el jugador activo cumple con las reglas del juego
+       para poder terminar su turno.
+       Devuelve false si el jugador activo no puede pasar de turno y 
+      true en caso contrario */
     private Boolean nextTurnAllowed(){
         return currentPlayer.validState();
     }
@@ -106,8 +109,15 @@ public class Napakalaki {
         return true;
     }
     
-    public Boolean endOfGame (CombatResult result){
-        return true;
+    /* Devuelve true si el parametro resutl es WINGAME, en caso contrario devuelve false */
+    public boolean endOfGame (CombatResult result){
+        boolean end;
+        if (result==CombatResult.WINGAME)
+            end = true;
+        else
+            end = false;
+        
+        return end;
     }
     
 }
