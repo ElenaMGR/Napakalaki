@@ -67,6 +67,18 @@ public class Napakalaki {
     }
     
     private void setEnemies(){
+        boolean asignado = false;
+        int pos_enemy;
+        for(int i=0; i < players.size(); i++){
+            while(!asignado){
+                pos_enemy = (int) (Math.random()*players.size() - 1);
+                if(i != pos_enemy){
+                    players.get(i).setEnemy(players.get(pos_enemy));
+                    asignado = true;
+                }
+            }
+            asignado = false;
+        }
         
     }
     
