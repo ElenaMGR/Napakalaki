@@ -253,7 +253,15 @@ public class CardDealer {
     }
     
     public Monster nextMonster(){
-        return usedMonsters.get(0);
+        Monster nuevo_monstruo ;
+        // Si esta vacio el mazo de tesoros.
+        if(unusedMonsters.isEmpty()){
+            unusedMonsters = new ArrayList(usedMonsters);
+            shuffleMonster();
+        }
+        nuevo_monstruo = unusedMonsters.get(0);
+        unusedMonsters.remove(0);
+        return nuevo_monstruo;
     }
     
     //Introduce en e mazo de descartes de tesoros (usedTreasures) el tesoro t
