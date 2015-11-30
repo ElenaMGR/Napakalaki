@@ -279,6 +279,7 @@ public class CardDealer {
         usedMonsters.add(m);
     }
     
+    //Inicializa los mazos
     public void initCards(){
         initTreasureCardDeck();
         initMonsterCardDeck();
