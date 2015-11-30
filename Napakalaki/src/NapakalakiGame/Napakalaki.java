@@ -63,6 +63,9 @@ public class Napakalaki {
        Devuelve false si el jugador activo no puede pasar de turno y 
       true en caso contrario */
     private Boolean nextTurnAllowed(){
+        if(currentPlayer == null){
+            return true;
+        }
         return currentPlayer.validState();
     }
     
