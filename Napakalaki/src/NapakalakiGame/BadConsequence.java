@@ -83,10 +83,8 @@ public class BadConsequence {
         return specificVisibleTreasures;
     }
     
-    /**
-     * Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
-     * @param t 
-     */
+    
+    //Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
     public void substracVisibleTreasure(Treasure t){
         if(nVisibleTreasures != 0){ // Si es un numero se reduce en 1
             nVisibleTreasures--;
@@ -95,6 +93,7 @@ public class BadConsequence {
         }
     }
     
+    //Actualiza el mal rollo para que el tesoro oculto t no forme parte del mismo.
     public void substracHiddenTreasure(Treasure t){
         if(nHiddenTreasures != 0){ // Si es un numero se reduce en 1
             nHiddenTreasures--;
