@@ -91,7 +91,7 @@ public class Player {
         que podrá tener equipados hasta 2.*/
         int oneHand=0;
         boolean bothhands=false;
-        for (int i=0; i<visibleTreasure.size(); i++){
+        for (int i=0; i<visibleTreasure.size()  && sePuede; i++){
             if (t.getType()!= TreasureKind.ONEHAND){
                 //Si ya lo tiene equipado no se puede equipar
                 if (t.getType()==visibleTreasure.get(i).getType())
@@ -106,25 +106,20 @@ public class Player {
             if (visibleTreasure.get(i).getType()==TreasureKind.BOTHHANDS)
                 bothhands=true;
         }
-        
-        /*Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
-        tener equipado ningún tesoro de dos manos.*/ 
-        if (t.getType()== TreasureKind.BOTHHANDS){
-            if(oneHand>0)
+        if(sePuede){
+            /*Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
+            tener equipado ningún tesoro de dos manos.*/ 
+            if (oneHand>0 && t.getType()== TreasureKind.BOTHHANDS)
                 sePuede=false;
-        }
-        
-        /*Si se tiene equipado un tesoro de dos manos, no se podrá tener 
-        equipado ningún tesoro de una mano.*/
-        if (bothhands && t.getType()== TreasureKind.ONEHAND)
-            sePuede=false;
-        if (oneHand>0 && t.getType()== TreasureKind.BOTHHANDS)
-            sePuede=false;
-        
-        //Si el tipo es ONEHAND y ya tiene dos equipadas, no se puede
-        if (t.getType()== TreasureKind.ONEHAND && oneHand==2)
-            sePuede=false;
-              
+
+            /*Si se tiene equipado un tesoro de dos manos, no se podrá tener 
+            equipado ningún tesoro de una mano.
+            Si el tipo es ONEHAND y ya tiene dos equipadas, no se puede
+            */            
+            else if(t.getType() == TreasureKind.ONEHAND)
+                if(oneHand==2 || bothhands)
+                    sePuede=false;
+        }      
     
         return sePuede;
     }
