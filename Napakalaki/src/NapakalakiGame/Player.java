@@ -83,8 +83,50 @@ public class Player {
         
     }
     
+    /* Comprueba si el tesoro t se puede pasar de oculto a visible */
     private boolean canMakeTreasureVisible(Treasure t){
-        return false;
+        boolean sePuede = true;
+        /*Solo podrá tener equipado un tesoro de cada tipo, 
+        salvo para el caso de tesoros de una mano de los
+        que podrá tener equipados hasta 2.*/
+        int oneHand=0;
+        boolean bothhands=false;
+        for (int i=0; i<visibleTreasure.size(); i++){
+            if (t.getType()!= TreasureKind.ONEHAND){
+                //Si ya lo tiene equipado no se puede equipar
+                if (t.getType()==visibleTreasure.get(i).getType())
+                    sePuede=false;                     
+            }else{
+                //Cuento cuantas armas de una mano tiene equipadas
+                if (t.getType()==visibleTreasure.get(i).getType())
+                    oneHand++;
+            }
+            
+            //Compruebo si tiene equipado un arma de dos manos      
+            if (visibleTreasure.get(i).getType()==TreasureKind.BOTHHANDS)
+                bothhands=true;
+        }
+        
+        /*Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
+        tener equipado ningún tesoro de dos manos.*/ 
+        if (t.getType()== TreasureKind.BOTHHANDS){
+            if(oneHand>0)
+                sePuede=false;
+        }
+        
+        /*Si se tiene equipado un tesoro de dos manos, no se podrá tener 
+        equipado ningún tesoro de una mano.*/
+        if (bothhands && t.getType()== TreasureKind.ONEHAND)
+            sePuede=false;
+        if (oneHand>0 && t.getType()== TreasureKind.BOTHHANDS)
+            sePuede=false;
+        
+        //Si el tipo es ONEHAND y ya tiene dos equipadas, no se puede
+        if (t.getType()== TreasureKind.ONEHAND && oneHand==2)
+            sePuede=false;
+              
+    
+        return sePuede;
     }
     
     // Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
