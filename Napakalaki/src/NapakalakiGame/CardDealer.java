@@ -233,13 +233,12 @@ public class CardDealer {
     
     //Métodos públicos
     
-    /**
-     * Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
-     * de él. 
-     * Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
-     * al mazo de tesoros y lo baraja.
-     * @return 
-     */
+    /*
+     Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
+     de él. 
+     Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     al mazo de tesoros y lo baraja.*/
+
     public Treasure nextTreasure(){
         Treasure nuevo_tesoro ;
         // Si esta vacio el mazo de tesoros.
@@ -247,11 +246,17 @@ public class CardDealer {
             unusedTreasures = new ArrayList(usedTreasures);
             shuffleTreasures();
         }
-        nuevo_tesoro = unusedTreasures.get(0);
-        unusedTreasures.remove(0);
+        nuevo_tesoro = unusedTreasures.get(unusedTreasures.size()-1);
+        unusedTreasures.remove(unusedTreasures.size()-1);
         return nuevo_tesoro;
     }
     
+    
+    /*
+     Devuelve el siguiente monstruo que hay en el mazo de monstruos y lo elimina
+     de él. 
+     Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     al mazo de monstruos y lo baraja.*/
     public Monster nextMonster(){
         Monster nuevo_monstruo ;
         // Si esta vacio el mazo de tesoros.
@@ -259,8 +264,8 @@ public class CardDealer {
             unusedMonsters = new ArrayList(usedMonsters);
             shuffleMonster();
         }
-        nuevo_monstruo = unusedMonsters.get(0);
-        unusedMonsters.remove(0);
+        nuevo_monstruo = unusedMonsters.get(unusedMonsters.size()-1);
+        unusedMonsters.remove(unusedMonsters.size()-1);
         return nuevo_monstruo;
     }
     
