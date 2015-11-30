@@ -107,8 +107,19 @@ public class Napakalaki {
         
     }
     
-    public void initGame (String[] players){
-        
+    /**
+     * Se encarga de solicitar a CardDealer la inicializacion de los mazos
+     * de cartas de Tesoros y de Monstruos, de inicializar los jugadores
+     * proporcionandoles un nombre, asignarle a cada jugador su enemigo y de 
+     * iniciar el juego con la llamada nextTurn() para pasar al siguiente
+     * turno.
+     * @param players 
+     */
+    public void initGame (ArrayList<String> players){
+        initPlayers(players);
+        setEnemies();
+        nextTurn();
+        dealer.initCards();
     }
     
     // Devuelve el jugador actual
