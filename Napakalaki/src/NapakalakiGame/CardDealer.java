@@ -233,8 +233,23 @@ public class CardDealer {
     
     //Métodos públicos
     
+    /**
+     * Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
+     * de él. 
+     * Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     * al mazo de tesoros y lo baraja.
+     * @return 
+     */
     public Treasure nextTreasure(){
-        return usedTreasures.get(0);
+        Treasure nuevo_tesoro ;
+        // Si esta vacio el mazo de tesoros.
+        if(unusedTreasures.isEmpty()){
+            unusedTreasures = new ArrayList(usedTreasures);
+            shuffleTreasures();
+        }
+        nuevo_tesoro = unusedTreasures.get(0);
+        unusedTreasures.remove(0);
+        return nuevo_tesoro;
     }
     
     public Monster nextMonster(){
