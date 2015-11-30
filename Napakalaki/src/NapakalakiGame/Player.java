@@ -203,8 +203,16 @@ public class Player {
         this.enemy=enemy;
     }
     
+    // Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
     private Treasure giveMeATreasure(){
-        return null;
+        Treasure tesoro;
+        //Genero un número aletorio
+        int num=(int) (Math.random()*hiddenTreasures.size());
+        //Elijo el tesoro a devolver
+        tesoro = hiddenTreasures.get(num);
+        //Elimino el tesoro
+        hiddenTreasures.remove(num);
+        return tesoro;
     }
     
     // Indica si el jugador ha robado antes o no un tesoro a su enemigo.
