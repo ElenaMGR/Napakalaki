@@ -79,8 +79,18 @@ public class Player {
         
     }
     
+    /**
+     * Realiza el mal rollo de un monstruo contra el jugador.
+     * Aplica las consecuencias que puede y las que no las guarda
+     * en el mal rollo pendiente.
+     * @param m monstruo con el que ha perdido
+     */
     private void applyBadConsequence(Monster m){
-        
+        BadConsequence badConsequence = m.getBadConsequence();
+        int nLevels = badConsequence.getLevels();
+        decrementLevels(nLevels);
+        BadConsequence pendingBad = badConsequence.adjustToFitTreasureList(visibleTreasure, hiddenTreasures);
+        setPendingBadConsequence(pendingBad);
     }
     
     /* Comprueba si el tesoro t se puede pasar de oculto a visible */
