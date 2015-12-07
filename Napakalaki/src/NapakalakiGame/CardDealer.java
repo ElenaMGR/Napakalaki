@@ -37,7 +37,9 @@ public class CardDealer {
     
     //Métodos privados
     
-    //Inicializa el mazo de cartas Tesoros (unusedTreasures)
+    /** 
+     * Inicializa el mazo de cartas Tesoros (unusedTreasures)
+     */
     private void initTreasureCardDeck() {
         unusedTreasures.add(new Treasure ("¡Sí mi amo!",4,TreasureKind.HELMET));
         unusedTreasures.add(new Treasure ("Botas de investigación",3,TreasureKind.SHOE));
@@ -73,7 +75,9 @@ public class CardDealer {
         
     }
     
-    //Inicializa el mazo de cartas de Mostruos (unusedMonsters)
+    /**
+     * Inicializa el mazo de cartas de Mostruos (unusedMonsters)
+     */
     private void initMonsterCardDeck() {
         BadConsequence badConsequence;
         Prize prize;
@@ -233,11 +237,12 @@ public class CardDealer {
     
     //Métodos públicos
     
-    /*
-     Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
-     de él. 
-     Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
-     al mazo de tesoros y lo baraja.*/
+    /**
+     * Devuelve el siguiente tesoro que hay en el mazo de tesoros y lo elimina
+     * de él. 
+     * Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     * al mazo de tesoros y lo baraja.
+     */
 
     public Treasure nextTreasure(){
         Treasure nuevo_tesoro ;
@@ -252,11 +257,12 @@ public class CardDealer {
     }
     
     
-    /*
-     Devuelve el siguiente monstruo que hay en el mazo de monstruos y lo elimina
-     de él. 
-     Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
-     al mazo de monstruos y lo baraja.*/
+    /**
+     * Devuelve el siguiente monstruo que hay en el mazo de monstruos y lo elimina
+     * de él. 
+     * Si al iniciar el método el mazo estuviese vacío, pasa el mazo de decartes
+     * al mazo de monstruos y lo baraja.
+     */
     public Monster nextMonster(){
         Monster nuevo_monstruo ;
         // Si esta vacio el mazo de tesoros.
@@ -269,17 +275,25 @@ public class CardDealer {
         return nuevo_monstruo;
     }
     
-    //Introduce en e mazo de descartes de tesoros (usedTreasures) el tesoro t
+    /**
+     * Introduce en el mazo de descartes de tesoros (usedTreasures) el tesoro t
+     * @param t tesoro que se inserta en el mazo de descartes.
+     */
     public void giveTreasureBack(Treasure t){
         usedTreasures.add(t);
     }
     
-    //Introduce en el mazo de descartes de monstruos (usedMonster) al monstruo m
+    /**
+     * Introduce en el mazo de descartes de monstruos (usedMonster) al monstruo m
+     * @param m monstruo que se inserta en el mazo de descartes.
+     */
     public void giveMonsterBack(Monster m){
         usedMonsters.add(m);
     }
     
-    //Inicializa los mazos
+    /**
+     * Inicializa los mazos
+     */
     public void initCards(){
         initTreasureCardDeck();
         initMonsterCardDeck();
