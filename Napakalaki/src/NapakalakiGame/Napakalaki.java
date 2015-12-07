@@ -63,7 +63,7 @@ public class Napakalaki {
        para poder terminar su turno.
        Devuelve false si el jugador activo no puede pasar de turno y 
        true en caso contrario. Si currentPlayer es null, devuelve true*/
-    private Boolean nextTurnAllowed(){
+    private boolean nextTurnAllowed(){
         if(currentPlayer == null){
             return true;
         }
@@ -139,8 +139,30 @@ public class Napakalaki {
         return currentMonster;
     }
     
+    /**
+     * Usa el método nextTurnAllowed(), donde se verifíca si el jugador activo 
+     * cumple con las reglas del juego para poder terminar su turno.
+     * En caso de que nextTurnAllowed devuelva true, se le solicita a CardDeale el
+     * siguiente monstruo al que se enfrentará ese jugador y se actualiza el jugador activo
+     * al siguiente jugador.
+     * En caso de que el nuevo jugador activo esté muerto, por el combate en su anterior turno o 
+     * porque es el primer turno, se inicilian sus tesoros siguiendo las reglas del juego.
+     * @return devuelve nextTurnAllowed()
+     */
     public Boolean nextTurn(){
-        return true;
+        boolean stateOK = nextTurnAllowed();
+        boolean dead;
+        if (stateOK){
+            currentMonster = dealer.nextMonster();
+            currentPlayer = nextPlayer();
+            dead = currentPlayer.isDead();
+            
+            if (dead){
+                currentPlayer.initTreasures();
+            }
+        }
+        
+        return stateOK;
     }
     
     /* Devuelve true si el parametro resutl es WINGAME, en caso contrario devuelve false */
