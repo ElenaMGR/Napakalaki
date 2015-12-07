@@ -97,8 +97,13 @@ public class Napakalaki {
         return instance;
     } 
     
+    /**
+     * Pasa el control al jugador actual para que lleve a cabo el combate con el 
+     * monstruo que le ha tocado.
+     * @return CombatResult
+     */
     public CombatResult developCombat(){
-        CombatResult combatResult = null;
+        CombatResult combatResult = currentPlayer.combat(currentMonster);
         return combatResult;
     }
     
