@@ -225,8 +225,12 @@ public class Player {
         dieIfNoTreasures();
     }
     
-    // Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
-    // y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
+
+    /**
+     * Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir
+     * y no tiene más de 4 tesoros  ocultos, y false en caso contrario.
+     * @return 
+     */
     public boolean validState(){
         boolean state=false;
         if(pendingBadConsequence.isEmpty() && !(hiddenTreasures.size() > 4) )
@@ -239,7 +243,9 @@ public class Player {
         
     }
     
-    // Devuelve el nivel del jugador
+    /**
+     * Devuelve el nivel del jugador
+     */
     public int getLevels(){
         return level;
     }
@@ -248,12 +254,18 @@ public class Player {
         return null;
     }
     
-    // Asigna valor al atributo que referencia al enemigo del jugador
+    /**
+     * Asigna valor al atributo que referencia al enemigo del jugador
+     * @param enemy Enemigo que se asigna al jugador.
+     */
     public void setEnemy(Player enemy){
         this.enemy=enemy;
     }
     
-    // Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
+    /**
+     * Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
+     * @return el tesoro que se devuelve
+     */
     private Treasure giveMeATreasure(){
         Treasure tesoro;
         //Genero un número aletorio
@@ -265,13 +277,19 @@ public class Player {
         return tesoro;
     }
     
-    // Indica si el jugador ha robado antes o no un tesoro a su enemigo.
+    /**
+     * Indica si el jugador ha robado antes o no un tesoro a su enemigo.
+     * @return si el jugador puede robar.
+     */
     public boolean canISteal(){
         return canISteal;
     }
     
-    // Devuelve true si el jugador tiene tesoros para ser robados
-    // por otro jugador y false en caso contrario.
+    /**
+     * Devuelve true si el jugador tiene tesoros para ser robados por otro 
+     * jugador y false en caso contrario.
+     * 
+     */
     private boolean canYouGiveMeATreasure(){
         boolean numTreasure=false;
         if(!hiddenTreasures.isEmpty())
@@ -279,7 +297,9 @@ public class Player {
         return numTreasure;
     }
     
-    // Cambia el atributo canISteal a false cuando el jugador roba un tesoro
+    /**
+     * Cambia el atributo canISteal a false cuando el jugador roba un tesoro
+     */ 
     private void haveStolen(){
         canISteal= false;
     }
