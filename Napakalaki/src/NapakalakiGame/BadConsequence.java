@@ -84,7 +84,10 @@ public class BadConsequence {
     }
     
     
-    //Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
+    /**
+     * Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
+     * @param t Tesoro que se elimina.
+     */
     public void substracVisibleTreasure(Treasure t){
         if(nVisibleTreasures != 0){ // Si es un numero se reduce en 1
             nVisibleTreasures--;
@@ -93,7 +96,10 @@ public class BadConsequence {
         }
     }
     
-    //Actualiza el mal rollo para que el tesoro oculto t no forme parte del mismo.
+    /**
+     * Actualiza el mal rollo para que el tesoro oculto t no forme parte del mismo.
+     * @param t tesoro que se elimine
+     */
     public void substracHiddenTreasure(Treasure t){
         if(nHiddenTreasures != 0){ // Si es un numero se reduce en 1
             nHiddenTreasures--;
@@ -103,9 +109,12 @@ public class BadConsequence {
     }
     
     
-    //Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
-    //vacío, eso significa que el conjunto de atributos del mal rollo indica 
-    //que no se pierden tesoros
+    /**
+     * Devuelve true cuando el mal rollo que tiene que cumplir el jugador está 
+     * vacío, eso significa que el conjunto de atributos del mal rollo indica
+     * que no se pierden tesoros.
+     * @return true si esta vacio, false en caso contrario.
+     */
     public boolean isEmpty(){
         boolean vacio = false;
         if(!death && (levels==0) && (nVisibleTreasures==0) && (nHiddenTreasures==0) && 
@@ -119,7 +128,10 @@ public class BadConsequence {
         return null;
     }
     
-    //Método que muestra el estado de BadConsequence
+    /**
+     * Método que muestra el estado de BadConsequence
+     * @return un string con el estado.
+     */
     @Override
     public String toString(){
         return "Text = " + text + " , levels = " + Integer.toString(levels) + " , nVisibleTreasures = " +
