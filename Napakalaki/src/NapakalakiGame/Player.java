@@ -163,12 +163,36 @@ public class Player {
         
     }
     
+    /**
+     * Se elimina un tesoro visible.
+     * Si tiene un mal rollo pendiente e implica eliminar un tesoro visible
+     * se elimina del mal rollo tambien. Luego se comprueban si el jugador
+     * esta vivo.
+     * @param t tesoro que se va a descartar.
+     */
     public void discardVisibleTreasure(Treasure t){
+        visibleTreasure.remove(t);
+        if( (pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty()) ){
+            pendingBadConsequence.substracVisibleTreasure(t);
+        }
         
+        dieIfNoTreasures();
     }
     
+    /**
+     * Se elimina un tesoro oculto.
+     * Si tiene un mal rollo pendiente e implica eliminar un tesoro oculto
+     * se elimina del mal rollo tambien. Luego se comprueban si el jugador
+     * esta vivo.
+     * @param t tesoro que se va a descartar.
+     */
     public void discardHiddenTreasure(Treasure t){
+        hiddenTreasures.remove(t);
+        if( (pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty()) ){
+            pendingBadConsequence.substracVisibleTreasure(t);
+        }
         
+        dieIfNoTreasures();
     }
     
     // Devuelve true cuando el jugador no tiene ningún mal rollo que cumplir

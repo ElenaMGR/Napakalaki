@@ -102,12 +102,29 @@ public class Napakalaki {
         return combatResult;
     }
     
+    /**
+     * Elimina los tesoros visibles indicados en la lista de tesoros visibles
+     * del jugador. Al eliminar esos tesoros se devuelven al mazo de tesoros.
+     * @param treasures 
+     */
     public void discardVisibleTreasures ( ArrayList<Treasure> treasures){
         
+        for(Treasure treasure:treasures){
+            currentPlayer.discardVisibleTreasure(treasure);
+            dealer.giveTreasureBack(treasure);
+        }
     }
     
+    /**
+     * Elimina los tesoros ocultos indicados en la lista de tesoros ocultos
+     * del jugador. Al eliminar esos tesoros se devuelven al mazo de tesoros.
+     * @param treasures 
+     */
     public void discardHiddenTreasures ( ArrayList<Treasure> treasures){
-        
+        for(Treasure treasure:treasures){
+            currentPlayer.discardHiddenTreasure(treasure);
+            dealer.giveTreasureBack(treasure);
+        }
     }
     
     public void makeTreasuresVisible ( ArrayList<Treasure> treasures){
