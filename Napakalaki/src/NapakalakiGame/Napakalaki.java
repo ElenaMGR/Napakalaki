@@ -50,7 +50,7 @@ public class Napakalaki {
             next = 0;
             for(int i=0;i<players.size();i++){
                 if(players.get(i).getName().equals(currentPlayer.getName())){
-                   next = (i + 1) % (players.size()- 1);
+                   next = (i + 1) % (players.size());
                 }
             }
             
