@@ -40,6 +40,7 @@ public class Napakalaki {
             players.add(new Player(names.get(i)));
     }
     
+    //Decide qué jugador es el siguiente en jugar
     private Player nextPlayer(){
         int next;
         //Player next_player;
