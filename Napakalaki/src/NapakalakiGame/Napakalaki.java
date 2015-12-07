@@ -104,6 +104,7 @@ public class Napakalaki {
      */
     public CombatResult developCombat(){
         CombatResult combatResult = currentPlayer.combat(currentMonster);
+        dealer.giveMonsterBack(currentMonster);
         return combatResult;
     }
     
