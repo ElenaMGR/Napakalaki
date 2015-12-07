@@ -180,6 +180,7 @@ public class Player {
         return state;
     }
     
+    
     public void initTreasures(){
         
     }
