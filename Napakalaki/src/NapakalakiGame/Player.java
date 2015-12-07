@@ -181,8 +181,16 @@ public class Player {
         return cr;
     }
     
+    /**
+     * Pasa un objeto oculto de la mano del jugador a visible.
+     * @param t tesoro que se hace visible.
+     */
     public void makeTreasureVisible(Treasure t){
-        
+        boolean canI = canMakeTreasureVisible(t);
+        if (canI){
+            visibleTreasure.add(t);
+            hiddenTreasures.remove(t);
+        }
     }
     
     /**

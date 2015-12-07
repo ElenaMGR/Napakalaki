@@ -133,8 +133,14 @@ public class Napakalaki {
         }
     }
     
+    /**
+     * Se pide al jugador actual que pase tesoros ocultos a visibles.
+     * @param treasures lista de tesoros que pasan de ocultos a visibles.
+     */
     public void makeTreasuresVisible ( ArrayList<Treasure> treasures){
-        
+        for(Treasure t:treasures){
+           currentPlayer.makeTreasureVisible(t);
+        }
     }
     
     /**
