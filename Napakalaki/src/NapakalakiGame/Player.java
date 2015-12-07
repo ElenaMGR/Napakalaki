@@ -385,6 +385,5 @@ public class Player {
             discardHiddenTreasure(treasure);
         }
     }
-        
-    
+         
 }
