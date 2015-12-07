@@ -75,8 +75,26 @@ public class Player {
         pendingBadConsequence = b;
     }
     
+    /**
+     * Aplica el buen rolloo del monstruo vencido al jugador, sumando los niveles
+     * correspondientes y pidiendo al CardDealer que le dé el número de 
+     * tesoros indicado en el buen rollo del monstruo. Esos tesoros se añaden
+     * a sus tesoros
+     * @param m Monstruo vencido
+     */
     private void applyPrize(Monster m){
-        
+        int nLevels = m.getLevelsGained();
+        incrementLevels(nLevels);
+        int nTreasures = m.getTreasuresGained();
+        if (nTreasures>0){
+            CardDealer dealer = CardDealer.getInstace();
+            
+            Treasure treasure;
+            for (int i=1; i<=nTreasures; i++){
+                treasure = dealer.nextTreasure();
+                hiddenTreasures.add(treasure);
+            }
+        }
     }
     
     /**
