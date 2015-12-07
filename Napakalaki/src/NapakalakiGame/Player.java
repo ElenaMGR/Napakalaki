@@ -278,8 +278,27 @@ public class Player {
         return level;
     }
     
+    
+    /**
+     * Comprueba si un jugador puede robar un tesoro a su enemigo.
+     * Si se puede, el tesoro se almacenaŕa en ocultos.
+     * El jugador no puede volver a robar otro tesoro durante la partida.
+     * En el caso que no se haya podido robar el tesoro por algún motivo devuelve null
+     * @return Treasure tesoro robado
+     */
     public Treasure stealTreasure(){
-        return null;
+        Treasure treasure = null;
+        boolean canI = canISteal();
+        if(canI){
+            boolean canYou = enemy.canYouGiveMeATreasure();
+            
+            if (canYou){
+                treasure = enemy.giveMeATreasure();
+                hiddenTreasures.add(treasure);
+                haveStolen();
+            }
+        }
+        return treasure;
     }
     
     /**
