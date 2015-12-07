@@ -345,14 +345,25 @@ public class Player {
     }
     
     /**
-     * Cambia el atributo canISteal a false cuando el jugador roba un tesoro
+     * Cambia el atributo canISteal a false cuando el jugador roba un tesoro.
      */ 
     private void haveStolen(){
         canISteal= false;
     }
     
+   /**
+    * Elimina todos los tesoros del jugador.
+    */
     public void discardAllTreasures(){
+        ArrayList<Treasure> listTreasure = new ArrayList(new ArrayList(visibleTreasure));
+        for(Treasure treasure:listTreasure){
+            discardVisibleTreasure(treasure);
+        }
         
+        listTreasure = new ArrayList(new ArrayList(hiddenTreasures));
+        for(Treasure treasure:listTreasure){
+            discardHiddenTreasure(treasure);
+        }
     }
         
     
