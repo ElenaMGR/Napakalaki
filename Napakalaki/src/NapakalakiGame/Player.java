@@ -158,8 +158,8 @@ public class Player {
      * Si el nivel de combate del jugador supera al del monstruo, se aplica el buen rollo 
      * y se puede ganar el combate o el juego, en otro caso, el jugador pierde el combate 
      * y se aplica el mal rollo correspondiente.
-     * @param m Monster
-     * @return CombatResult
+     * @param m Monstruo con el que combate
+     * @return resultado del combate.
      */
     public CombatResult combat(Monster m){
         CombatResult cr;
