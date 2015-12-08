@@ -117,7 +117,7 @@ public class BadConsequence {
      */
     public boolean isEmpty(){
         boolean vacio = false;
-        if(/*!death && (levels==0) && */(nVisibleTreasures==0) && (nHiddenTreasures==0) && 
+        if((nVisibleTreasures==0) && (nHiddenTreasures==0) && 
                 (specificHiddenTreasures.isEmpty()) && (specificVisibleTreasures.isEmpty())){
             vacio=true;
         }
