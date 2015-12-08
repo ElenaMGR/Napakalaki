@@ -186,10 +186,9 @@ public class BadConsequence {
      */
     @Override
     public String toString(){
-        return "Text = " + text + " , levels = " + Integer.toString(levels) + " , nVisibleTreasures = " +
-                Integer.toString(nVisibleTreasures) + " , nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +
-                " , death = " + Boolean.toString(death) + " , specificHiddenTreasures = " +
-                specificHiddenTreasures + " , specificVisibleTreasures = " +
-                specificVisibleTreasures;
+        return "BadConsequence = " + text +"\n" +
+                "   levels = " + Integer.toString(levels) + "   death = " + Boolean.toString(death)+"\n"+
+                "   nVisibleTreasures = " +Integer.toString(nVisibleTreasures) + "  nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +"\n"+
+                "   specificVisibleTreasures = " + specificVisibleTreasures + "   specificHiddenTreasures = " + specificHiddenTreasures+"\n";
     }
 }

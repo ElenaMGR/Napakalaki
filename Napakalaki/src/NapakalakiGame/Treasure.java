@@ -49,7 +49,7 @@ public class Treasure {
     public String toString(){
         return "Treasure: "+name+"\n"+
                 "   tipo: "+type+
-                "   bonus: "+bonus;
+                "   bonus: "+bonus+"\n";
     }
     
 }
