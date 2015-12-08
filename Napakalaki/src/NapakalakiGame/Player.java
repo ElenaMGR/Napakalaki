@@ -126,7 +126,9 @@ public class Player {
             if (t.getType()!= TreasureKind.ONEHAND){
                 //Si ya lo tiene equipado no se puede equipar
                 if (t.getType()==visibleTreasures.get(i).getType())
-                    sePuede=false;                     
+                    sePuede=false;     
+                if (visibleTreasures.get(i).getType()==TreasureKind.ONEHAND)
+                    oneHand++;
             }else{
                 //Cuento cuantas armas de una mano tiene equipadas
                 if (t.getType()==visibleTreasures.get(i).getType())
@@ -140,7 +142,7 @@ public class Player {
         if(sePuede){
             /*Si se tienen equipado 1 ó 2 tesoros de una mano, no se podrá 
             tener equipado ningún tesoro de dos manos.*/ 
-            if (oneHand>0 && t.getType()== TreasureKind.BOTHHANDS)
+            if (oneHand>0 && (t.getType()== TreasureKind.BOTHHANDS))
                 sePuede=false;
 
             /*Si se tiene equipado un tesoro de dos manos, no se podrá tener 
