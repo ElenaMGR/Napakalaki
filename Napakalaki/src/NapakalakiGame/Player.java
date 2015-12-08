@@ -385,5 +385,15 @@ public class Player {
             discardHiddenTreasure(treasure);
         }
     }
-         
+    
+    
+    
+    /**
+     * Método que muestra player
+     * @return un string con el nombre del jugador
+     */
+    @Override
+    public String toString(){
+        return getName();
+    }
 }
