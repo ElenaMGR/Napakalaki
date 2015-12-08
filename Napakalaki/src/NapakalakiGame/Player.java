@@ -397,7 +397,6 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName()+"\tlevel: "+level+"\n"+
-                "\tenemy: "+enemy.name+"\n";
+        return getName()+"\tlevel: "+level+"\tenemy: "+enemy.name+"\n";
     }
 }
