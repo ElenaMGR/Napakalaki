@@ -14,7 +14,7 @@ public class Treasure {
     private String name;
     private int bonus; 
     private TreasureKind type;
-    
+   
     // Constructores
     public Treasure(String n, int bonus,TreasureKind t){
         name        = n;
