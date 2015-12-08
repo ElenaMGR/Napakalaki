@@ -124,8 +124,56 @@ public class BadConsequence {
         return vacio;
     }
     
+    /**
+     * Ajusta el mal rollo de un monstruo a la posibilidad del jugador que tiene
+     * que cumplirlo.
+     * @param v lista de tesoros visibles del jugador
+     * @param h lista de tesoros ocultos del jugador.
+     * @return 
+     */
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){     
-        return null;
+        // Si el jugador no tiene objetos ocultos, no los puede perder
+        if(h.isEmpty()){
+            specificHiddenTreasures.clear();
+            nHiddenTreasures = 0;
+        }else{  // Si el jugador tiene objetos ocultos, quitamos los que no posea
+            if(nHiddenTreasures > 0){ // Si es un numero lo ajustamos
+                if(nHiddenTreasures > h.size()){
+                    nHiddenTreasures = h.size();
+                }
+                
+            }else{ // Si son objetos especificos los buscamos y eliminamos
+                for(Treasure treasure: h){
+                    if(!specificHiddenTreasures.contains(treasure.getType())){
+                        specificHiddenTreasures.remove(treasure.getType());
+                    }
+                }
+            }
+            
+        }
+        
+        
+        // Si el jugador no tiene objetos visibles, no los puede perder
+        if( v.isEmpty() ){
+            specificVisibleTreasures.clear();
+            nVisibleTreasures = 0;
+        }else{  // Si el jugador tiene objetos ocultos, quitamos los que no posea
+            if(nVisibleTreasures > 0){ // Si es un numero lo ajustamos
+                if(nVisibleTreasures > v.size()){
+                    nVisibleTreasures = v.size();
+                }
+                
+            }else{ // Si son objetos especificos los buscamos y eliminamos
+                for(Treasure treasure: v){
+                    if(!specificVisibleTreasures.contains(treasure.getType())){
+                        specificVisibleTreasures.remove(treasure.getType());
+                    }
+                }
+            }
+            
+        }
+        
+        return this;
     }
     
     /**
