@@ -30,7 +30,7 @@ public class Player {
     
     public Player(String name){
         this.name=name;
-        level=0;
+        level=1;
         dead = true;
         canISteal = true;
         hiddenTreasures = new ArrayList();
@@ -67,8 +67,8 @@ public class Player {
     
     // Decrementa el nivel del jugador en i niveles
     private void decrementLevels(int i){
-        if (level-i<0)
-            level=0;
+        if (level-i<=0)
+            level=1;
         else
             level -= i;
     }
@@ -399,6 +399,6 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName()+"\tlevel: "+level+"\tenemy: "+enemy.name+"\n";
+        return getName()+"  level: "+level+"    dead: "+dead+"    enemy: "+enemy.name+"\n";
     }
 }
