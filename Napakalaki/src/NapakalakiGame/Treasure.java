@@ -40,4 +40,16 @@ public class Treasure {
         return type;
     }  
     
+    
+    /**
+     * Método que muestra el estado de Treasure
+     * @return un string con el estado.
+     */
+    @Override
+    public String toString(){
+        return "Treasure: "+name+"\n"+
+                "   tipo: "+type+
+                "   bonus: "+bonus;
+    }
+    
 }
