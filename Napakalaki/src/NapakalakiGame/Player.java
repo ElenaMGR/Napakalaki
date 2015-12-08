@@ -67,7 +67,10 @@ public class Player {
     
     // Decrementa el nivel del jugador en i niveles
     private void decrementLevels(int i){
-        level -= i;
+        if (level-i<0)
+            level=0;
+        else
+            level -= i;
     }
     
     // Asigna el mal rollo al jugador
@@ -394,6 +397,7 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName();
+        return getName()+" level: "+level+"\n"+
+                "   enemy: "+enemy+"\n";
     }
 }
