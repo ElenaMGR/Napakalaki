@@ -131,7 +131,7 @@ public class BadConsequence {
      * @param h lista de tesoros ocultos del jugador.
      * @return 
      */
-    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){     
+    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){      
         // Si el jugador no tiene objetos ocultos, no los puede perder
         if(h.isEmpty()){
             specificHiddenTreasures.clear();
@@ -143,11 +143,13 @@ public class BadConsequence {
                 }
                 
             }else{ // Si son objetos especificos los buscamos y eliminamos
+                ArrayList<TreasureKind> aux = new ArrayList();
                 for(Treasure treasure: h){
-                    if(!specificHiddenTreasures.contains(treasure.getType())){
-                        specificHiddenTreasures.remove(treasure.getType());
+                    if(specificHiddenTreasures.contains(treasure.getType())){
+                        aux.add(treasure.getType());
                     }
                 }
+                specificHiddenTreasures=aux;
             }
             
         }
@@ -164,11 +166,13 @@ public class BadConsequence {
                 }
                 
             }else{ // Si son objetos especificos los buscamos y eliminamos
+                ArrayList<TreasureKind> aux = new ArrayList();
                 for(Treasure treasure: v){
-                    if(!specificVisibleTreasures.contains(treasure.getType())){
-                        specificVisibleTreasures.remove(treasure.getType());
+                    if(specificVisibleTreasures.contains(treasure.getType())){
+                        aux.add(treasure.getType());
                     }
                 }
+                specificVisibleTreasures=aux;
             }
             
         }
