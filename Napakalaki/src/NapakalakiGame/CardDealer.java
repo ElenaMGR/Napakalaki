@@ -265,7 +265,7 @@ public class CardDealer {
      */
     public Monster nextMonster(){
         Monster nuevo_monstruo ;
-        // Si esta vacio el mazo de tesoros.
+        // Si esta vacio el mazo de monstruos.
         if(unusedMonsters.isEmpty()){
             unusedMonsters = new ArrayList(usedMonsters);
             shuffleMonster();

@@ -35,8 +35,8 @@ public class Player {
         canISteal = true;
         hiddenTreasures = new ArrayList();
         visibleTreasure = new ArrayList();
-        pendingBadConsequence = null;
         enemy = null;
+        pendingBadConsequence = new BadConsequence("",0,0,0);
     }
     
     // Devuelve el nombre del jugador;
