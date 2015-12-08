@@ -297,6 +297,10 @@ public class CardDealer {
     public void initCards(){
         initTreasureCardDeck();
         initMonsterCardDeck();
+        //Barajamos los mazos de cartas
+        shuffleMonster();
+        shuffleTreasures();
+                
     }
     
 }

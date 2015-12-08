@@ -21,7 +21,7 @@ public class Player {
     private boolean canISteal;
     
     private ArrayList<Treasure> hiddenTreasures;
-    private ArrayList<Treasure> visibleTreasure;
+    private ArrayList<Treasure> visibleTreasures;
     
     private BadConsequence pendingBadConsequence;
     
@@ -34,7 +34,7 @@ public class Player {
         dead = true;
         canISteal = true;
         hiddenTreasures = new ArrayList();
-        visibleTreasure = new ArrayList();
+        visibleTreasures = new ArrayList();
         enemy = null;
         pendingBadConsequence = new BadConsequence("",0,0,0);
     }
@@ -54,7 +54,7 @@ public class Player {
     // tenga equipados
     private int getCombatLevel(){
         int combatLevel=level;
-        for(Treasure ht : hiddenTreasures) {
+        for(Treasure ht : visibleTreasures) {
             combatLevel += ht.getBonus();
         }
         return combatLevel;
@@ -107,7 +107,7 @@ public class Player {
         BadConsequence badConsequence = m.getBadConsequence();
         int nLevels = badConsequence.getLevels();
         decrementLevels(nLevels);
-        BadConsequence pendingBad = badConsequence.adjustToFitTreasureList(visibleTreasure, hiddenTreasures);
+        BadConsequence pendingBad = badConsequence.adjustToFitTreasureList(visibleTreasures, hiddenTreasures);
         setPendingBadConsequence(pendingBad);
     }
     
@@ -119,19 +119,19 @@ public class Player {
         que podrá tener equipados hasta 2.*/
         int oneHand=0;
         boolean bothhands=false;
-        for (int i=0; i<visibleTreasure.size()  && sePuede; i++){
+        for (int i=0; i<visibleTreasures.size()  && sePuede; i++){
             if (t.getType()!= TreasureKind.ONEHAND){
                 //Si ya lo tiene equipado no se puede equipar
-                if (t.getType()==visibleTreasure.get(i).getType())
+                if (t.getType()==visibleTreasures.get(i).getType())
                     sePuede=false;                     
             }else{
                 //Cuento cuantas armas de una mano tiene equipadas
-                if (t.getType()==visibleTreasure.get(i).getType())
+                if (t.getType()==visibleTreasures.get(i).getType())
                     oneHand++;
             }
             
             //Compruebo si tiene equipado un arma de dos manos      
-            if (visibleTreasure.get(i).getType()==TreasureKind.BOTHHANDS)
+            if (visibleTreasures.get(i).getType()==TreasureKind.BOTHHANDS)
                 bothhands=true;
         }
         if(sePuede){
@@ -155,7 +155,7 @@ public class Player {
     // Devuelve el número de tesoros visibles de tipo tKind que tiene el jugador
     private int howManyVisibleTreasures(TreasureKind tKind){
         int numero=0;
-        for (Treasure vt : visibleTreasure) {
+        for (Treasure vt : visibleTreasures) {
             if(vt.getType() == tKind)
                 numero++;
         }
@@ -165,7 +165,7 @@ public class Player {
     // Cambia el estado de jugador a muerto, modificando el correspondiente
     // atributo. 
     private void dieIfNoTreasures(){
-        if( hiddenTreasures.isEmpty() && visibleTreasure.isEmpty())
+        if( hiddenTreasures.isEmpty() && visibleTreasures.isEmpty())
             dead = true;
     }
     
@@ -179,7 +179,7 @@ public class Player {
     }
     
     public ArrayList<Treasure> getVisibleTreasures(){
-        return visibleTreasure;
+        return visibleTreasures;
     }
     
     /**
@@ -216,7 +216,7 @@ public class Player {
     public void makeTreasureVisible(Treasure t){
         boolean canI = canMakeTreasureVisible(t);
         if (canI){
-            visibleTreasure.add(t);
+            visibleTreasures.add(t);
             hiddenTreasures.remove(t);
         }
     }
@@ -229,7 +229,7 @@ public class Player {
      * @param t tesoro que se va a descartar.
      */
     public void discardVisibleTreasure(Treasure t){
-        visibleTreasure.remove(t);
+        visibleTreasures.remove(t);
         if( (pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty()) ){
             pendingBadConsequence.substracVisibleTreasure(t);
         }
@@ -375,7 +375,7 @@ public class Player {
     * Elimina todos los tesoros del jugador.
     */
     public void discardAllTreasures(){
-        ArrayList<Treasure> listTreasure = new ArrayList(new ArrayList(visibleTreasure));
+        ArrayList<Treasure> listTreasure = new ArrayList(new ArrayList(visibleTreasures));
         for(Treasure treasure:listTreasure){
             discardVisibleTreasure(treasure);
         }
