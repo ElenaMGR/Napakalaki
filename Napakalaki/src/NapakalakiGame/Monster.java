@@ -52,7 +52,7 @@ public class Monster {
     @Override
     public String toString() {
         return "Monster = " + name + "   CombatLevel = " + Integer.toString(combatLevel)+"\n"+
-                prize.toString() + "\n" +
+                prize.toString() + 
                 badConsequence.toString()+"\n";
     }
 }
