@@ -39,9 +39,9 @@ public class BadConsequence {
         this.death=death;
         specificHiddenTreasures=new ArrayList();
         specificVisibleTreasures=new ArrayList();
-        nVisibleTreasures=0;
-        nHiddenTreasures=0;
-        levels=0;
+        nVisibleTreasures=MAXTREASURES;
+        nHiddenTreasures=MAXTREASURES;
+        levels=Player.MAXLEVEL;
     }
     public BadConsequence(String t, int l, ArrayList<TreasureKind> v,
             ArrayList<TreasureKind> h){
