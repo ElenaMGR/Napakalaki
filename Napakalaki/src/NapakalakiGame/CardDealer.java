@@ -31,7 +31,7 @@ public class CardDealer {
         usedTreasures = new ArrayList();
     }
     
-    public static CardDealer getInstace(){
+    public static CardDealer getInstance(){
         return instance;
     }
     

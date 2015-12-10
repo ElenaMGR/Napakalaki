@@ -90,7 +90,7 @@ public class Player {
         incrementLevels(nLevels);
         int nTreasures = m.getTreasuresGained();
         if (nTreasures>0){
-            CardDealer dealer = CardDealer.getInstace();
+            CardDealer dealer = CardDealer.getInstance();
             
             Treasure treasure;
             for (int i=1; i<=nTreasures; i++){
@@ -279,7 +279,7 @@ public class Player {
      * el dado.
      */
     public void initTreasures(){
-        CardDealer dealer = CardDealer.getInstace();
+        CardDealer dealer = CardDealer.getInstance();
         Dice dice = Dice.getInstance();
         bringToLife();
         Treasure treasure = dealer.nextTreasure();

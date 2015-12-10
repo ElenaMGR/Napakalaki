@@ -26,7 +26,7 @@ public class Napakalaki {
     private Napakalaki(){
         currentPlayer = new Player("");
         players = new ArrayList();
-        dealer = CardDealer.getInstace();
+        dealer = CardDealer.getInstance();
     }
     
     
