@@ -149,6 +149,7 @@ public class BadConsequence {
                         aux.add(treasure.getType());
                     }
                 }
+                specificHiddenTreasures.clear();
                 specificHiddenTreasures=aux;
             }
             
@@ -172,6 +173,7 @@ public class BadConsequence {
                         aux.add(treasure.getType());
                     }
                 }
+                specificVisibleTreasures.clear();
                 specificVisibleTreasures=aux;
             }
             
