@@ -45,7 +45,7 @@ public class Napakalaki {
         int next;
         //Player next_player;
         if(currentPlayer.getName().equals("")){ // Si es la primera jugada
-           next = (int) (Math.random()*players.size() - 1);
+           next = (int) (Math.random()*players.size());
         }else{
             next = 0;
             for(int i=0;i<players.size();i++){
