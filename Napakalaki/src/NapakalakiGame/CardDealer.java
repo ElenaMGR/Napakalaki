@@ -102,7 +102,7 @@ public class CardDealer {
         prize = new Prize(1,1);
         unusedMonsters.add(new Monster("Chibithulhu", 2, badConsequence, prize));
         /*****************************************************/
-        
+       
         svt = new ArrayList();
         svt.add(TreasureKind.SHOE);
         badConsequence = new BadConsequence("El primordial bostezo"
@@ -249,6 +249,7 @@ public class CardDealer {
         // Si esta vacio el mazo de tesoros.
         if(unusedTreasures.isEmpty()){
             unusedTreasures = new ArrayList(usedTreasures);
+            usedTreasures.clear();
             shuffleTreasures();
         }
         nuevo_tesoro = unusedTreasures.get(unusedTreasures.size()-1);
@@ -268,6 +269,7 @@ public class CardDealer {
         // Si esta vacio el mazo de monstruos.
         if(unusedMonsters.isEmpty()){
             unusedMonsters = new ArrayList(usedMonsters);
+            usedMonsters.clear();
             shuffleMonster();
         }
         nuevo_monstruo = unusedMonsters.get(unusedMonsters.size()-1);
