@@ -131,55 +131,56 @@ public class BadConsequence {
      * @param h lista de tesoros ocultos del jugador.
      * @return 
      */
-    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){      
-        // Si el jugador no tiene objetos ocultos, no los puede perder
-        if(h.isEmpty()){
-            specificHiddenTreasures.clear();
-            nHiddenTreasures = 0;
-        }else{  // Si el jugador tiene objetos ocultos, quitamos los que no posea
+    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){   
+        int nHidden=0, nVisible=0;
+        ArrayList<TreasureKind> hidden = new ArrayList();
+        ArrayList<TreasureKind> visible = new ArrayList();
+        
+        // Si el jugador tiene objetos ocultos
+        if(!(h.isEmpty()) ){
+          // Si el jugador tiene objetos ocultos, quitamos los que no posea
             if(nHiddenTreasures > 0){ // Si es un numero lo ajustamos
                 if(nHiddenTreasures > h.size()){
-                    nHiddenTreasures = h.size();
+                    nHidden = h.size();
+                }else{
+                    nHidden = nHiddenTreasures;
                 }
                 
             }else{ // Si son objetos especificos los buscamos y eliminamos
-                ArrayList<TreasureKind> aux = new ArrayList();
                 for(Treasure treasure: h){
                     if(specificHiddenTreasures.contains(treasure.getType())){
-                        aux.add(treasure.getType());
+                        hidden.add(treasure.getType());
                     }
                 }
-                specificHiddenTreasures.clear();
-                specificHiddenTreasures=aux;
+                
             }
             
         }
         
         
         // Si el jugador no tiene objetos visibles, no los puede perder
-        if( v.isEmpty() ){
-            specificVisibleTreasures.clear();
-            nVisibleTreasures = 0;
-        }else{  // Si el jugador tiene objetos ocultos, quitamos los que no posea
+        if( !(v.isEmpty()) ){
+            // Si el jugador tiene objetos ocultos, quitamos los que no posea
             if(nVisibleTreasures > 0){ // Si es un numero lo ajustamos
                 if(nVisibleTreasures > v.size()){
-                    nVisibleTreasures = v.size();
+                    nVisible = v.size();
+                }else{
+                    nVisible= nVisibleTreasures;
                 }
                 
             }else{ // Si son objetos especificos los buscamos y eliminamos
-                ArrayList<TreasureKind> aux = new ArrayList();
                 for(Treasure treasure: v){
                     if(specificVisibleTreasures.contains(treasure.getType())){
-                        aux.add(treasure.getType());
+                        visible.add(treasure.getType());
                     }
                 }
-                specificVisibleTreasures.clear();
-                specificVisibleTreasures=aux;
             }
             
         }
-        
-        return this;
+        BadConsequence nuevo = new BadConsequence(text, levels, visible, hidden);
+        nuevo.nHiddenTreasures=nHidden;
+        nuevo.nVisibleTreasures=nVisible;
+        return nuevo;
     }
     
     /**
