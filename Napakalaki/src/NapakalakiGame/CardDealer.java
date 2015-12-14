@@ -21,6 +21,7 @@ public class CardDealer {
     ArrayList<Monster> usedMonsters;
     ArrayList<Treasure> unusedTreasures;
     ArrayList<Treasure> usedTreasures;
+    ArrayList<Cultist> unusedCultist;
     
     //El constructor privado asegura que no se puede instanciar
     //desde otras clases
@@ -225,6 +226,16 @@ public class CardDealer {
         // Fin de cartas de monstruos
     }
     
+    private void initCultistCardDeck(){
+        
+    }
+    
+    private void shuffleCultists(){
+        Collections.sufuffle(unusedCultist);
+    }
+    
+    
+    
     //Baraja el mazo de cartas de tesoros unusedTreasures
     private void shuffleTreasures(){
        Collections.shuffle(unusedTreasures);
@@ -277,6 +288,10 @@ public class CardDealer {
         return nuevo_monstruo;
     }
     
+    public Cultist nextCultist(){
+        
+    }
+    
     /**
      * Introduce en el mazo de descartes de tesoros (usedTreasures) el tesoro t
      * @param t tesoro que se inserta en el mazo de descartes.
@@ -299,9 +314,11 @@ public class CardDealer {
     public void initCards(){
         initTreasureCardDeck();
         initMonsterCardDeck();
+        initCultistCardDeck();
         //Barajamos los mazos de cartas
         shuffleMonster();
         shuffleTreasures();
+        shuffleCultists();
                 
     }
     
