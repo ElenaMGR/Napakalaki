@@ -24,10 +24,10 @@ public class Player {
     private ArrayList<Treasure> visibleTreasures;
     
     private BadConsequence pendingBadConsequence;
-    
     private Player enemy;
     
     
+    //Constructores
     public Player(String name){
         this.name=name;
         level=1;
@@ -37,6 +37,25 @@ public class Player {
         visibleTreasures = new ArrayList();
         enemy = null;
         pendingBadConsequence = new BadConsequence("",0,0,0);
+    }
+    
+    public Player(Player p){
+        name=p.name;
+        level=p.level;
+        dead = p.dead;
+        canISteal = p.canISteal;
+        hiddenTreasures = p.hiddenTreasures;
+        visibleTreasures = p.visibleTreasures;
+        enemy = p.enemy;
+        pendingBadConsequence = p.pendingBadConsequence;
+    }
+    
+    protected int getOponentLevel (Monster m){
+        return 0;
+    }
+    
+    protected boolean shouldConvert(){
+        return true;
     }
     
     // Devuelve el nombre del jugador;
@@ -52,7 +71,7 @@ public class Player {
     // Devuelve el nivel de combate del jugador. Que viene dado por
     // su nivel más los bonus que le proporcionan los tesoros que
     // tenga equipados
-    private int getCombatLevel(){
+    protected int getCombatLevel(){
         int combatLevel=level;
         for(Treasure ht : visibleTreasures) {
             combatLevel += ht.getBonus();
