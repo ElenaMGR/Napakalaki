@@ -231,7 +231,7 @@ public class CardDealer {
     }
     
     private void shuffleCultists(){
-        Collections.sufuffle(unusedCultist);
+        Collections.shuffle(unusedCultist);
     }
     
     
@@ -289,7 +289,7 @@ public class CardDealer {
     }
     
     public Cultist nextCultist(){
-        
+        return null;
     }
     
     /**
