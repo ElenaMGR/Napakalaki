@@ -10,10 +10,10 @@ package NapakalakiGame;
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class Cultist {
-    String name;
-    int gainedLevels;
+    private String name;
+    private int gainedLevels;
     
-    Cultist(String name, int gainedLevels){
+    public Cultist(String name, int gainedLevels){
         this.name = name;
         this.gainedLevels = gainedLevels;
     }
