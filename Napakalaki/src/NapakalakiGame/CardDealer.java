@@ -223,6 +223,55 @@ public class CardDealer {
                 + "Pierdes 3 niveles y tus tesoros visibles de las manos.",3,svt,new ArrayList());
         prize = new Prize(1,1);
         unusedMonsters.add(new Monster("Bicéfalo", 20, badConsequence, prize));
+        /*****************************************************/
+        //          MONSTRUOS PARA SECTARIOS
+        svt = new ArrayList();
+        svt.add(TreasureKind.ONEHAND);
+        badConsequence= new BadConsequence("Pierdes 1 mano visible.",0,svt,new ArrayList());
+        prize = new Prize(3,1);
+        unusedMonsters.add(new Monster("El mal indecible impronuncialbe", 10, badConsequence, prize,-2));
+        /*****************************************************/
+        
+        badConsequence= new BadConsequence("Pierdes tus tesoros visibles. Jajaja.",0,BadConsequence.MAXTREASURES,0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Testigos Oculares",6, badConsequence, prize,2));
+        /*****************************************************/
+        
+        badConsequence = new BadConsequence("Hoy no es tu día de suerte. Mueres.", true);
+        prize = new Prize(2,5);
+        unusedMonsters.add(new Monster("El gran Cthulhu", 20, badConsequence, prize,4));
+        /*****************************************************/
+        
+        badConsequence= new BadConsequence("Tu gobierno te recorta 2 niveles.",2,0,0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Serpiente Político",8, badConsequence, prize,-2));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.HELMET);
+        svt.add(TreasureKind.ARMOR);
+        
+        sht = new ArrayList();
+        sht.add(TreasureKind.BOTHHANDS);
+        sht.add(TreasureKind.ONEHAND);
+        sht.add(TreasureKind.ONEHAND);
+        badConsequence= new BadConsequence("Pierdes tu casco y tu armadura visible"
+                + ". Pierdes tus manos ocultas.",0,svt,sht);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Felpuggoth", 2, badConsequence, prize,5));
+        /*****************************************************/
+        
+        badConsequence= new BadConsequence("Pierdes 2 niveles.",2,0,0);
+        prize = new Prize(4,2);
+        unusedMonsters.add(new Monster("Shoggoth",16, badConsequence, prize,-4));
+        /*****************************************************/
+        
+        badConsequence= new BadConsequence("Pintalabios negro. Pierdes 2 niveles.",2,0,0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Lolitagooth",2, badConsequence, prize,3));
+        
+        
+        
         // Fin de cartas de monstruos
     }
     
