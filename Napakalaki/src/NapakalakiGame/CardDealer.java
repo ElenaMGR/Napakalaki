@@ -226,14 +226,20 @@ public class CardDealer {
         // Fin de cartas de monstruos
     }
     
+    //Inizializa el mazo de Sectarios
     private void initCultistCardDeck(){
-        
+        unusedCultist.add(new Cultist("Sectario", 1));
+        unusedCultist.add(new Cultist("Sectario", 2));
+        unusedCultist.add(new Cultist("Sectario", 1));
+        unusedCultist.add(new Cultist("Sectario", 2));
+        unusedCultist.add(new Cultist("Sectario", 1));
+        unusedCultist.add(new Cultist("Sectario", 1));
     }
     
+    //Baraja el mazo de cartas de Sectarios
     private void shuffleCultists(){
         Collections.shuffle(unusedCultist);
     }
-    
     
     
     //Baraja el mazo de cartas de tesoros unusedTreasures
