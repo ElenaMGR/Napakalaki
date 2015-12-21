@@ -57,6 +57,10 @@ public class Monster {
     public int getTreasuresGained(){
         return prize.getTreasures();
     }
+    
+    public int getCombatLevelAgainstCultistPlayer(){
+        return 0;
+    }
 
     //Método que muestra el estado de Monster
     @Override
