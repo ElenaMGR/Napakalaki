@@ -27,10 +27,12 @@ public class CultistPlayer extends Player {
         return 0;
     }
     
+    @Override
     protected int getOponentLevel(Monster m){
         return 0;
     }
     
+    @Override
     protected boolean shouldConvert(){
         return true;
     }
@@ -38,6 +40,7 @@ public class CultistPlayer extends Player {
     private Treasure giveMeATreasure(){
         return null;
     }
+    
     
     private boolean CanYouGiveMeATreasure(){
         return true;
