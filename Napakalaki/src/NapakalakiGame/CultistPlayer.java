@@ -12,7 +12,7 @@ package NapakalakiGame;
  */
 public class CultistPlayer extends Player {
 
-    private static final int totalCultistPlayers =0;
+    private static final int totalCultistPlayers = 0;
     
     private Cultist myCultistCard;
     
@@ -24,7 +24,7 @@ public class CultistPlayer extends Player {
         return 0;
     }
     
-    protected int getOponentLevel(){
+    protected int getOponentLevel(Monster m){
         return 0;
     }
     
