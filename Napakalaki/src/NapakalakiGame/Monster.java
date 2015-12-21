@@ -16,7 +16,7 @@ public class Monster {
     private int combatLevel;
     private BadConsequence badConsequence;
     private Prize prize;
-    private int levelChangeAgainstCultisPlayer;
+    private int levelChangeAgainstCultistPlayer;
 
     //Constructor
     public Monster(String n, int l, BadConsequence b, Prize p) {
@@ -24,7 +24,7 @@ public class Monster {
         combatLevel = l;
         badConsequence = b;
         prize = p;
-        levelChangeAgainstCultisPlayer=0;
+        levelChangeAgainstCultistPlayer=0;
     }
     
     public Monster(String n, int l, BadConsequence b, Prize p, int IC) {
@@ -32,7 +32,7 @@ public class Monster {
         combatLevel = l;
         badConsequence = b;
         prize = p;
-        levelChangeAgainstCultisPlayer=IC;
+        levelChangeAgainstCultistPlayer=IC;
     }
 
     //Métodos get
