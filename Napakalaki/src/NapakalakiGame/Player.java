@@ -24,7 +24,7 @@ public class Player {
     private ArrayList<Treasure> visibleTreasures;
     
     private BadConsequence pendingBadConsequence;
-    private Player enemy;
+    protected Player enemy;
     
     
     //Constructores
