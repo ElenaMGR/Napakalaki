@@ -12,12 +12,15 @@ package NapakalakiGame;
  */
 public class CultistPlayer extends Player {
 
-    private static final int totalCultistPlayers = 0;
+    private static int totalCultistPlayers = 0;
     
     private Cultist myCultistCard;
     
     public CultistPlayer(Player p, Cultist c) {
-        super(p.getName());
+        super(p);
+        totalCultistPlayers++;
+        myCultistCard = c;
+        
     }
     
     protected int getCombatLevel(){
