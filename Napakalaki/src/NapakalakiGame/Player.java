@@ -235,7 +235,12 @@ public class Player {
                 cr = CombatResult.WIN;
         }else{
             applyBadConsequence(m);
-            cr = CombatResult.LOSE;
+            if(shouldConvert()){
+                cr = CombatResult.LOSEANDCONVERT;
+            }else{
+               cr = CombatResult.LOSE; 
+            }
+            
         }
         
         return cr;
