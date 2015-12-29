@@ -224,7 +224,7 @@ public class Player {
     public CombatResult combat(Monster m){
         CombatResult cr;
         int myLevel = getCombatLevel();
-        int monsterLevel = m.getCombatLevel();
+        int monsterLevel = getOponentLevel(m);
         
         if (myLevel>monsterLevel){
             applyPrize(m);
