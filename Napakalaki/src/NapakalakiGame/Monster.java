@@ -58,8 +58,13 @@ public class Monster {
         return prize.getTreasures();
     }
     
+    /**
+     * Devuelve la suma del nivel del con el valor del atributo 
+     * levelChangeAgainstCultistPlayer.
+     * @return 
+     */
     public int getCombatLevelAgainstCultistPlayer(){
-        return 0;
+        return combatLevel+levelChangeAgainstCultistPlayer;
     }
 
     //Método que muestra el estado de Monster
