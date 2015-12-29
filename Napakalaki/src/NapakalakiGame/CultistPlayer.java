@@ -34,7 +34,7 @@ public class CultistPlayer extends Player {
     
     @Override
     protected boolean shouldConvert(){
-        return true;
+        return false;
     }
     
     private Treasure giveMeATreasure(){

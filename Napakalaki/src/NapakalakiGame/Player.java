@@ -55,7 +55,15 @@ public class Player {
     }
     
     protected boolean shouldConvert(){
-        return true;
+        boolean shouldC;
+        Dice d = Dice.getInstance();
+        int n = d.nextNumber();
+        if (n==1)
+            shouldC=true;
+        else
+            shouldC=false;
+        
+        return shouldC;
     }
     
     // Devuelve el nombre del jugador;
