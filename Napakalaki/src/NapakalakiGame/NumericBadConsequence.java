@@ -52,4 +52,21 @@ public class NumericBadConsequence extends BadConsequence {
         BadConsequence nuevo = new NumericBadConsequence(super.getText(), super.getLevels(), nHidden, nVisible);
         return nuevo;
     }
+    
+    @Override
+    public void substracHiddenTreasure(Treasure t){
+        // Si es un numero se reduce en 1
+        int h = super.getNHiddenTreasures()-1;
+        super.setNHiddenTreasures(h);
+ 
+    }
+    
+    
+    @Override
+    public void substracVisibleTreasure(Treasure t){
+        // Si es un numero se reduce en 1
+        int v = super.getNVisibleTreasures()-1;
+        super.setNVisibleTreasures(v);
+ 
+    }
 }

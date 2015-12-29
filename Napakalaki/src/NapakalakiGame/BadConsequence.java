@@ -62,6 +62,14 @@ public abstract class BadConsequence {
         death = d;
     }
     
+    protected void setNHiddenTreasures(int h){
+        nHiddenTreasures = h;
+    }
+    
+    protected void setNVisibleTreasures(int v){
+        nVisibleTreasures = v;
+    }
+    
     public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
         return specificHiddenTreasures;
     }
@@ -70,30 +78,26 @@ public abstract class BadConsequence {
         return specificVisibleTreasures;
     }
     
+    protected void setSpecificHiddenTreasures(ArrayList<TreasureKind> sh){
+        specificHiddenTreasures= sh;
+    }
+    
+    protected void setSpecificVisibleTreasures(ArrayList<TreasureKind> sv){
+        specificVisibleTreasures = sv;
+    }
+    
     
     /**
      * Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
      * @param t Tesoro que se elimina.
      */
-    public void substracVisibleTreasure(Treasure t){
-        if(nVisibleTreasures != 0){ // Si es un numero se reduce en 1
-            nVisibleTreasures--;
-        }else{ // Si es un tesoro especifico se elimina
-            specificVisibleTreasures.remove(t.getType());
-        }
-    }
+    public abstract void substracVisibleTreasure(Treasure t);
     
     /**
      * Actualiza el mal rollo para que el tesoro oculto t no forme parte del mismo.
      * @param t tesoro que se elimine
      */
-    public void substracHiddenTreasure(Treasure t){
-        if(nHiddenTreasures != 0){ // Si es un numero se reduce en 1
-            nHiddenTreasures--;
-        }else{ // Si es un tesoro especifico se elimina
-            specificHiddenTreasures.remove(t.getType());
-        }
-    }
+    public abstract void substracHiddenTreasure(Treasure t);
     
     
     /**

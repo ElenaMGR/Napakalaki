@@ -52,4 +52,20 @@ public class SpecificBadConsequence extends BadConsequence{
 
         return nuevo;
     }
+    
+    @Override
+    public void substracHiddenTreasure(Treasure t){
+        //Si es un tesoro especifico se elimina
+        ArrayList<TreasureKind> sh = super.getSpecificHiddenTreasures();
+        sh.remove(t.getType());
+        super.setSpecificHiddenTreasures(sh);
+    }
+    
+    @Override
+    public void substracVisibleTreasure(Treasure t){
+        //Si es un tesoro especifico se elimina
+        ArrayList<TreasureKind> sv = super.getSpecificVisibleTreasures();
+        sv.remove(t.getType());
+        super.setSpecificVisibleTreasures(sv);
+    }
 }
