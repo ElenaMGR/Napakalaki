@@ -345,7 +345,10 @@ public class CardDealer {
     }
     
     public Cultist nextCultist(){
-        return null;
+        Cultist nuevo_cultist ;      
+        nuevo_cultist = unusedCultist.get(unusedCultist.size()-1);
+        unusedCultist.remove(unusedCultist.size()-1);
+        return nuevo_cultist;
     }
     
     /**
