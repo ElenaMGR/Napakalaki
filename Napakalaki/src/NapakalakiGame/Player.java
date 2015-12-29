@@ -51,7 +51,7 @@ public class Player {
     }
     
     protected int getOponentLevel (Monster m){
-        return 0;
+        return m.getCombatLevel();
     }
     
     protected boolean shouldConvert(){
