@@ -21,7 +21,7 @@ public class CultistPlayer extends Player {
     public CultistPlayer(Player p, Cultist c) {
         super(p);
         totalCultistPlayers++;
-            myCultistCard = c;
+        myCultistCard = c;
         
     }
     
