@@ -30,6 +30,7 @@ public class CardDealer {
         usedMonsters = new ArrayList();
         unusedTreasures = new ArrayList();
         usedTreasures = new ArrayList();
+        unusedCultist = new ArrayList();
     }
     
     public static CardDealer getInstance(){
