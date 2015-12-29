@@ -64,7 +64,7 @@ public class Monster {
      * @return 
      */
     public int getCombatLevelAgainstCultistPlayer(){
-        return combatLevel+levelChangeAgainstCultistPlayer;
+        return getCombatLevel()+levelChangeAgainstCultistPlayer;
     }
 
     //Método que muestra el estado de Monster
