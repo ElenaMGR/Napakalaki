@@ -50,6 +50,11 @@ public class Player {
         pendingBadConsequence = p.pendingBadConsequence;
     }
     
+    // Devuelve el enemigo del jugador
+    protected Player getEnemy (){
+        return enemy;
+    }
+    
     protected int getOponentLevel (Monster m){
         return m.getCombatLevel();
     }
