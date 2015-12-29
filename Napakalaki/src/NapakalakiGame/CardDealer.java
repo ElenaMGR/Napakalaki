@@ -378,7 +378,7 @@ public class CardDealer {
         shuffleMonster();
         shuffleTreasures();
         shuffleCultists();
-                
+        
     }
     
 }
