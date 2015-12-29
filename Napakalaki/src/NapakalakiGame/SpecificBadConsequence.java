@@ -12,13 +12,30 @@ import java.util.ArrayList;
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class SpecificBadConsequence extends BadConsequence{
+    
+    private ArrayList<TreasureKind> specificHiddenTreasures;
+    private ArrayList<TreasureKind> specificVisibleTreasures;
+    
     // Constructor
     public SpecificBadConsequence(String t, int l, ArrayList<TreasureKind> v,
             ArrayList<TreasureKind> h){
         
-        super (t,l,0,0,v, h,false);
-
+        super (t,l);
+        specificVisibleTreasures = v;
+        specificHiddenTreasures = h;
     }
+    
+    // Métodos get y set
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
+    }
+    
+    
     
     @Override
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){   
@@ -29,7 +46,7 @@ public class SpecificBadConsequence extends BadConsequence{
         if(!(h.isEmpty()) ){
             // Si son objetos especificos los buscamos y eliminamos
             for(Treasure treasure: h){
-                if(super.getSpecificHiddenTreasures().contains(treasure.getType())){
+                if(specificHiddenTreasures.contains(treasure.getType())){
                         hidden.add(treasure.getType());
                 }
             }
@@ -41,7 +58,7 @@ public class SpecificBadConsequence extends BadConsequence{
         if( !(v.isEmpty()) ){
             // Si son objetos especificos los buscamos y eliminamos
             for(Treasure treasure: v){
-                if(super.getSpecificVisibleTreasures().contains(treasure.getType())){
+                if(specificVisibleTreasures.contains(treasure.getType())){
                     visible.add(treasure.getType());
                 }
             }
@@ -56,16 +73,31 @@ public class SpecificBadConsequence extends BadConsequence{
     @Override
     public void substracHiddenTreasure(Treasure t){
         //Si es un tesoro especifico se elimina
-        ArrayList<TreasureKind> sh = super.getSpecificHiddenTreasures();
-        sh.remove(t.getType());
-        super.setSpecificHiddenTreasures(sh);
+        specificHiddenTreasures.remove(t.getType());
     }
     
     @Override
     public void substracVisibleTreasure(Treasure t){
         //Si es un tesoro especifico se elimina
-        ArrayList<TreasureKind> sv = super.getSpecificVisibleTreasures();
-        sv.remove(t.getType());
-        super.setSpecificVisibleTreasures(sv);
+        specificVisibleTreasures.remove(t.getType());
+    }
+    
+    @Override
+    public boolean isEmpty(){
+        boolean vacio = false;
+        if((specificHiddenTreasures.isEmpty()) && (specificVisibleTreasures.isEmpty())){
+            vacio=true;
+        }
+        return vacio;
+    }
+    
+    /**
+     * Método que muestra el estado de BadConsequence
+     * @return un string con el estado.
+     */
+    @Override
+    public String toString(){
+        return super.toString()+ 
+            "   specificVisibleTreasures = " + specificVisibleTreasures + "   specificHiddenTreasures = " + specificHiddenTreasures+"\n";
     }
 }

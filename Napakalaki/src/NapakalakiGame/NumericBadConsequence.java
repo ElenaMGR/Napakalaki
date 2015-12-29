@@ -12,11 +12,29 @@ import java.util.ArrayList;
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class NumericBadConsequence extends BadConsequence {
+    
+    private int nVisibleTreasures;  //Representa el número de tesoros visibles que se pierden
+    private int nHiddenTreasures;   //Representa el número de tesoros ocultos que se pierden
+    
+    
     // Constructor
     public NumericBadConsequence(String t, int l, int nVisible, int nHidden){
-        super (t,l,nVisible,nHidden,new ArrayList(), new ArrayList(),false);
-       
+        super (t,l);
+        nVisibleTreasures = nVisible;
+        nHiddenTreasures = nHidden;
     }
+    
+    // Métodos get y set
+    
+    public int getNVisibleTreasures() {
+        return nVisibleTreasures;
+    }
+
+    public int getNHiddenTreasures() {
+        return nHiddenTreasures;
+    }
+    
+    
     
     @Override
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){   
@@ -25,12 +43,11 @@ public class NumericBadConsequence extends BadConsequence {
         // Si el jugador tiene objetos ocultos
         if(!(h.isEmpty()) ){
           // Si el jugador tiene objetos ocultos, quitamos los que no posea
-            int nHiddenT = super.getNHiddenTreasures();
-            if(nHiddenT > 0){ // Si es un numero lo ajustamos
-                if(nHiddenT > h.size()){
+            if(nHiddenTreasures > 0){ // Si es un numero lo ajustamos
+                if(nHiddenTreasures > h.size()){
                     nHidden = h.size();
                 }else{
-                    nHidden = nHiddenT;
+                    nHidden = nHiddenTreasures;
                 }
             } 
         }
@@ -39,12 +56,11 @@ public class NumericBadConsequence extends BadConsequence {
         // Si el jugador no tiene objetos visibles, no los puede perder
         if( !(v.isEmpty()) ){
             // Si el jugador tiene objetos ocultos, quitamos los que no posea
-            int nVisibleT = super.getNHiddenTreasures();
-            if(nVisibleT > 0){ // Si es un numero lo ajustamos
-                if(nVisibleT > v.size()){
+            if(nVisibleTreasures > 0){ // Si es un numero lo ajustamos
+                if(nVisibleTreasures > v.size()){
                     nVisible = v.size();
                 }else{
-                    nVisible= nVisibleT;
+                    nVisible= nVisibleTreasures;
                 }     
             }      
         }
@@ -56,8 +72,7 @@ public class NumericBadConsequence extends BadConsequence {
     @Override
     public void substracHiddenTreasure(Treasure t){
         // Si es un numero se reduce en 1
-        int h = super.getNHiddenTreasures()-1;
-        super.setNHiddenTreasures(h);
+        nHiddenTreasures--;
  
     }
     
@@ -65,8 +80,24 @@ public class NumericBadConsequence extends BadConsequence {
     @Override
     public void substracVisibleTreasure(Treasure t){
         // Si es un numero se reduce en 1
-        int v = super.getNVisibleTreasures()-1;
-        super.setNVisibleTreasures(v);
+        nVisibleTreasures--;
  
     }
+    
+    @Override
+    public boolean isEmpty(){
+        boolean vacio = false;
+        if((nVisibleTreasures==0) && (nHiddenTreasures==0)){
+            vacio=true;
+        }
+        return vacio;
+    }
+    
+    @Override
+    public String toString(){
+        return super.toString()+ 
+            "   nVisibleTreasures = " +Integer.toString(nVisibleTreasures) + "  nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +"\n";
+              
+    }
+    
 }

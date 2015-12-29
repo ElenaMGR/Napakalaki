@@ -17,23 +17,11 @@ public abstract class BadConsequence {
     
     private String text;            //Representa lo que dice un mal rollo
     private int levels;             //Representa los niveles que se pierden    
-    private int nVisibleTreasures;  //Representa el número de tesoros visibles que se pierden
-    private int nHiddenTreasures;   //Representa el número de tesoros ocultos que se pierden
-    private boolean death;          //Representa un mal rollo de tipo muerte
-    
-    private ArrayList<TreasureKind> specificHiddenTreasures;
-    private ArrayList<TreasureKind> specificVisibleTreasures;
-    
+ 
     //Constructores
-    public BadConsequence (String t, int l, int nVisible, int nHidden,
-            ArrayList<TreasureKind> v, ArrayList<TreasureKind> h, boolean death){
+    public BadConsequence (String t, int l){
         text=t;
         levels=l;
-        nVisibleTreasures=nVisible;
-        nHiddenTreasures=nHidden;
-        this.death=death;
-        specificHiddenTreasures=h;
-        specificVisibleTreasures=v;
     }
     
 
@@ -46,46 +34,7 @@ public abstract class BadConsequence {
         return levels;
     }
 
-    public int getNVisibleTreasures() {
-        return nVisibleTreasures;
-    }
 
-    public int getNHiddenTreasures() {
-        return nHiddenTreasures;
-    }
-
-    public boolean isDeath() {
-        return death;
-    }
-    
-    public void setDeath(boolean d){
-        death = d;
-    }
-    
-    protected void setNHiddenTreasures(int h){
-        nHiddenTreasures = h;
-    }
-    
-    protected void setNVisibleTreasures(int v){
-        nVisibleTreasures = v;
-    }
-    
-    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
-        return specificHiddenTreasures;
-    }
-    
-    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
-        return specificVisibleTreasures;
-    }
-    
-    protected void setSpecificHiddenTreasures(ArrayList<TreasureKind> sh){
-        specificHiddenTreasures= sh;
-    }
-    
-    protected void setSpecificVisibleTreasures(ArrayList<TreasureKind> sv){
-        specificVisibleTreasures = sv;
-    }
-    
     
     /**
      * Actualiza el mal rollo para que el tesoro visible t no forme parte del mismo.
@@ -106,14 +55,7 @@ public abstract class BadConsequence {
      * que no se pierden tesoros.
      * @return true si esta vacio, false en caso contrario.
      */
-    public boolean isEmpty(){
-        boolean vacio = false;
-        if((nVisibleTreasures==0) && (nHiddenTreasures==0) && 
-                (specificHiddenTreasures.isEmpty()) && (specificVisibleTreasures.isEmpty())){
-            vacio=true;
-        }
-        return vacio;
-    }
+    public abstract boolean isEmpty();
     
     /**
      * Ajusta el mal rollo de un monstruo a la posibilidad del jugador que tiene
@@ -131,8 +73,6 @@ public abstract class BadConsequence {
     @Override
     public String toString(){
         return "BadConsequence = " + text +"\n" +
-                "   levels = " + Integer.toString(levels) + "   death = " + Boolean.toString(death)+"\n"+
-                "   nVisibleTreasures = " +Integer.toString(nVisibleTreasures) + "  nHiddenTreasures = " + Integer.toString(nHiddenTreasures) +"\n"+
-                "   specificVisibleTreasures = " + specificVisibleTreasures + "   specificHiddenTreasures = " + specificHiddenTreasures+"\n";
+                "   levels = " + Integer.toString(levels) + "\n";
     }
 }
