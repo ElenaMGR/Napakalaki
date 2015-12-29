@@ -59,9 +59,13 @@ public class CultistPlayer extends Player {
         return tesoro;
     }
     
-    
+    /**
+     * Devuelve true si el jugador tiene tesoros para ser robados por otro 
+     * jugador y false en caso contrario.
+     * 
+     */
     private boolean CanYouGiveMeATreasure(){
-        return true;
+        return !super.getVisibleTreasures().isEmpty();
     }
     
     public int getTotalCultistPlayers(){
