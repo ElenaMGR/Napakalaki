@@ -375,7 +375,7 @@ public class Player {
      * Devuelve un tesoro elegido al azar de entre los tesoros ocultos del jugador
      * @return el tesoro que se devuelve
      */
-    private Treasure giveMeATreasure(){
+    protected Treasure giveMeATreasure(){
         Treasure tesoro;
         //Genero un número aletorio
         int num=(int) (Math.random()*hiddenTreasures.size());

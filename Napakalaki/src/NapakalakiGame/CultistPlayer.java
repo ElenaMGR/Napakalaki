@@ -1,5 +1,7 @@
 package NapakalakiGame;
 
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,8 +42,21 @@ public class CultistPlayer extends Player {
         return false;
     }
     
-    private Treasure giveMeATreasure(){
-        return null;
+    /**
+     * Devuelve un tesoro elegido al azar de entre los tesoros visibles del jugador
+     * @return el tesoro que se devuelve
+     */
+    @Override
+    protected Treasure giveMeATreasure(){
+        Treasure tesoro;
+        ArrayList<Treasure> visibleT = super.getVisibleTreasures();
+        //Genero un número aletorio
+        int num=(int) (Math.random()*visibleT.size());
+        //Elijo el tesoro a devolver
+        tesoro = visibleT.get(num);
+        //Elimino el tesoro
+        super.discardVisibleTreasure(tesoro);
+        return tesoro;
     }
     
     
