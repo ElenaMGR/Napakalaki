@@ -36,7 +36,7 @@ public class Player {
         hiddenTreasures = new ArrayList();
         visibleTreasures = new ArrayList();
         enemy = null;
-        pendingBadConsequence = new BadConsequence("",0,0,0);
+        pendingBadConsequence = new NumericBadConsequence("",0,0,0);
     }
     
     public Player(Player p){

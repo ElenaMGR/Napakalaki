@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
-public class BadConsequence {
+public abstract class BadConsequence {
     
     static final int MAXTREASURES = 10;
     
@@ -25,34 +25,17 @@ public class BadConsequence {
     private ArrayList<TreasureKind> specificVisibleTreasures;
     
     //Constructores
-    public BadConsequence(String t, int l, int nVisible, int nHidden){
+    public BadConsequence (String t, int l, int nVisible, int nHidden,
+            ArrayList<TreasureKind> v, ArrayList<TreasureKind> h, boolean death){
         text=t;
         levels=l;
         nVisibleTreasures=nVisible;
         nHiddenTreasures=nHidden;
-        death=false;
-        specificHiddenTreasures=new ArrayList();
-        specificVisibleTreasures=new ArrayList();
-    }
-    public BadConsequence(String t, boolean death){
-        text=t;
         this.death=death;
-        specificHiddenTreasures=new ArrayList();
-        specificVisibleTreasures=new ArrayList();
-        nVisibleTreasures=MAXTREASURES;
-        nHiddenTreasures=MAXTREASURES;
-        levels=Player.MAXLEVEL;
-    }
-    public BadConsequence(String t, int l, ArrayList<TreasureKind> v,
-            ArrayList<TreasureKind> h){
-        text=t;
-        levels=l;
         specificHiddenTreasures=h;
         specificVisibleTreasures=v;
-        nVisibleTreasures=0;
-        nHiddenTreasures=0;
-        death=false;
     }
+    
 
     //Métodos Get
     public String getText() {
@@ -131,57 +114,7 @@ public class BadConsequence {
      * @param h lista de tesoros ocultos del jugador.
      * @return 
      */
-    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){   
-        int nHidden=0, nVisible=0;
-        ArrayList<TreasureKind> hidden = new ArrayList();
-        ArrayList<TreasureKind> visible = new ArrayList();
-        
-        // Si el jugador tiene objetos ocultos
-        if(!(h.isEmpty()) ){
-          // Si el jugador tiene objetos ocultos, quitamos los que no posea
-            if(nHiddenTreasures > 0){ // Si es un numero lo ajustamos
-                if(nHiddenTreasures > h.size()){
-                    nHidden = h.size();
-                }else{
-                    nHidden = nHiddenTreasures;
-                }
-                
-            }else{ // Si son objetos especificos los buscamos y eliminamos
-                for(Treasure treasure: h){
-                    if(specificHiddenTreasures.contains(treasure.getType())){
-                        hidden.add(treasure.getType());
-                    }
-                }
-                
-            }
-            
-        }
-        
-        
-        // Si el jugador no tiene objetos visibles, no los puede perder
-        if( !(v.isEmpty()) ){
-            // Si el jugador tiene objetos ocultos, quitamos los que no posea
-            if(nVisibleTreasures > 0){ // Si es un numero lo ajustamos
-                if(nVisibleTreasures > v.size()){
-                    nVisible = v.size();
-                }else{
-                    nVisible= nVisibleTreasures;
-                }
-                
-            }else{ // Si son objetos especificos los buscamos y eliminamos
-                for(Treasure treasure: v){
-                    if(specificVisibleTreasures.contains(treasure.getType())){
-                        visible.add(treasure.getType());
-                    }
-                }
-            }
-            
-        }
-        BadConsequence nuevo = new BadConsequence(text, levels, visible, hidden);
-        nuevo.nHiddenTreasures=nHidden;
-        nuevo.nVisibleTreasures=nVisible;
-        return nuevo;
-    }
+    public abstract BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h);
     
     /**
      * Método que muestra el estado de BadConsequence
