@@ -229,7 +229,7 @@ public class CardDealer {
         svt.add(TreasureKind.ONEHAND);
         badConsequence= new BadConsequence("Pierdes 1 mano visible.",0,svt,new ArrayList());
         prize = new Prize(3,1);
-        unusedMonsters.add(new Monster("El mal indecible impronuncialbe", 10, badConsequence, prize,-2));
+        unusedMonsters.add(new Monster("El mal indecible impronunciable", 10, badConsequence, prize,-2));
         /*****************************************************/
         
         badConsequence= new BadConsequence("Pierdes tus tesoros visibles. Jajaja.",0,BadConsequence.MAXTREASURES,0);
