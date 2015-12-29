@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+ 
 /**
  *
  * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
@@ -21,7 +21,7 @@ public class CultistPlayer extends Player {
     public CultistPlayer(Player p, Cultist c) {
         super(p);
         totalCultistPlayers++;
-        myCultistCard = c;
+            myCultistCard = c;
         
     }
     
