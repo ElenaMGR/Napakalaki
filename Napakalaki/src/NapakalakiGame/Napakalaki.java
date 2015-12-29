@@ -104,6 +104,13 @@ public class Napakalaki {
      */
     public CombatResult developCombat(){
         CombatResult combatResult = currentPlayer.combat(currentMonster);
+        if(combatResult == CombatResult.LOSEANDCONVERT){
+            CultistPlayer cultis = new CultistPlayer(currentPlayer,dealer.nextCultist());
+            // Busco la posicion del jugador y la reemplazo.
+            players.set(players.indexOf(currentPlayer), cultis);
+            currentPlayer = cultis;
+                    
+        }
         dealer.giveMonsterBack(currentMonster);
         return combatResult;
     }
