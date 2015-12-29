@@ -65,7 +65,7 @@ public class NumericBadConsequence extends BadConsequence {
             }      
         }
         
-        BadConsequence nuevo = new NumericBadConsequence(super.getText(), super.getLevels(), nHidden, nVisible);
+        BadConsequence nuevo = new NumericBadConsequence(super.getText(), super.getLevels(),nVisible, nHidden);
         return nuevo;
     }
     
