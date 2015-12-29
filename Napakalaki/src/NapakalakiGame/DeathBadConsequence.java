@@ -17,6 +17,7 @@ public class DeathBadConsequence extends NumericBadConsequence {
     public DeathBadConsequence(String t, boolean death){
 
         super (t,Player.MAXLEVEL,MAXTREASURES,MAXTREASURES);
+        super.setDeath(death);
         
     }
     

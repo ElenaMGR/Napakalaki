@@ -58,6 +58,10 @@ public abstract class BadConsequence {
         return death;
     }
     
+    public void setDeath(boolean d){
+        death = d;
+    }
+    
     public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
         return specificHiddenTreasures;
     }
