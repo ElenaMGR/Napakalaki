@@ -6,7 +6,6 @@
 package NapakalakiGame;
 
 import static NapakalakiGame.BadConsequence.MAXTREASURES;
-import java.util.ArrayList;
 
 /**
  *
