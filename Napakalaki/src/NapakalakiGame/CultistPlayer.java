@@ -64,8 +64,9 @@ public class CultistPlayer extends Player {
      * jugador y false en caso contrario.
      * 
      */
-    private boolean CanYouGiveMeATreasure(){
-        return !super.getVisibleTreasures().isEmpty();
+    @Override
+    protected boolean canYouGiveMeATreasure(){
+        return !(super.getVisibleTreasures().isEmpty());
     }
     
     public int getTotalCultistPlayers(){
