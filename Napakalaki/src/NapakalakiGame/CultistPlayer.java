@@ -70,7 +70,7 @@ public class CultistPlayer extends Player {
     }
     
     public int getTotalCultistPlayers(){
-        return 0;
+        return totalCultistPlayers;
     }
     
     @Override
