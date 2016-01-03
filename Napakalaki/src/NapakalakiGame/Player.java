@@ -436,7 +436,7 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName()+"  level: "+level+"    combat level: "+getCombatLevel()
-                +"    dead: "+dead+"    enemy: "+enemy.name+"\n";
+        return getName()+"  level: "+getLevels()+"    combat level: "+getCombatLevel()
+                +"    dead: "+isDead()+"    enemy: "+enemy.name+"\n";
     }
 }
