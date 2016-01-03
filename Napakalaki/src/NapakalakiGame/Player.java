@@ -240,7 +240,7 @@ public class Player {
                 cr = CombatResult.WIN;
         }else{
             applyBadConsequence(m);
-            if(shouldConvert() && !isDead()){
+            if(shouldConvert()){
                 cr = CombatResult.LOSEANDCONVERT;
             }else{
                cr = CombatResult.LOSE; 
