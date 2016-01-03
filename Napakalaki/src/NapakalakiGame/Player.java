@@ -240,7 +240,7 @@ public class Player {
                 cr = CombatResult.WIN;
         }else{
             applyBadConsequence(m);
-            if(shouldConvert()){
+            if(shouldConvert() && !isDead()){
                 cr = CombatResult.LOSEANDCONVERT;
             }else{
                cr = CombatResult.LOSE; 
@@ -436,6 +436,7 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName()+"  level: "+level+"    dead: "+dead+"    enemy: "+enemy.name+"\n";
+        return getName()+"  level: "+level+"    combat level: "+getCombatLevel()
+                +"    dead: "+dead+"    enemy: "+enemy.name+"\n";
     }
 }

@@ -73,5 +73,9 @@ public class CultistPlayer extends Player {
         return 0;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Judador Sectario: "+getName()+"  level: "+super.getLevels()+"    combat level: "+getCombatLevel()
+                +"    dead: "+super.isDead()+"    enemy: "+enemy.getName()+"\n";
+    }
 }
