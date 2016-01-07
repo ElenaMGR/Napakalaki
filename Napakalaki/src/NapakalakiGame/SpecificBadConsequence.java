@@ -72,6 +72,7 @@ public class SpecificBadConsequence extends BadConsequence{
             
         
         // Hacemos una copia de los tipos en un axuliar jugador
+        jugador.clear();
         for (Treasure treasure: v){
             jugador.add(treasure.getType());
         }
