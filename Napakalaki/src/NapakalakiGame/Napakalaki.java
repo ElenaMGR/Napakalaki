@@ -108,6 +108,14 @@ public class Napakalaki {
             CultistPlayer cultis = new CultistPlayer(currentPlayer,dealer.nextCultist());
             // Busco la posicion del jugador y la reemplazo.
             players.set(players.indexOf(currentPlayer), cultis);
+            
+            for( Player jugador:players){
+                if(jugador.getEnemy().equals(currentPlayer)){
+                    jugador.setEnemy(cultis);
+                }
+            }
+            
+            
             currentPlayer = cultis;
                     
         }
