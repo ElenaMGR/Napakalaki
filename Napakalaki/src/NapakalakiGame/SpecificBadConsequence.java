@@ -41,39 +41,53 @@ public class SpecificBadConsequence extends BadConsequence{
     public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v,ArrayList<Treasure> h){   
         ArrayList<TreasureKind> hidden = new ArrayList();
         ArrayList<TreasureKind> visible = new ArrayList();
+        boolean encontrado;
         
-        int ntesoros;
+        // Hacemos una copia de los tipos en un axuliar jugador
+        ArrayList<TreasureKind> jugador = new ArrayList();
+        for (Treasure treasure: h){
+            jugador.add(treasure.getType());
+        }
+        
         
         // Si el jugador tiene objetos ocultos
         if(!(h.isEmpty()) ){
-            ntesoros = specificHiddenTreasures.size();
-            // Si son objetos especificos los buscamos y eliminamos
-            for(Treasure treasure: h){
                
-                if(ntesoros > 0){ // Todavia quedan tesoros en el mal rollo
+            // Si son objetos especificos los buscamos y eliminamos    
+            for(int i = 0; i< specificHiddenTreasures.size() ; i++){
+                encontrado = false;
+                for (int j = 0; j< jugador.size() && !encontrado ; j++){
+                    if (specificHiddenTreasures.get(i).equals(jugador.get(j))){
                     
-                    if(specificHiddenTreasures.contains(treasure.getType())){
-                        hidden.add(treasure.getType());
-                        ntesoros--;
+                        hidden.add(jugador.get(j));
+                        jugador.remove(j);
+                        encontrado = true;
                     }
                 }
+          
                 
             }
                 
         }
             
+        
+        // Hacemos una copia de los tipos en un axuliar jugador
+        for (Treasure treasure: v){
+            jugador.add(treasure.getType());
+        }
  
         // Si el jugador no tiene objetos visibles, no los puede perder
         if( !(v.isEmpty()) ){
-            ntesoros = specificVisibleTreasures.size();
+           
             // Si son objetos especificos los buscamos y eliminamos
-            for(Treasure treasure: v){
-                
-                if(ntesoros > 0){ // Todavia quedan tesoros en el mal rollo
+            for(int i = 0; i< specificVisibleTreasures.size() ; i++){
+                encontrado = false;
+                for (int j = 0; j< jugador.size() && !encontrado ; j++){
                     
-                    if(specificVisibleTreasures.contains(treasure.getType())){
-                        visible.add(treasure.getType());
-                        ntesoros--;
+                    if (specificVisibleTreasures.get(i).equals(jugador.get(j))){
+                        visible.add(jugador.get(j));
+                        jugador.remove(j);
+                        encontrado = true;                 
                     }
                 }
             }
