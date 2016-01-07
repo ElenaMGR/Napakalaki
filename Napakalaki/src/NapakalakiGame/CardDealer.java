@@ -158,7 +158,7 @@ public class CardDealer {
         /*****************************************************/
         
         badConsequence = new DeathBadConsequence("Estos monstruos resultan bastante "
-                + "superficiales y te aburren mortalmente. Estas muerto",true);
+                + "superficiales y te aburren mortalmente. Estas muerto");
         prize = new Prize(2,1);
         unusedMonsters.add(new Monster("Los hondos", 8, badConsequence, prize));
         /*****************************************************/
@@ -184,12 +184,12 @@ public class CardDealer {
         /*****************************************************/
         
         badConsequence = new DeathBadConsequence("No le hace gracia que pronuncien "
-                + "mal su nombre. Estas muerto", true);
+                + "mal su nombre. Estas muerto");
         prize = new Prize(3,1);
         unusedMonsters.add(new Monster("Yskhtihyssg-Goth", 12, badConsequence, prize));
         /*****************************************************/
         
-        badConsequence = new DeathBadConsequence("La familia te atrapa. Estás muerto.", true);
+        badConsequence = new DeathBadConsequence("La familia te atrapa. Estás muerto.");
         prize = new Prize(4,1);
         unusedMonsters.add(new Monster("Familia feliz", 1, badConsequence, prize));
         /*****************************************************/
@@ -238,7 +238,7 @@ public class CardDealer {
         unusedMonsters.add(new Monster("Testigos Oculares",6, badConsequence, prize,2));
         /*****************************************************/
         
-        badConsequence = new DeathBadConsequence("Hoy no es tu día de suerte. Mueres.", true);
+        badConsequence = new DeathBadConsequence("Hoy no es tu día de suerte. Mueres.");
         prize = new Prize(2,5);
         unusedMonsters.add(new Monster("El gran Cthulhu", 20, badConsequence, prize,4));
         /*****************************************************/
