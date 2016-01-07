@@ -13,29 +13,12 @@ import static NapakalakiGame.BadConsequence.MAXTREASURES;
  */
 public class DeathBadConsequence extends NumericBadConsequence {
     
-    private boolean death;          //Representa un mal rollo de tipo muerte
     
     // Constructor
-    public DeathBadConsequence(String t, boolean death){
+    public DeathBadConsequence(String t){
 
         super (t,Player.MAXLEVEL,MAXTREASURES,MAXTREASURES);
-        this.death= death;
         
-    }
-    
-    // Métodos get y set
-    
-    public boolean isDeath() {
-        return death;
-    }
-    
-    public void setDeath(boolean d){
-        death = d;
-    }
-    
-    @Override
-    public String toString(){
-        return super.toString()+ "death = "+ death+"\n";
     }
     
 }
