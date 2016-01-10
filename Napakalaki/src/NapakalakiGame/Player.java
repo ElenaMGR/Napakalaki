@@ -417,14 +417,23 @@ public class Player {
     * Elimina todos los tesoros del jugador.
     */
     public void discardAllTreasures(){
+        // Añadido para que no de error el main de la practica 3
+        CardDealer dealer = CardDealer.getInstance();
+        //
         ArrayList<Treasure> listTreasure = new ArrayList(new ArrayList(visibleTreasures));
         for(Treasure treasure:listTreasure){
             discardVisibleTreasure(treasure);
+            // Añadido para que no de error el main de la practica 3
+            dealer.giveTreasureBack(treasure);
+            //
         }
         
         listTreasure = new ArrayList(new ArrayList(hiddenTreasures));
         for(Treasure treasure:listTreasure){
             discardHiddenTreasure(treasure);
+            // Añadido para que no de error el main de la practica 3
+            dealer.giveTreasureBack(treasure);
+            //
         }
     }
     
