@@ -21,7 +21,7 @@ public class NapakalakiView extends javax.swing.JFrame {
     }
     
     public void setNapakalaki(Napakalaki n){
-        napakalakiModel=n;
+        napakalakiModel= n;
     }
 
     /**
