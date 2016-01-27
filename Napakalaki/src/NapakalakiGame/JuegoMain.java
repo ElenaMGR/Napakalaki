@@ -7,6 +7,8 @@ package NapakalakiGame;
 
 import GUI.Dice;
 import GUI.NapakalakiView;
+import GUI.PlayerNamesCapture;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,7 +20,16 @@ public class JuegoMain {
         NapakalakiView napakalakiView = new NapakalakiView();
         Dice.createInstance(napakalakiView);
         napakalakiView.setNapakalaki(game);
-        napakalakiView.setVisible(true);
+        
+        //Creamos los jugadores
+        ArrayList<String> names;
+        PlayerNamesCapture namesCapture = new PlayerNamesCapture(napakalakiView,true);
+        names=namesCapture.getNames();
+        //Iniciamos el juego
+        game.initGame(names);
+        
+        //Visualiza la ventana (debe ser última línea)
+        napakalakiView.setVisible(true);     
     }
     
 }
