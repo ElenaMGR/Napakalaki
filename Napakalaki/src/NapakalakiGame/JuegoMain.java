@@ -8,6 +8,7 @@ package NapakalakiGame;
 import GUI.Dice;
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
+import GUI.TreasureView;
 import java.util.ArrayList;
 
 /**
@@ -27,6 +28,10 @@ public class JuegoMain {
         names=namesCapture.getNames();
         //Iniciamos el juego
         game.initGame(names);
+        
+        /*Treasure t = new Treasure ("Clavo de rail ferroviario",3,TreasureKind.ONEHAND);
+        TreasureView tre = new TreasureView();
+        tre.setTreasure(t);*/
         
         //Visualiza la ventana (debe ser última línea)
         napakalakiView.setVisible(true);     
