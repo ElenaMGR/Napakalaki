@@ -6,30 +6,25 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
-import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
  * @author elena
  */
-public class TreasureView extends javax.swing.JFrame {
+public class TreasureView extends javax.swing.JPanel {
     Treasure treasureModel;
-    
+
     /**
      * Creates new form TreasureView
      */
     public TreasureView() {
         initComponents();
-        
-        setVisible(true);
     }
     
     public void setTreasure (Treasure t){
@@ -64,9 +59,6 @@ public class TreasureView extends javax.swing.JFrame {
         jPTreasure = new javax.swing.JPanel();
         jLImagen = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(254, 254, 254));
-
         jLBonusTreasure.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow"));
 
         jPTreasure.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -83,8 +75,8 @@ public class TreasureView extends javax.swing.JFrame {
             .addComponent(jLImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -116,14 +108,8 @@ public class TreasureView extends javax.swing.JFrame {
                         .addComponent(jPTreasure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLBonusTreasure;

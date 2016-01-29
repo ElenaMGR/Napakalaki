@@ -9,7 +9,6 @@ import GUI.Dice;
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
 import GUI.PlayerView;
-import GUI.TreasureView;
 import java.util.ArrayList;
 
 /**
@@ -30,18 +29,23 @@ public class JuegoMain {
         //Iniciamos el juego
         game.initGame(names);
         
-        /*Treasure t = new Treasure ("Clavo de rail ferroviario",3,TreasureKind.ONEHAND);
-        TreasureView tre = new TreasureView();
-        tre.setTreasure(t);*/
+        Treasure t = new Treasure ("Clavo de rail ferroviario",3,TreasureKind.ONEHAND);
+        //TreasureView tre = new TreasureView();
+        //tre.setTreasure(t);
         
         Player p = new Player("Josasdffffffffffffffffffffffffffffffffffffffffe");
         Player p2 = new Player("Elesdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffna");
         p.setEnemy(p2);
+        p.initTreasures();
         PlayerView pla = new PlayerView();
         pla.setPlayer(p);
+        pla.setVisible(true);
         
+        napakalakiView.add(pla);
+        napakalakiView.repaint();
+        napakalakiView.revalidate();
         //Visualiza la ventana (debe ser última línea)
-        napakalakiView.setVisible(true);     
+        napakalakiView.setVisible(true);  
     }
     
 }

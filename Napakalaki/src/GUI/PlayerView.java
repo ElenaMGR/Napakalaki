@@ -7,21 +7,22 @@ package GUI;
 
 import NapakalakiGame.CultistPlayer;
 import NapakalakiGame.Player;
+import NapakalakiGame.Treasure;
+import java.util.ArrayList;
+import javax.swing.JPanel;
 
 /**
  *
  * @author elena
  */
-public class PlayerView extends javax.swing.JFrame {
-
+public class PlayerView extends javax.swing.JPanel {
     Player playerModel;
-    
+
     /**
      * Creates new form PlayerView
      */
     public PlayerView() {
         initComponents();
-        setVisible(true);
     }
     
     public void setPlayer (Player p){
@@ -32,7 +33,25 @@ public class PlayerView extends javax.swing.JFrame {
         }
         jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
+        fillTreasurePanel(jPVisibleTreasures,playerModel.getVisibleTreasures());
+        fillTreasurePanel(jPHiddenTreasures, playerModel.getHiddenTreasures());
         repaint();
+        revalidate();
+    }
+    
+    private void fillTreasurePanel (JPanel aPanel, ArrayList<Treasure> aList){
+        //Se elimina la información antngua, si la hubiera
+        aPanel.removeAll();
+        //Se recorre la lista de tesoros construyendo y añadiendo sus vistas al panel
+        for (Treasure t: aList){
+            TreasureView aTreasureView = new TreasureView();
+            aTreasureView.setTreasure (t);
+            aTreasureView.setVisible(true);
+            aPanel.add(aTreasureView);   
+        }
+        //Se fuerza la actualización visual del panel
+        aPanel.repaint();
+        aPanel.revalidate();
     }
 
     /**
@@ -50,9 +69,6 @@ public class PlayerView extends javax.swing.JFrame {
         jLLevel = new javax.swing.JLabel();
         jLEnemy = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Jugador");
-
         jPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
         jPHiddenTreasures.setPreferredSize(new java.awt.Dimension(565, 191));
 
@@ -65,15 +81,15 @@ public class PlayerView extends javax.swing.JFrame {
 
         jLEnemy.setText("Enemigo");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                     .addComponent(jLNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -88,7 +104,7 @@ public class PlayerView extends javax.swing.JFrame {
                 .addComponent(jLNombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLLevel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLEnemy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,14 +112,8 @@ public class PlayerView extends javax.swing.JFrame {
                 .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLEnemy;
