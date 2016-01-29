@@ -16,15 +16,22 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPHiddenTreasures" alignment="0" pref="376" max="32767" attributes="0"/>
-                  <Component id="jPVisibleTreasures" alignment="0" pref="376" max="32767" attributes="0"/>
+                  <Component id="jPHiddenTreasures" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPVisibleTreasures" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLNombre" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLLevel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLEnemy" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLEnemy" max="32767" attributes="0"/>
+                      <Component id="jBStealTreasure" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jBMakeVisible" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jBDiscardTreasures" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jBDiscardAll" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -45,7 +52,14 @@
               <Component id="jPVisibleTreasures" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPHiddenTreasures" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jBStealTreasure" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBMakeVisible" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBDiscardTreasures" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBDiscardAll" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,6 +114,26 @@
     <Component class="javax.swing.JLabel" name="jLEnemy">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enemigo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBStealTreasure">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Steal Treasure"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBMakeVisible">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Make Visible"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBDiscardTreasures">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Discard Treasures"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBDiscardAll">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Discard All Treasures"/>
       </Properties>
     </Component>
   </SubComponents>

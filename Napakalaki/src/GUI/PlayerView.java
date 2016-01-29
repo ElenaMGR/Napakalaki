@@ -68,6 +68,10 @@ public class PlayerView extends javax.swing.JPanel {
         jLNombre = new javax.swing.JLabel();
         jLLevel = new javax.swing.JLabel();
         jLEnemy = new javax.swing.JLabel();
+        jBStealTreasure = new javax.swing.JButton();
+        jBMakeVisible = new javax.swing.JButton();
+        jBDiscardTreasures = new javax.swing.JButton();
+        jBDiscardAll = new javax.swing.JButton();
 
         jPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
         jPHiddenTreasures.setPreferredSize(new java.awt.Dimension(565, 191));
@@ -81,6 +85,14 @@ public class PlayerView extends javax.swing.JPanel {
 
         jLEnemy.setText("Enemigo");
 
+        jBStealTreasure.setText("Steal Treasure");
+
+        jBMakeVisible.setText("Make Visible");
+
+        jBDiscardTreasures.setText("Discard Treasures");
+
+        jBDiscardAll.setText("Discard All Treasures");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,12 +100,19 @@ public class PlayerView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                    .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLEnemy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLEnemy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBStealTreasure)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBMakeVisible)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBDiscardTreasures)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBDiscardAll)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -110,12 +129,22 @@ public class PlayerView extends javax.swing.JPanel {
                 .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBStealTreasure)
+                    .addComponent(jBMakeVisible)
+                    .addComponent(jBDiscardTreasures)
+                    .addComponent(jBDiscardAll))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBDiscardAll;
+    private javax.swing.JButton jBDiscardTreasures;
+    private javax.swing.JButton jBMakeVisible;
+    private javax.swing.JButton jBStealTreasure;
     private javax.swing.JLabel jLEnemy;
     private javax.swing.JLabel jLLevel;
     private javax.swing.JLabel jLNombre;
