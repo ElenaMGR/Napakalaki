@@ -40,10 +40,12 @@ public class JuegoMain {
         PlayerView pla = new PlayerView();
         pla.setPlayer(p);
         pla.setVisible(true);
+        pla.setSize(600,600);
         
         napakalakiView.add(pla);
         napakalakiView.repaint();
         napakalakiView.revalidate();
+        
         //Visualiza la ventana (debe ser última línea)
         napakalakiView.setVisible(true);  
     }
