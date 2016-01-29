@@ -6,6 +6,7 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +45,7 @@ public class TreasureView extends javax.swing.JFrame {
             Logger.getLogger(TreasureView.class.getName()).log(Level.SEVERE, null, ex);
         }
         jLImagen.setIcon((new ImageIcon(imagen)));
+        
         repaint();
     }
 
