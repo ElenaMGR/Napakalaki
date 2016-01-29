@@ -8,6 +8,7 @@ package NapakalakiGame;
 import GUI.Dice;
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
+import GUI.PlayerView;
 import GUI.TreasureView;
 import java.util.ArrayList;
 
@@ -32,6 +33,12 @@ public class JuegoMain {
         /*Treasure t = new Treasure ("Clavo de rail ferroviario",3,TreasureKind.ONEHAND);
         TreasureView tre = new TreasureView();
         tre.setTreasure(t);*/
+        
+        Player p = new Player("Josasdffffffffffffffffffffffffffffffffffffffffe");
+        Player p2 = new Player("Elesdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffna");
+        p.setEnemy(p2);
+        PlayerView pla = new PlayerView();
+        pla.setPlayer(p);
         
         //Visualiza la ventana (debe ser última línea)
         napakalakiView.setVisible(true);     

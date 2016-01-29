@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import NapakalakiGame.CultistPlayer;
 import NapakalakiGame.Player;
 
 /**
@@ -20,6 +21,18 @@ public class PlayerView extends javax.swing.JFrame {
      */
     public PlayerView() {
         initComponents();
+        setVisible(true);
+    }
+    
+    public void setPlayer (Player p){
+        playerModel = p;
+        jLNombre.setText(playerModel.getName());
+        if (playerModel instanceof CultistPlayer){
+            jLNombre.setText("Jugador Sectario: "+playerModel.getName());
+        }
+        jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
+        jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
+        repaint();
     }
 
     /**
@@ -34,8 +47,8 @@ public class PlayerView extends javax.swing.JFrame {
         jPHiddenTreasures = new javax.swing.JPanel();
         jPVisibleTreasures = new javax.swing.JPanel();
         jLNombre = new javax.swing.JLabel();
+        jLLevel = new javax.swing.JLabel();
         jLEnemy = new javax.swing.JLabel();
-        jLNSectarios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jugador");
@@ -48,9 +61,9 @@ public class PlayerView extends javax.swing.JFrame {
 
         jLNombre.setText("Nombre");
 
-        jLEnemy.setText("Enemigo");
+        jLLevel.setText("Level");
 
-        jLNSectarios.setText("NSectarios");
+        jLEnemy.setText("Enemigo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,10 +75,9 @@ public class PlayerView extends javax.swing.JFrame {
                     .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLEnemy)
-                        .addGap(196, 196, 196)
-                        .addComponent(jLNSectarios)
+                        .addComponent(jLEnemy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -75,10 +87,10 @@ public class PlayerView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLNombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLEnemy)
-                    .addComponent(jLNSectarios))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLLevel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jLEnemy)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPVisibleTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -91,41 +103,11 @@ public class PlayerView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PlayerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PlayerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PlayerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PlayerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PlayerView().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLEnemy;
-    private javax.swing.JLabel jLNSectarios;
+    private javax.swing.JLabel jLLevel;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JPanel jPHiddenTreasures;
     private javax.swing.JPanel jPVisibleTreasures;

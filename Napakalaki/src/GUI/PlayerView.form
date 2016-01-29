@@ -30,10 +30,9 @@
                   <Component id="jPHiddenTreasures" max="32767" attributes="0"/>
                   <Component id="jPVisibleTreasures" max="32767" attributes="0"/>
                   <Component id="jLNombre" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLLevel" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLEnemy" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                      <Component id="jLNSectarios" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLEnemy" max="32767" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -47,11 +46,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLNombre" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLEnemy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLNSectarios" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLLevel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="7" max="32767" attributes="0"/>
+              <Component id="jLEnemy" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPVisibleTreasures" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPHiddenTreasures" min="-2" max="-2" attributes="0"/>
@@ -102,14 +100,14 @@
         <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="jLLevel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Level"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLEnemy">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enemigo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLNSectarios">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="NSectarios"/>
       </Properties>
     </Component>
   </SubComponents>

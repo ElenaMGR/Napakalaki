@@ -52,7 +52,7 @@ public class Player {
     }
     
     // Devuelve el enemigo del jugador
-    protected Player getEnemy (){
+    public Player getEnemy (){
         return enemy;
     }
     
@@ -85,7 +85,7 @@ public class Player {
     // Devuelve el nivel de combate del jugador. Que viene dado por
     // su nivel más los bonus que le proporcionan los tesoros que
     // tenga equipados
-    protected int getCombatLevel(){
+    public int getCombatLevel(){
         int combatLevel=level;
         for(Treasure ht : visibleTreasures) {
             combatLevel += ht.getBonus();
@@ -446,7 +446,7 @@ public class Player {
      */
     @Override
     public String toString(){
-        return getName()+"  level: "+getLevels()+"    combat level: "+getCombatLevel()
-                +"    dead: "+isDead()+"    enemy: "+enemy.name+"\n";
+        return getName()+"  level: "+getLevels()+"  combat level: "+getCombatLevel()
+                +"\nenemy: "+enemy.name+"\n";
     }
 }

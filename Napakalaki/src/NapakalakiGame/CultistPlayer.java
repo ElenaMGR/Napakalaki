@@ -26,7 +26,7 @@ public class CultistPlayer extends Player {
     }
     
     @Override
-    protected int getCombatLevel(){
+    public int getCombatLevel(){
         int combatL = super.getCombatLevel();
         combatL += combatL*0.2 + myCultistCard.getGainedLevels() * totalCultistPlayers;
         return combatL;
@@ -75,7 +75,6 @@ public class CultistPlayer extends Player {
     
     @Override
     public String toString(){
-        return "Judador Sectario: "+getName()+"  level: "+super.getLevels()+"    combat level: "+getCombatLevel()
-                +"    dead: "+super.isDead()+"    enemy: "+enemy.getName()+"\n";
+        return "Judador Sectario: "+super.toString();
     }
 }
