@@ -5,12 +5,20 @@
  */
 package GUI;
 
+import NapakalakiGame.Monster;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author elena
  */
 public class MonsterView extends javax.swing.JPanel {
-
+    Monster monsterModel;
 
     /**
      * Creates new form MonsterView
@@ -19,7 +27,21 @@ public class MonsterView extends javax.swing.JPanel {
         initComponents();
     }
     
-   
+    public void setMonster (Monster m){
+        monsterModel = m;
+        jLNombre.setText(monsterModel.getName());
+        jLCombatLevel.setText("Combat Level: "+monsterModel.getCombatLevel());
+        BufferedImage imagen=null;
+        try {
+            String ruta = "Monster/"+monsterModel.getName()+".jpg";
+            imagen = ImageIO.read(getClass().getResource(ruta));
+        } catch (IOException ex) {
+            Logger.getLogger(TreasureView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jLImagen.setIcon((new ImageIcon(imagen)));
+        
+        repaint();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +56,8 @@ public class MonsterView extends javax.swing.JPanel {
         badConsequenceView1 = new GUI.BadConsequenceView();
         jPTreasure4 = new javax.swing.JPanel();
         jLImagen4 = new javax.swing.JLabel();
+        jLNombre = new javax.swing.JLabel();
+        jLCombatLevel = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Monster"));
 
@@ -51,13 +75,25 @@ public class MonsterView extends javax.swing.JPanel {
             .addComponent(jLImagen4, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
         );
 
+        jLNombre.setText("Nombre");
+
+        jLCombatLevel.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLNombre))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLCombatLevel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(prizeView1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -68,25 +104,32 @@ public class MonsterView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(prizeView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(badConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(prizeView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(badConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLNombre)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLCombatLevel)
+                        .addGap(21, 21, 21)
+                        .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.BadConsequenceView badConsequenceView1;
+    private javax.swing.JLabel jLCombatLevel;
     private javax.swing.JLabel jLImagen;
     private javax.swing.JLabel jLImagen1;
     private javax.swing.JLabel jLImagen2;
     private javax.swing.JLabel jLImagen3;
     private javax.swing.JLabel jLImagen4;
+    private javax.swing.JLabel jLNombre;
     private javax.swing.JPanel jPTreasure;
     private javax.swing.JPanel jPTreasure1;
     private javax.swing.JPanel jPTreasure2;
