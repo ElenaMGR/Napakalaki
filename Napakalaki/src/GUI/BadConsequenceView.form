@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Bad Consequence">
+          <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </TitledBorder>
+      </Border>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,13 +27,66 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLText" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLevels" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="jLMuerte" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLVisibles" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLOcultos" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="172" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLText" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLevels" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLMuerte" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLVisibles" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLOcultos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLText">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Texto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLevels">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Niveles"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLVisibles">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Visibles"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLOcultos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ocultos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLMuerte">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Muerte"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>
