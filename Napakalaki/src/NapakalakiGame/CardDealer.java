@@ -121,13 +121,13 @@ public class CardDealer {
                 + " y te dejan caer en mitad del vuelo. Descarta 1 mano visible"
                 + " y 1 mano oculta", 0, svt, sht);
         prize = new Prize(4,1);
-        unusedMonsters.add(new Monster("Ángeles de la noche ibicenca", 14, badConsequence, prize));
+        unusedMonsters.add(new Monster("Angeles de la noche ibicenca", 14, badConsequence, prize));
         /*****************************************************/
         
         badConsequence = new NumericBadConsequence("Pierdes todos tus tesoros visibles" 
                 , 0, BadConsequence.MAXTREASURES, 0);
         prize = new Prize(3,1);
-        unusedMonsters.add(new Monster("El gorrón en el umbral", 10, badConsequence, prize));
+        unusedMonsters.add(new Monster("El gorron en el umbral", 10, badConsequence, prize));
         /*****************************************************/
         
         svt = new ArrayList();
@@ -180,13 +180,13 @@ public class CardDealer {
         badConsequence = new NumericBadConsequence("Da mucho asquito. Pierdes "
                 + "3 niveles", 3, 0, 0);
         prize = new Prize(1,1);
-        unusedMonsters.add(new Monster("Pollipólipo volante", 3, badConsequence, prize));
+        unusedMonsters.add(new Monster("Pollipolipo volante", 3, badConsequence, prize));
         /*****************************************************/
         
         badConsequence = new DeathBadConsequence("No le hace gracia que pronuncien "
                 + "mal su nombre. Estas muerto");
         prize = new Prize(3,1);
-        unusedMonsters.add(new Monster("Yskhtihyssg-Goth", 12, badConsequence, prize));
+        unusedMonsters.add(new Monster("YskhtihyssgGoth", 12, badConsequence, prize));
         /*****************************************************/
         
         badConsequence = new DeathBadConsequence("La familia te atrapa. Estás muerto.");
@@ -213,7 +213,7 @@ public class CardDealer {
         badConsequence= new NumericBadConsequence("Menudo susto te llevas. Pierdes 2 niveles "
                 + "y 5 tesoros visibles.",2,5,0);
         prize = new Prize(1,1);
-        unusedMonsters.add(new Monster("El Lenguas", 20, badConsequence, prize));
+        unusedMonsters.add(new Monster("El lenguas", 20, badConsequence, prize));
         /*****************************************************/
         
         svt = new ArrayList();
@@ -223,7 +223,7 @@ public class CardDealer {
         badConsequence= new SpecificBadConsequence("Te faltan manos para tanta cabeza. "
                 + "Pierdes 3 niveles y tus tesoros visibles de las manos.",3,svt,new ArrayList());
         prize = new Prize(1,1);
-        unusedMonsters.add(new Monster("Bicéfalo", 20, badConsequence, prize));
+        unusedMonsters.add(new Monster("Bicefalo", 20, badConsequence, prize));
         /*****************************************************/
         //          MONSTRUOS PARA SECTARIOS
         svt = new ArrayList();
@@ -240,12 +240,12 @@ public class CardDealer {
         
         badConsequence = new DeathBadConsequence("Hoy no es tu día de suerte. Mueres.");
         prize = new Prize(2,5);
-        unusedMonsters.add(new Monster("El gran Cthulhu", 20, badConsequence, prize,4));
+        unusedMonsters.add(new Monster("El gran cthulhu", 20, badConsequence, prize,4));
         /*****************************************************/
         
         badConsequence= new NumericBadConsequence("Tu gobierno te recorta 2 niveles.",2,0,0);
         prize = new Prize(2,1);
-        unusedMonsters.add(new Monster("Serpiente Político",8, badConsequence, prize,-2));
+        unusedMonsters.add(new Monster("Serpiente politico",8, badConsequence, prize,-2));
         /*****************************************************/
         
         svt = new ArrayList();
