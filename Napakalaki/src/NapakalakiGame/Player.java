@@ -111,6 +111,10 @@ public class Player {
         pendingBadConsequence = b;
     }
     
+    public BadConsequence getPendingBadConsequence(){
+        return pendingBadConsequence;
+    }
+    
     /**
      * Aplica el buen rolloo del monstruo vencido al jugador, sumando los niveles
      * correspondientes y pidiendo al CardDealer que le dé el número de 

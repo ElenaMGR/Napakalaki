@@ -35,6 +35,10 @@ public class PlayerView extends javax.swing.JPanel {
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
         fillTreasurePanel(jPVisibleTreasures,playerModel.getVisibleTreasures());
         fillTreasurePanel(jPHiddenTreasures, playerModel.getHiddenTreasures());
+        
+        pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence());
+        
+        
         repaint();
         revalidate();
     }
@@ -72,6 +76,7 @@ public class PlayerView extends javax.swing.JPanel {
         jBMakeVisible = new javax.swing.JButton();
         jBDiscardTreasures = new javax.swing.JButton();
         jBDiscardAll = new javax.swing.JButton();
+        pendingBadConsequenceView = new GUI.PendingBadConsequenceView();
 
         jPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
         jPHiddenTreasures.setPreferredSize(new java.awt.Dimension(565, 191));
@@ -106,13 +111,18 @@ public class PlayerView extends javax.swing.JPanel {
                     .addComponent(jLLevel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLEnemy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBStealTreasure)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBMakeVisible)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBDiscardTreasures)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBDiscardAll)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jBStealTreasure)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBMakeVisible)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBDiscardTreasures)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBDiscardAll))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(pendingBadConsequenceView, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -130,6 +140,8 @@ public class PlayerView extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPHiddenTreasures, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pendingBadConsequenceView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBStealTreasure)
                     .addComponent(jBMakeVisible)
@@ -150,5 +162,6 @@ public class PlayerView extends javax.swing.JPanel {
     private javax.swing.JLabel jLNombre;
     private javax.swing.JPanel jPHiddenTreasures;
     private javax.swing.JPanel jPVisibleTreasures;
+    private GUI.PendingBadConsequenceView pendingBadConsequenceView;
     // End of variables declaration//GEN-END:variables
 }
