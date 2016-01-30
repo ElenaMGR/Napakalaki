@@ -6,18 +6,26 @@
 package GUI;
 
 import NapakalakiGame.Napakalaki;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 
 /**
  *
  * @author elena
  */
-public class NapakalakiView extends javax.swing.JFrame {
+public class NapakalakiView extends JFrame {
     Napakalaki napakalakiModel;
     /**
      * Creates new form NapakalakiView
      */
     public NapakalakiView() {
         initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        setSize(xSize,ySize);
+        setResizable(false);
+        
     }
     
     public void setNapakalaki(Napakalaki n){
