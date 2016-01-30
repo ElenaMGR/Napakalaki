@@ -40,6 +40,7 @@ public class MonsterView extends javax.swing.JPanel {
         }
         jLImagen.setIcon((new ImageIcon(imagen)));
         
+        
         repaint();
     }
 
