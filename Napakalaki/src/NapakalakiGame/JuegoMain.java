@@ -6,9 +6,10 @@
 package NapakalakiGame;
 
 import GUI.Dice;
+import GUI.MonsterView;
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
-import GUI.PlayerView;
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 /**
@@ -33,7 +34,7 @@ public class JuegoMain {
         //TreasureView tre = new TreasureView();
         //tre.setTreasure(t);
         
-        Player p = new Player("Josasdffffffffffffffffffffffffffffffffffffffffe");
+       /* Player p = new Player("Josasdffffffffffffffffffffffffffffffffffffffffe");
         Player p2 = new Player("Elesdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffna");
         p.setEnemy(p2);
         p.initTreasures();
@@ -41,11 +42,32 @@ public class JuegoMain {
         pla.setPlayer(p);
         pla.setVisible(true);
         pla.setSize(600,600);
+        */
         
-        napakalakiView.add(pla);
+        
+        
+        ArrayList<TreasureKind> svt = new ArrayList();
+        svt.add(TreasureKind.BOTHHANDS);
+        svt.add(TreasureKind.BOTHHANDS);
+        svt.add(TreasureKind.BOTHHANDS);
+        svt.add(TreasureKind.BOTHHANDS);
+        svt.add(TreasureKind.BOTHHANDS);
+        BadConsequence badConsequence = new SpecificBadConsequence("Embobados con el lindo"
+                + "primigenio te descartas de tu casco visible", 0, svt, new ArrayList());
+        Prize prize = new Prize(1,1);
+        Monster m = new Monster("Chibithulhu", 2, badConsequence, prize);
+        
+        MonsterView mv = new MonsterView();
+        mv.setMonster(m);
+        
+        mv.setSize(610, 450);
+        
+        mv.setVisible(true);
+        
+        
+        napakalakiView.add(mv);
         napakalakiView.repaint();
         napakalakiView.revalidate();
-        
         //Visualiza la ventana (debe ser última línea)
         napakalakiView.setVisible(true);  
     }

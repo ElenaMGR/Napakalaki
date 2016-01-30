@@ -24,6 +24,20 @@ public class BadConsequenceView extends javax.swing.JPanel {
      */
     public BadConsequenceView() {
         initComponents();
+        jLText.setLineWrap(true);
+        jLText.setAutoscrolls(false);
+        jLText.setWrapStyleWord(true);
+        jLText.setBackground(getBackground());
+        
+        jLOcultos.setLineWrap(true);
+        jLOcultos.setAutoscrolls(false);
+        jLOcultos.setWrapStyleWord(true);
+        jLOcultos.setBackground(getBackground());
+
+        jLVisibles.setLineWrap(true);
+        jLVisibles.setAutoscrolls(false);
+        jLVisibles.setWrapStyleWord(true);
+        jLVisibles.setBackground(getBackground());
     }
     
      public void setBadConsequence (BadConsequence bc){
@@ -72,23 +86,42 @@ public class BadConsequenceView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLText = new javax.swing.JLabel();
         jLevels = new javax.swing.JLabel();
-        jLVisibles = new javax.swing.JLabel();
-        jLOcultos = new javax.swing.JLabel();
         jLMuerte = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLText = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jLOcultos = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jLVisibles = new javax.swing.JTextArea();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Bad Consequence"));
 
-        jLText.setText("Texto");
-
         jLevels.setText("Niveles");
 
-        jLVisibles.setText("Visibles");
-
-        jLOcultos.setText("Ocultos");
-
         jLMuerte.setText("Muerte");
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLText.setEditable(false);
+        jLText.setColumns(10);
+        jLText.setRows(3);
+        jLText.setAutoscrolls(false);
+        jScrollPane1.setViewportView(jLText);
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLOcultos.setEditable(false);
+        jLOcultos.setColumns(20);
+        jLOcultos.setRows(1);
+        jScrollPane2.setViewportView(jLOcultos);
+
+        jScrollPane3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jLVisibles.setEditable(false);
+        jLVisibles.setColumns(20);
+        jLVisibles.setRows(1);
+        jScrollPane3.setViewportView(jLVisibles);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -97,28 +130,28 @@ public class BadConsequenceView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLText)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLevels)
                         .addGap(104, 104, 104)
-                        .addComponent(jLMuerte))
-                    .addComponent(jLVisibles)
-                    .addComponent(jLOcultos))
-                .addContainerGap(172, Short.MAX_VALUE))
+                        .addComponent(jLMuerte)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLText)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLevels)
                     .addComponent(jLMuerte))
                 .addGap(18, 18, 18)
-                .addComponent(jLVisibles)
-                .addGap(18, 18, 18)
-                .addComponent(jLOcultos)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -126,9 +159,12 @@ public class BadConsequenceView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLMuerte;
-    private javax.swing.JLabel jLOcultos;
-    private javax.swing.JLabel jLText;
-    private javax.swing.JLabel jLVisibles;
+    private javax.swing.JTextArea jLOcultos;
+    private javax.swing.JTextArea jLText;
+    private javax.swing.JTextArea jLVisibles;
     private javax.swing.JLabel jLevels;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
