@@ -5,10 +5,12 @@
  */
 package GUI;
 
+import NapakalakiGame.CombatResult;
 import NapakalakiGame.Napakalaki;
-import java.awt.Component;
 import java.awt.Toolkit;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -112,7 +114,20 @@ public class NapakalakiView extends JFrame {
     }//GEN-LAST:event_jBMeetMonsterActionPerformed
 
     private void jBCombatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCombatActionPerformed
-        napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
+        CombatResult resultado;
+        resultado = napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
+        String texto = "";
+        
+        
+        switch(resultado){
+            case WIN: texto = "Has Ganado";break;
+            case LOSE:texto = "Has Perdido";break;
+            case LOSEANDCONVERT:texto = "Te combiertes en sectario";break;
+            case WINGAME: texto = "Has Ganado el juego";break;
+        }
+        JOptionPane.showMessageDialog(this,texto,"Resultado",JOptionPane.PLAIN_MESSAGE);
+        
+        
         playerView.setEnabledjBMakeVisible(true);
         jBNextTurn.setEnabled(true);
         jBCombat.setEnabled(false);
