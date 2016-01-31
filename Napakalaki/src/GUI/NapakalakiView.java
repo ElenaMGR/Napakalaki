@@ -34,6 +34,7 @@ public class NapakalakiView extends JFrame {
         playerView.setPlayer(napakalakiModel.getCurrentPlayer());
         monsterView.setMonster(napakalakiModel.getCurrentMonster());
         playerView.setNapakalaki(napakalakiModel);
+        monsterView.setVisible(false);
     }
 
     /**
@@ -54,6 +55,11 @@ public class NapakalakiView extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBMeetMonster.setText("Meet the Monster");
+        jBMeetMonster.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMeetMonsterActionPerformed(evt);
+            }
+        });
 
         jBCombat.setText("Combat");
 
@@ -108,6 +114,10 @@ public class NapakalakiView extends JFrame {
         //Actualiza la vista
         setNapakalaki(napakalakiModel);
     }//GEN-LAST:event_jBNextTurnActionPerformed
+
+    private void jBMeetMonsterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMeetMonsterActionPerformed
+        monsterView.setVisible(true);
+    }//GEN-LAST:event_jBMeetMonsterActionPerformed
 
     
 

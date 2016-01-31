@@ -37,15 +37,13 @@ public class MonsterView extends javax.swing.JPanel {
         try {
             String ruta = "Monsters/"+monsterModel.getName()+".jpg";
             imagen = ImageIO.read(getClass().getResource(ruta));
-            System.out.println("Entra");
         } catch (IOException ex) {
             Logger.getLogger(TreasureView.class.getName()).log(Level.SEVERE, null, ex);
         }
         jLImagen4.setIcon((new ImageIcon(imagen)));
         prizeView.setPrize(new Prize(monsterModel.getTreasuresGained(),monsterModel.getLevelsGained()));
         badConsequenceView.setBadConsequence(monsterModel.getBadConsequence());
-        
-        
+             
         repaint();
     }
 
