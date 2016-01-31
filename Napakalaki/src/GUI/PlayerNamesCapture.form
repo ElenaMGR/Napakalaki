@@ -100,10 +100,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTplayer1">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTplayer1KeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTplayer2">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTplayer2KeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTplayer3">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTplayer3KeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBPlay">
       <Properties>

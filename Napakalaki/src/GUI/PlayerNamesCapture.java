@@ -30,6 +30,18 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
                 System.exit(0);
             }
         });
+        jBPlay.setEnabled(false);
+        
+    }
+    
+    private void datosVacios(){
+        if (jTplayer1.getText().length()==0 ||
+                jTplayer2.getText().length()==0 ||
+                jTplayer3.getText().length()==0){
+            jBPlay.setEnabled(false);
+        }else{
+            jBPlay.setEnabled(true);
+        }
     }
 
     /**
@@ -58,6 +70,24 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         jLabel2.setText("Player 2");
 
         jLabel3.setText("Player 3");
+
+        jTplayer1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTplayer1KeyReleased(evt);
+            }
+        });
+
+        jTplayer2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTplayer2KeyReleased(evt);
+            }
+        });
+
+        jTplayer3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTplayer3KeyReleased(evt);
+            }
+        });
 
         jBPlay.setText("Play");
         jBPlay.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +164,18 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         names.add(jTplayer3.getText());
         dispose();
     }//GEN-LAST:event_jBPlayActionPerformed
+
+    private void jTplayer1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTplayer1KeyReleased
+        datosVacios(); 
+    }//GEN-LAST:event_jTplayer1KeyReleased
+
+    private void jTplayer2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTplayer2KeyReleased
+        datosVacios(); 
+    }//GEN-LAST:event_jTplayer2KeyReleased
+
+    private void jTplayer3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTplayer3KeyReleased
+        datosVacios(); 
+    }//GEN-LAST:event_jTplayer3KeyReleased
 
     public ArrayList<String> getNames(){
         this.setVisible(true);

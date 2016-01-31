@@ -57,6 +57,7 @@ public class PlayerView extends javax.swing.JPanel {
         aPanel.removeAll();
         //Se recorre la lista de tesoros construyendo y añadiendo sus vistas al panel
         TreasureView aTreasureView;
+        anchoCarta=0;
         for (Treasure t: aList){
             aTreasureView = new TreasureView();
             aTreasureView.setTreasure (t);
@@ -119,6 +120,11 @@ public class PlayerView extends javax.swing.JPanel {
         jBStealTreasure.setText("Steal Treasure");
 
         jBMakeVisible.setText("Make Visible");
+        jBMakeVisible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMakeVisibleActionPerformed(evt);
+            }
+        });
 
         jBDiscardTreasures.setText("Discard Treasures");
 
@@ -200,6 +206,15 @@ public class PlayerView extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBMakeVisibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMakeVisibleActionPerformed
+        //Recopilar informacion de la GUI
+        ArrayList<Treasure> selHidden = getSelectedTreasures(jPHiddenTreasures);
+        //Enviar mensaje al modelo para que se desarrolle la accion
+        napakalakiModel.makeTreasuresVisible(selHidden);
+        //Actualiza la vista
+        setPlayer (napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_jBMakeVisibleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
