@@ -46,12 +46,8 @@ public class PlayerView extends javax.swing.JPanel {
         fillTreasurePanel(jPHiddenTreasures, playerModel.getHiddenTreasures());
         
         pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence());
-        
-        if (playerModel.canISteal())
-            jBStealTreasure.setEnabled(true);
-        else
-           jBStealTreasure.setEnabled(false); 
-        
+        jBStealTreasure.setEnabled(false); 
+      
         repaint();
         revalidate();
     }
@@ -93,6 +89,13 @@ public class PlayerView extends javax.swing.JPanel {
     
     public void setEnabledjBMakeVisible(boolean estado){
         jBMakeVisible.setEnabled(estado);
+    }
+    
+    public void isEnabledjBStealTreasure(){     
+        if (playerModel.canISteal())
+            jBStealTreasure.setEnabled(true);
+        else
+           jBStealTreasure.setEnabled(false); 
     }
 
     /**

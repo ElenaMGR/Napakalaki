@@ -130,6 +130,7 @@ public class NapakalakiView extends JFrame {
         playerView.setEnabledjBMakeVisible(true);
         jBNextTurn.setEnabled(true);
         jBCombat.setEnabled(false);
+        playerView.isEnabledjBStealTreasure();
         //Actualiza la vista
         setNapakalaki(napakalakiModel);
     }//GEN-LAST:event_jBCombatActionPerformed
