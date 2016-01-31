@@ -63,7 +63,7 @@ public class Player {
     protected boolean shouldConvert(){
         boolean shouldC;
         Dice d = Dice.getInstance();
-        int n = d.nextNumber();
+        int n = d.nextNumber("Lanzamiento de Dado.","¿Debes convertirte en Sectario?");
         if (n==1)
             shouldC=true;
         else
@@ -326,7 +326,7 @@ public class Player {
         bringToLife();
         Treasure treasure = dealer.nextTreasure();
         hiddenTreasures.add(treasure);
-        int number = dice.nextNumber();
+        int number = dice.nextNumber("Lanzamiento de Dado.","¿Cuantas cartas robarás?");
         
         
         if (number>1){
