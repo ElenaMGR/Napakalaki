@@ -25,7 +25,7 @@ public class NapakalakiView extends JFrame {
         int ySize = ((int) tk.getScreenSize().getHeight());
         setSize(xSize,ySize);
         setResizable(false);
-        
+        setLocation(0,0);
     }
     
     public void setNapakalaki(Napakalaki n){
