@@ -130,148 +130,148 @@ public class CardDealer {
         unusedMonsters.add(new Monster("El gorron en el umbral", 10, badConsequence, prize));
         /*****************************************************/
         
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.ARMOR);
-//        badConsequence = new SpecificBadConsequence("Pierdes la armadura visible", 0, svt, new ArrayList());
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("H.P. Munchcraft", 6, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.ARMOR);
-//        badConsequence = new SpecificBadConsequence("Sientes bichos bajo la ropa. "
-//                + " Descarta la armadura visible", 0, svt, new ArrayList());
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("Bichgooth", 2, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new NumericBadConsequence("Pierdes 5 niveles y 3 tesoros "
-//                + "visibles", 5, 3, 0);
-//        prize = new Prize(4,2);
-//        unusedMonsters.add(new Monster("El rey de rosa", 13, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new NumericBadConsequence("Toses los pulmones y pierdes"
-//                + " 2 niveles", 2, 0, 0);
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("La que redacta en las tinieblas", 2, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new DeathBadConsequence("Estos monstruos resultan bastante "
-//                + "superficiales y te aburren mortalmente. Estas muerto");
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Los hondos", 8, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new NumericBadConsequence("Pierdes 2 niveles y 2 tesoros"
-//                + " ocultos", 2, 0, 2);
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Semillas Cthulhu", 4, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.ONEHAND);
-//        badConsequence = new SpecificBadConsequence("Te intentas escaquear. Pierdes"
-//                + " una mano visible", 0, svt, new ArrayList());
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Dameargo", 1, badConsequence, prize));
-//        /*****************************************************/
-//
-//        badConsequence = new NumericBadConsequence("Da mucho asquito. Pierdes "
-//                + "3 niveles", 3, 0, 0);
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("Pollipolipo volante", 3, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new DeathBadConsequence("No le hace gracia que pronuncien "
-//                + "mal su nombre. Estas muerto");
-//        prize = new Prize(3,1);
-//        unusedMonsters.add(new Monster("YskhtihyssgGoth", 12, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence = new DeathBadConsequence("La familia te atrapa. Estás muerto.");
-//        prize = new Prize(4,1);
-//        unusedMonsters.add(new Monster("Familia feliz", 1, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.BOTHHANDS);
-//        badConsequence= new SpecificBadConsequence("La quinta directiva primaria te obliga a "
-//                + "perder 2 niveles, un tesoro 2 manos visible",2,svt,new ArrayList());
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Roboggoth", 8, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.HELMET);
-//        badConsequence= new SpecificBadConsequence("Te asusta en la noche. Pierdes un casco "
-//                + "visible.",0,svt,new ArrayList());
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("El espia", 5, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        badConsequence= new NumericBadConsequence("Menudo susto te llevas. Pierdes 2 niveles "
-//                + "y 5 tesoros visibles.",2,5,0);
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("El lenguas", 20, badConsequence, prize));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.ONEHAND);
-//        svt.add(TreasureKind.ONEHAND);
-//        svt.add(TreasureKind.BOTHHANDS);
-//        badConsequence= new SpecificBadConsequence("Te faltan manos para tanta cabeza. "
-//                + "Pierdes 3 niveles y tus tesoros visibles de las manos.",3,svt,new ArrayList());
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("Bicefalo", 20, badConsequence, prize));
-//        /*****************************************************/
-//        //          MONSTRUOS PARA SECTARIOS
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.ONEHAND);
-//        badConsequence= new SpecificBadConsequence("Pierdes 1 mano visible.",0,svt,new ArrayList());
-//        prize = new Prize(3,1);
-//        unusedMonsters.add(new Monster("El mal indecible impronunciable", 10, badConsequence, prize,-2));
-//        /*****************************************************/
-//        
-//        badConsequence= new NumericBadConsequence("Pierdes tus tesoros visibles. Jajaja.",0,BadConsequence.MAXTREASURES,0);
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Testigos Oculares",6, badConsequence, prize,2));
-//        /*****************************************************/
-//        
-//        badConsequence = new DeathBadConsequence("Hoy no es tu día de suerte. Mueres.");
-//        prize = new Prize(2,5);
-//        unusedMonsters.add(new Monster("El gran cthulhu", 20, badConsequence, prize,4));
-//        /*****************************************************/
-//        
-//        badConsequence= new NumericBadConsequence("Tu gobierno te recorta 2 niveles.",2,0,0);
-//        prize = new Prize(2,1);
-//        unusedMonsters.add(new Monster("Serpiente politico",8, badConsequence, prize,-2));
-//        /*****************************************************/
-//        
-//        svt = new ArrayList();
-//        svt.add(TreasureKind.HELMET);
-//        svt.add(TreasureKind.ARMOR);
-//        
-//        sht = new ArrayList();
-//        sht.add(TreasureKind.BOTHHANDS);
-//        sht.add(TreasureKind.ONEHAND);
-//        sht.add(TreasureKind.ONEHAND);
-//        badConsequence= new SpecificBadConsequence("Pierdes tu casco y tu armadura visible"
-//                + ". Pierdes tus manos ocultas.",0,svt,sht);
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("Felpuggoth", 2, badConsequence, prize,5));
-//        /*****************************************************/
-//        
-//        badConsequence= new NumericBadConsequence("Pierdes 2 niveles.",2,0,0);
-//        prize = new Prize(4,2);
-//        unusedMonsters.add(new Monster("Shoggoth",16, badConsequence, prize,-4));
-//        /*****************************************************/
-//        
-//        badConsequence= new NumericBadConsequence("Pintalabios negro. Pierdes 2 niveles.",2,0,0);
-//        prize = new Prize(1,1);
-//        unusedMonsters.add(new Monster("Lolitagooth",2, badConsequence, prize,3));
-//        
-//        
+        svt = new ArrayList();
+        svt.add(TreasureKind.ARMOR);
+        badConsequence = new SpecificBadConsequence("Pierdes la armadura visible", 0, svt, new ArrayList());
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("H.P. Munchcraft", 6, badConsequence, prize));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.ARMOR);
+        badConsequence = new SpecificBadConsequence("Sientes bichos bajo la ropa. "
+                + " Descarta la armadura visible", 0, svt, new ArrayList());
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Bichgooth", 2, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new NumericBadConsequence("Pierdes 5 niveles y 3 tesoros "
+                + "visibles", 5, 3, 0);
+        prize = new Prize(4,2);
+        unusedMonsters.add(new Monster("El rey de rosa", 13, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new NumericBadConsequence("Toses los pulmones y pierdes"
+                + " 2 niveles", 2, 0, 0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("La que redacta en las tinieblas", 2, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new DeathBadConsequence("Estos monstruos resultan bastante "
+                + "superficiales y te aburren mortalmente. Estas muerto");
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Los hondos", 8, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new NumericBadConsequence("Pierdes 2 niveles y 2 tesoros"
+                + " ocultos", 2, 0, 2);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Semillas Cthulhu", 4, badConsequence, prize));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.ONEHAND);
+        badConsequence = new SpecificBadConsequence("Te intentas escaquear. Pierdes"
+                + " una mano visible", 0, svt, new ArrayList());
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Dameargo", 1, badConsequence, prize));
+        /*****************************************************/
+
+        badConsequence = new NumericBadConsequence("Da mucho asquito. Pierdes "
+                + "3 niveles", 3, 0, 0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Pollipolipo volante", 3, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new DeathBadConsequence("No le hace gracia que pronuncien "
+                + "mal su nombre. Estas muerto");
+        prize = new Prize(3,1);
+        unusedMonsters.add(new Monster("YskhtihyssgGoth", 12, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence = new DeathBadConsequence("La familia te atrapa. Estás muerto.");
+        prize = new Prize(4,1);
+        unusedMonsters.add(new Monster("Familia feliz", 1, badConsequence, prize));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.BOTHHANDS);
+        badConsequence= new SpecificBadConsequence("La quinta directiva primaria te obliga a "
+                + "perder 2 niveles, un tesoro 2 manos visible",2,svt,new ArrayList());
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Roboggoth", 8, badConsequence, prize));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.HELMET);
+        badConsequence= new SpecificBadConsequence("Te asusta en la noche. Pierdes un casco "
+                + "visible.",0,svt,new ArrayList());
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("El espia", 5, badConsequence, prize));
+        /*****************************************************/
+        
+        badConsequence= new NumericBadConsequence("Menudo susto te llevas. Pierdes 2 niveles "
+                + "y 5 tesoros visibles.",2,5,0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("El lenguas", 20, badConsequence, prize));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.ONEHAND);
+        svt.add(TreasureKind.ONEHAND);
+        svt.add(TreasureKind.BOTHHANDS);
+        badConsequence= new SpecificBadConsequence("Te faltan manos para tanta cabeza. "
+                + "Pierdes 3 niveles y tus tesoros visibles de las manos.",3,svt,new ArrayList());
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Bicefalo", 20, badConsequence, prize));
+        /*****************************************************/
+        //          MONSTRUOS PARA SECTARIOS
+        svt = new ArrayList();
+        svt.add(TreasureKind.ONEHAND);
+        badConsequence= new SpecificBadConsequence("Pierdes 1 mano visible.",0,svt,new ArrayList());
+        prize = new Prize(3,1);
+        unusedMonsters.add(new Monster("El mal indecible impronunciable", 10, badConsequence, prize,-2));
+        /*****************************************************/
+        
+        badConsequence= new NumericBadConsequence("Pierdes tus tesoros visibles. Jajaja.",0,BadConsequence.MAXTREASURES,0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Testigos Oculares",6, badConsequence, prize,2));
+        /*****************************************************/
+        
+        badConsequence = new DeathBadConsequence("Hoy no es tu día de suerte. Mueres.");
+        prize = new Prize(2,5);
+        unusedMonsters.add(new Monster("El gran cthulhu", 20, badConsequence, prize,4));
+        /*****************************************************/
+        
+        badConsequence= new NumericBadConsequence("Tu gobierno te recorta 2 niveles.",2,0,0);
+        prize = new Prize(2,1);
+        unusedMonsters.add(new Monster("Serpiente politico",8, badConsequence, prize,-2));
+        /*****************************************************/
+        
+        svt = new ArrayList();
+        svt.add(TreasureKind.HELMET);
+        svt.add(TreasureKind.ARMOR);
+        
+        sht = new ArrayList();
+        sht.add(TreasureKind.BOTHHANDS);
+        sht.add(TreasureKind.ONEHAND);
+        sht.add(TreasureKind.ONEHAND);
+        badConsequence= new SpecificBadConsequence("Pierdes tu casco y tu armadura visible"
+                + ". Pierdes tus manos ocultas.",0,svt,sht);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Felpuggoth", 2, badConsequence, prize,5));
+        /*****************************************************/
+        
+        badConsequence= new NumericBadConsequence("Pierdes 2 niveles.",2,0,0);
+        prize = new Prize(4,2);
+        unusedMonsters.add(new Monster("Shoggoth",16, badConsequence, prize,-4));
+        /*****************************************************/
+        
+        badConsequence= new NumericBadConsequence("Pintalabios negro. Pierdes 2 niveles.",2,0,0);
+        prize = new Prize(1,1);
+        unusedMonsters.add(new Monster("Lolitagooth",2, badConsequence, prize,3));
+        
+        
         
         // Fin de cartas de monstruos
     }
