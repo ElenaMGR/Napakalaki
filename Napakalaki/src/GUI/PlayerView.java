@@ -29,7 +29,8 @@ public class PlayerView extends javax.swing.JPanel {
     public PlayerView() {
         initComponents();
         sPHiddenTreasures.getHorizontalScrollBar().setUnitIncrement(16);
-        sPVisibleTreasures.getHorizontalScrollBar().setUnitIncrement(16);
+        sPVisibleTreasures.getHorizontalScrollBar().setUnitIncrement(16); 
+        jBStealTreasure.setEnabled(false); 
     }
     
     public void setNapakalaki(Napakalaki n){
@@ -47,8 +48,7 @@ public class PlayerView extends javax.swing.JPanel {
         fillTreasurePanel(jPVisibleTreasures,playerModel.getVisibleTreasures());
         fillTreasurePanel(jPHiddenTreasures, playerModel.getHiddenTreasures());
         
-        pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence());
-        jBStealTreasure.setEnabled(false); 
+        pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence()); 
         isVisiblePendingBadConsequence();
       
         repaint();
@@ -99,6 +99,10 @@ public class PlayerView extends javax.swing.JPanel {
             jBStealTreasure.setEnabled(true);
         else
            jBStealTreasure.setEnabled(false); 
+    }
+    
+    public void setEnabledjBStealTreasure(boolean estado){
+        jBStealTreasure.setEnabled(estado); 
     }
     
     public void isVisiblePendingBadConsequence(){
