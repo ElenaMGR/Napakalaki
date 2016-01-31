@@ -6,6 +6,7 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -19,6 +20,7 @@ import javax.swing.ImageIcon;
  */
 public class TreasureView extends javax.swing.JPanel {
     Treasure treasureModel;
+    private boolean selected=false;
 
     /**
      * Creates new form TreasureView
@@ -43,6 +45,14 @@ public class TreasureView extends javax.swing.JPanel {
         
         repaint();
     }
+    
+    public boolean isSelected(){
+        return selected;
+    }
+    
+    public Treasure getTreasure(){
+        return treasureModel;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +68,13 @@ public class TreasureView extends javax.swing.JPanel {
         jLBonusTreasure = new javax.swing.JLabel();
         jPTreasure = new javax.swing.JPanel();
         jLImagen = new javax.swing.JLabel();
+
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jLBonusTreasure.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow"));
 
@@ -109,6 +126,17 @@ public class TreasureView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        if (isSelected()){
+            selected=false;
+            setBackground(getParent().getBackground());
+        }else{
+            selected=true;
+            setBackground(Color.GRAY);
+        }
+        repaint();
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -328,6 +328,7 @@ public class Player {
         hiddenTreasures.add(treasure);
         int number = dice.nextNumber();
         
+        
         if (number>1){
             treasure = dealer.nextTreasure();
             hiddenTreasures.add(treasure);
