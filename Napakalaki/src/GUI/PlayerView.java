@@ -97,6 +97,14 @@ public class PlayerView extends javax.swing.JPanel {
         else
            jBStealTreasure.setEnabled(false); 
     }
+    
+    public void isVisiblePendingBadConsequence(){
+        if (playerModel.getPendingBadConsequence().isEmpty()){
+            pendingBadConsequenceView.setVisible(false);
+        }else{
+            pendingBadConsequenceView.setVisible(true);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

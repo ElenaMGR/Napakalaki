@@ -39,7 +39,7 @@ public class NapakalakiView extends JFrame {
         monsterView.setMonster(napakalakiModel.getCurrentMonster());
         playerView.setNapakalaki(napakalakiModel);
         monsterView.setVisible(false);
-       
+        playerView.isVisiblePendingBadConsequence();
     }
 
     /**
@@ -131,6 +131,7 @@ public class NapakalakiView extends JFrame {
         jBNextTurn.setEnabled(true);
         jBCombat.setEnabled(false);
         playerView.isEnabledjBStealTreasure();
+        playerView.isVisiblePendingBadConsequence();
         //Actualiza la vista
         setNapakalaki(napakalakiModel);
     }//GEN-LAST:event_jBCombatActionPerformed
