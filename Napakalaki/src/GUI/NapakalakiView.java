@@ -8,7 +8,6 @@ package GUI;
 import NapakalakiGame.CombatResult;
 import NapakalakiGame.Napakalaki;
 import java.awt.Toolkit;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -115,7 +114,7 @@ public class NapakalakiView extends JFrame {
 
     private void jBCombatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCombatActionPerformed
         CombatResult resultado;
-        resultado = napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
+        resultado = napakalakiModel.developCombat();
         String texto = "";
         
         
