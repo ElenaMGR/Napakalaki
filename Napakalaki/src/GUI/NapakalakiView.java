@@ -6,6 +6,7 @@
 package GUI;
 
 import NapakalakiGame.Napakalaki;
+import java.awt.Component;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 
@@ -26,6 +27,8 @@ public class NapakalakiView extends JFrame {
         setSize(xSize,ySize);
         setResizable(false);
         setLocation(0,0);
+        jBCombat.setEnabled(false);
+        jBNextTurn.setEnabled(false);
     }
     
     public void setNapakalaki(Napakalaki n){
@@ -35,6 +38,7 @@ public class NapakalakiView extends JFrame {
         monsterView.setMonster(napakalakiModel.getCurrentMonster());
         playerView.setNapakalaki(napakalakiModel);
         monsterView.setVisible(false);
+       
     }
 
     /**
@@ -53,6 +57,11 @@ public class NapakalakiView extends JFrame {
         jBNextTurn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+        getContentPane().add(playerView);
+        playerView.setBounds(12, 12, 596, 693);
+        getContentPane().add(monsterView);
+        monsterView.setBounds(614, 12, 650, 430);
 
         jBMeetMonster.setText("Meet the Monster");
         jBMeetMonster.addActionListener(new java.awt.event.ActionListener() {
@@ -60,8 +69,17 @@ public class NapakalakiView extends JFrame {
                 jBMeetMonsterActionPerformed(evt);
             }
         });
+        getContentPane().add(jBMeetMonster);
+        jBMeetMonster.setBounds(662, 485, 220, 29);
 
         jBCombat.setText("Combat");
+        jBCombat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCombatActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBCombat);
+        jBCombat.setBounds(662, 532, 220, 29);
 
         jBNextTurn.setText("Next Turn");
         jBNextTurn.addActionListener(new java.awt.event.ActionListener() {
@@ -69,55 +87,38 @@ public class NapakalakiView extends JFrame {
                 jBNextTurnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(playerView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(monsterView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jBCombat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBMeetMonster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBNextTurn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(playerView, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(monsterView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jBMeetMonster)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBCombat)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBNextTurn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jBNextTurn);
+        jBNextTurn.setBounds(662, 579, 220, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBNextTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNextTurnActionPerformed
-        napakalakiModel.nextTurn();
-        //Actualiza la vista
-        setNapakalaki(napakalakiModel);
+        if (napakalakiModel.getCurrentPlayer().validState()){
+            napakalakiModel.nextTurn();
+            jBMeetMonster.setEnabled(true);
+            jBCombat.setEnabled(false);
+            jBNextTurn.setEnabled(false);
+            //Actualiza la vista
+            setNapakalaki(napakalakiModel);
+        }
     }//GEN-LAST:event_jBNextTurnActionPerformed
 
     private void jBMeetMonsterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMeetMonsterActionPerformed
         monsterView.setVisible(true);
+        jBCombat.setEnabled(true);
+        playerView.setEnabledjBMakeVisible(false);
+        jBMeetMonster.setEnabled(false);
     }//GEN-LAST:event_jBMeetMonsterActionPerformed
+
+    private void jBCombatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCombatActionPerformed
+        napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
+        playerView.setEnabledjBMakeVisible(true);
+        jBNextTurn.setEnabled(true);
+        jBCombat.setEnabled(false);
+        //Actualiza la vista
+        setNapakalaki(napakalakiModel);
+    }//GEN-LAST:event_jBCombatActionPerformed
 
     
 

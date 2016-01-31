@@ -90,6 +90,10 @@ public class PlayerView extends javax.swing.JPanel {
         }
         return output;
     }
+    
+    public void setEnabledjBMakeVisible(boolean estado){
+        jBMakeVisible.setEnabled(estado);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
