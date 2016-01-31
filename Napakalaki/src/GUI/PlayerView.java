@@ -47,6 +47,10 @@ public class PlayerView extends javax.swing.JPanel {
         
         pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence());
         
+        if (playerModel.canISteal())
+            jBStealTreasure.setEnabled(true);
+        else
+           jBStealTreasure.setEnabled(false); 
         
         repaint();
         revalidate();
@@ -118,6 +122,11 @@ public class PlayerView extends javax.swing.JPanel {
         jLEnemy.setText("Enemigo");
 
         jBStealTreasure.setText("Steal Treasure");
+        jBStealTreasure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBStealTreasureActionPerformed(evt);
+            }
+        });
 
         jBMakeVisible.setText("Make Visible");
         jBMakeVisible.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +136,18 @@ public class PlayerView extends javax.swing.JPanel {
         });
 
         jBDiscardTreasures.setText("Discard Treasures");
+        jBDiscardTreasures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBDiscardTreasuresActionPerformed(evt);
+            }
+        });
 
         jBDiscardAll.setText("Discard All Treasures");
+        jBDiscardAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBDiscardAllActionPerformed(evt);
+            }
+        });
 
         sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visible Treasures"));
 
@@ -215,6 +234,31 @@ public class PlayerView extends javax.swing.JPanel {
         //Actualiza la vista
         setPlayer (napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_jBMakeVisibleActionPerformed
+
+    private void jBDiscardAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDiscardAllActionPerformed
+        //Enviar mensaje al modelo para que se desarrolle la accion
+        napakalakiModel.getCurrentPlayer().discardAllTreasures();
+        //Actualiza la vista
+        setPlayer (napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_jBDiscardAllActionPerformed
+
+    private void jBDiscardTreasuresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDiscardTreasuresActionPerformed
+        //Recopilar informacion de la GUI
+        ArrayList<Treasure> selHidden = getSelectedTreasures(jPHiddenTreasures);
+        ArrayList<Treasure> selVisible = getSelectedTreasures(jPVisibleTreasures);
+        //Enviar mensaje al modelo para que se desarrolle la accion
+        napakalakiModel.discardHiddenTreasures(selHidden);
+        napakalakiModel.discardVisibleTreasures(selVisible);
+        //Actualiza la vista
+        setPlayer (napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_jBDiscardTreasuresActionPerformed
+
+    private void jBStealTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBStealTreasureActionPerformed
+        //Enviar mensaje al modelo para que se desarrolle la accion
+        napakalakiModel.getCurrentPlayer().stealTreasure();
+        //Actualiza la vista
+        setPlayer (napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_jBStealTreasureActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

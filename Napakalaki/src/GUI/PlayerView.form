@@ -121,6 +121,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Steal Treasure"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBStealTreasureActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBMakeVisible">
       <Properties>
@@ -134,11 +137,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Discard Treasures"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBDiscardTreasuresActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBDiscardAll">
       <Properties>
         <Property name="text" type="java.lang.String" value="Discard All Treasures"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBDiscardAllActionPerformed"/>
+      </Events>
     </Component>
     <Component class="GUI.PendingBadConsequenceView" name="pendingBadConsequenceView">
     </Component>

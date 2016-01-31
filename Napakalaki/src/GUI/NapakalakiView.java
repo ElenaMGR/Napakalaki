@@ -58,6 +58,11 @@ public class NapakalakiView extends JFrame {
         jBCombat.setText("Combat");
 
         jBNextTurn.setText("Next Turn");
+        jBNextTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBNextTurnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +102,12 @@ public class NapakalakiView extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBNextTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNextTurnActionPerformed
+        napakalakiModel.nextTurn();
+        //Actualiza la vista
+        setNapakalaki(napakalakiModel);
+    }//GEN-LAST:event_jBNextTurnActionPerformed
 
     
 
