@@ -6,8 +6,10 @@
 package GUI;
 
 import NapakalakiGame.CultistPlayer;
+import NapakalakiGame.Napakalaki;
 import NapakalakiGame.Player;
 import NapakalakiGame.Treasure;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JPanel;
@@ -17,14 +19,19 @@ import javax.swing.JPanel;
  * @author elena
  */
 public class PlayerView extends javax.swing.JPanel {
-    Player playerModel;
-    int anchoCarta=0;
+    private Player playerModel;
+    private int anchoCarta=0;
+    private Napakalaki napakalakiModel;
 
     /**
      * Creates new form PlayerView
      */
     public PlayerView() {
         initComponents();
+    }
+    
+    public void setNapakalaki(Napakalaki n){
+        napakalakiModel= n;
     }
     
     public void setPlayer (Player p){
@@ -61,6 +68,22 @@ public class PlayerView extends javax.swing.JPanel {
         //Se fuerza la actualización visual del panel
         aPanel.repaint();
         aPanel.revalidate();
+    }
+    
+    //Método para obtener la lista de tesoros seleccionados
+    private ArrayList<Treasure> getSelectedTreasures(JPanel aPanel){
+        //Se recorren los tesoros que contiene el panel,
+        //almacenando en un vector aquellos que estan seleccionados.
+        //Finalmente se devuelve dicho vector.
+        
+        TreasureView tv;
+        ArrayList<Treasure> output = new ArrayList();
+        for (Component c: aPanel.getComponents()){
+            tv = (TreasureView)c;
+            if (tv.isSelected())
+                output.add(tv.getTreasure());
+        }
+        return output;
     }
 
     /**

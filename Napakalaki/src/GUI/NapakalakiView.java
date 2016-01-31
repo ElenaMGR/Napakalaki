@@ -33,6 +33,7 @@ public class NapakalakiView extends JFrame {
         
         playerView.setPlayer(napakalakiModel.getCurrentPlayer());
         monsterView.setMonster(napakalakiModel.getCurrentMonster());
+        playerView.setNapakalaki(napakalakiModel);
     }
 
     /**
