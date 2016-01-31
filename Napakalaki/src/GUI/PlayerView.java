@@ -28,6 +28,8 @@ public class PlayerView extends javax.swing.JPanel {
      */
     public PlayerView() {
         initComponents();
+        sPHiddenTreasures.getHorizontalScrollBar().setUnitIncrement(16);
+        sPVisibleTreasures.getHorizontalScrollBar().setUnitIncrement(16);
     }
     
     public void setNapakalaki(Napakalaki n){
