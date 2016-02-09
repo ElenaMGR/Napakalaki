@@ -29,7 +29,6 @@ public class JuegoFinalizado extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBNewGame = new javax.swing.JButton();
         jBExit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -37,8 +36,6 @@ public class JuegoFinalizado extends javax.swing.JDialog {
         setTitle("End of Game");
         setModal(true);
         setResizable(false);
-
-        jBNewGame.setText("New Game");
 
         jBExit.setText("Exit");
         jBExit.addActionListener(new java.awt.event.ActionListener() {
@@ -58,14 +55,11 @@ public class JuegoFinalizado extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jLabel1)
-                        .addGap(0, 17, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jBNewGame)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBExit, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(71, 71, 71)
+                        .addComponent(jBExit, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,9 +67,7 @@ public class JuegoFinalizado extends javax.swing.JDialog {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBNewGame)
-                    .addComponent(jBExit))
+                .addComponent(jBExit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -89,7 +81,6 @@ public class JuegoFinalizado extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBExit;
-    private javax.swing.JButton jBNewGame;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
