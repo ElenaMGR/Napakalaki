@@ -1,10 +1,7 @@
 package GUI;
 
 
-import java.awt.Color;
-import java.awt.Container;
 import java.util.ArrayList;
-import javax.swing.JViewport;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

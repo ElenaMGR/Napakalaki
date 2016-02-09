@@ -7,7 +7,6 @@ package GUI;
 
 import java.awt.Container;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
