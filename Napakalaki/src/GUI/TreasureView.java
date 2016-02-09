@@ -30,26 +30,6 @@ public class TreasureView extends javax.swing.JPanel {
         initComponents();
     }
     
-
-    protected void paintComponent(Graphics g){
-        super.paintComponent(g);
-        ImageIcon icono;
-        BufferedImage imagen=null;
-        try {
-            String ruta;
-            if (selected)
-                ruta= "Backgrounds/bg_card_on.png";
-            else
-                ruta= "Backgrounds/bg_card_off.png";
-            imagen = ImageIO.read(getClass().getResource(ruta));
-        } catch (IOException ex) {
-            Logger.getLogger("Error backgrounds").log(Level.SEVERE, null, ex);
-        }
-             
-        icono = new ImageIcon(imagen);
-        g.drawImage(icono.getImage(), 0, 0, this.getWidth(), this.getHeight(), this.getBackground(), this);
-    }
-    
     public void setTreasure (Treasure t){
         treasureModel = t;
         jLNombreTreasure.setText(treasureModel.getName());
@@ -90,19 +70,19 @@ public class TreasureView extends javax.swing.JPanel {
         jPTreasure = new javax.swing.JPanel();
         jLImagen = new javax.swing.JLabel();
 
-        setBorder(null);
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
             }
         });
 
-        jLNombreTreasure.setForeground(new java.awt.Color(254, 254, 254));
+        jLNombreTreasure.setForeground(new java.awt.Color(1, 1, 1));
 
-        jLTipoTreasure.setForeground(new java.awt.Color(254, 254, 254));
+        jLTipoTreasure.setForeground(new java.awt.Color(1, 1, 1));
 
         jLBonusTreasure.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow"));
-        jLBonusTreasure.setForeground(new java.awt.Color(254, 254, 254));
+        jLBonusTreasure.setForeground(new java.awt.Color(1, 1, 1));
 
         jPTreasure.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPTreasure.setPreferredSize(new java.awt.Dimension(112, 191));
@@ -156,8 +136,10 @@ public class TreasureView extends javax.swing.JPanel {
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         if (isSelected()){
             selected=false;
+            setBackground(getParent().getBackground());
         }else{
             selected=true;
+            setBackground(Color.GRAY);
         }
         repaint();
     }//GEN-LAST:event_formMouseClicked

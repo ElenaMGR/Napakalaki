@@ -41,21 +41,6 @@ public class PlayerView extends javax.swing.JPanel {
         jBStealTreasure.setEnabled(false); 
     }
     
-    @Override
-    protected void paintComponent(Graphics g){
-        super.paintComponent(g);
-        ImageIcon icono;
-        BufferedImage imagen=null;
-        try {
-        String ruta = "Backgrounds/bg_player.png";
-            imagen = ImageIO.read(getClass().getResource(ruta));
-        } catch (IOException ex) {
-            Logger.getLogger("Error backgrounds").log(Level.SEVERE, null, ex);
-        }
-             
-        icono = new ImageIcon(imagen);
-        g.drawImage(icono.getImage(), 0, 0, this.getWidth(), this.getHeight(), this.getBackground(), this);
-    }
     
     public void setNapakalaki(Napakalaki n){
         napakalakiModel= n;
@@ -163,20 +148,20 @@ public class PlayerView extends javax.swing.JPanel {
         jPHiddenTreasures = new javax.swing.JPanel();
         jLCultisBonus = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254)), "Jugador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(1, 1, 1)), "Jugador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(1, 1, 1))); // NOI18N
         setLayout(null);
 
-        jLNombre.setForeground(new java.awt.Color(254, 254, 254));
+        jLNombre.setForeground(new java.awt.Color(1, 1, 1));
         jLNombre.setText("Nombre");
         add(jLNombre);
         jLNombre.setBounds(17, 29, 562, 17);
 
-        jLLevel.setForeground(new java.awt.Color(254, 254, 254));
+        jLLevel.setForeground(new java.awt.Color(1, 1, 1));
         jLLevel.setText("Level");
         add(jLLevel);
         jLLevel.setBounds(17, 52, 270, 17);
 
-        jLEnemy.setForeground(new java.awt.Color(254, 254, 254));
+        jLEnemy.setForeground(new java.awt.Color(1, 1, 1));
         jLEnemy.setText("Enemigo");
         add(jLEnemy);
         jLEnemy.setBounds(17, 75, 562, 17);
@@ -219,8 +204,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(pendingBadConsequenceView);
         pendingBadConsequenceView.setBounds(100, 420, 371, 130);
 
-        sPVisibleTreasures.setBackground(new java.awt.Color(1, 1, 1));
-        sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visible Treasures"));
+        sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(1, 1, 1)), "Visible Treasures", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(1, 1, 1))); // NOI18N
 
         jPVisibleTreasures.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPVisibleTreasures.setAlignmentX(0.0F);
@@ -231,8 +215,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(sPVisibleTreasures);
         sPVisibleTreasures.setBounds(20, 100, 278, 303);
 
-        sPHiddenTreasures.setBackground(new java.awt.Color(1, 1, 1));
-        sPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
+        sPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(1, 1, 1))); // NOI18N
 
         jPHiddenTreasures.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPHiddenTreasures.setAlignmentX(0.0F);
