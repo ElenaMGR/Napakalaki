@@ -34,6 +34,8 @@ public class Reglas extends javax.swing.JDialog {
         inicializarTextos();
         jTextArea1.setText(texto.get(0));
         npagina = 1;
+        
+        
         repaint();
         
     }
@@ -54,12 +56,13 @@ public class Reglas extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reglas.");
+        setResizable(false);
 
         jScrollPane1.setBorder(null);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(10);
-        jTextArea1.setFont(new java.awt.Font("URW Chancery L", 0, 24)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("URW Chancery L", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
@@ -116,6 +119,7 @@ public class Reglas extends javax.swing.JDialog {
         }else if (npagina==texto.size()){
             jBnext.setVisible(false);
         }
+        jTextArea1.setCaretPosition(0);
     }//GEN-LAST:event_jBnextActionPerformed
 
     private void jBbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbackActionPerformed
@@ -126,6 +130,7 @@ public class Reglas extends javax.swing.JDialog {
         }else if (npagina==texto.size()-1){
             jBnext.setVisible(true);
         }
+        jTextArea1.setCaretPosition(0);
     }//GEN-LAST:event_jBbackActionPerformed
     private void inicializarTextos(){
         texto.add("        Juego Napakalaki \n\n"
@@ -138,8 +143,36 @@ public class Reglas extends javax.swing.JDialog {
                 + "una serie de armas o tesoros. Dependiendo de que se gane o se pierda el combate"
                 + "se irá incrementando o decrementando el nivel y ganando o perdiendo tesoros.\n\n"
                 + "   Por tanto hay dos barajas de cartas, una para los monstruos contra los "
-                + "que se combate y otra para los tesoros que nos sirven de ayuda en esos combates");
-        texto.add("");
+                + "que se combate y otra para los tesoros que nos sirven de ayuda en esos combates.\n\n"
+                + "   Después del combate el jugador puede robarle una carta oculta a su enemigo. Esto"
+                + " solo se podrá hacer una vez en toda la partida.");
+        texto.add("        Tesoros\n\n"
+                + "   Cada carta posee un nombre, un bonus y un tipo.\n"
+                + "   El bonus aumenta el nivel de combate del jugador.\n"
+                + "   Tipos de tesoros: armas de una o dos manos, casco, calzado y armadura.\n\n"
+                + "   Solo se podrá tener equipado un tesoro de cada tipo, salvo para el caso de "
+                + "armas. Puedes equiparte hasta dos armas de una mano. Si se tiene equipada un "
+                + "arma de dos manos, no puedes equiparte de más armas.\n\n"
+                + "   Se pueden tener 4 tesoros ocultos como máximo y no será posible volver"
+                + "a ocultar cartas ya equipadas.");
+        texto.add("        Monstruos\n\n"
+                + "   Cada monstruo posee un nombre, un nivel de combate, un buen rollo y un mal rollo.\n"
+                + "   El buen rollo indica el incremento de nivel y/o tesoros si se consigue vencer al "
+                + "monstruo.\n"
+                + "   El mal rollo indica el decremento de nivel y/o tesoros que perderá el jugador"
+                + "si pierde el combate contra el monstruo.\n\n"
+                + "   Existen monstruos con cualidades especiales contra jugadores sectarios.");
+        texto.add("      Jugadores Sectarios\n\n"
+                + "   Si un jugador pierde un combate tirará el dado para saber si se convierte"
+                + "en sectario, si sale un 1 se convierte.\n\n"
+                + "   Al tranformarse en sectario el jugador robará una carta de sectario que "
+                + "indica el bonus de sectario, que afecta a su nivel de combate.\n\n"
+                + "   Cuando un jugador roba una carta a un jugador sectario, este debe darle una "
+                + "carta equipada al azar.\n\n"
+                + "   Existen monstruos que incluyen un aumento o reducción del nivel de combate"
+                + " cuando se enfrentan a jugadores sectarios.\n\n"
+                + "   Una vez que un jugador adquiere el carácter de sectario nunca pierde esta"
+                + "condición.");
     }
             
 
