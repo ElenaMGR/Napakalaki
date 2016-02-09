@@ -13,6 +13,7 @@ import NapakalakiGame.Treasure;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -240,12 +241,16 @@ public class PlayerView extends javax.swing.JPanel {
     }//GEN-LAST:event_jBDiscardTreasuresActionPerformed
 
     private void jBStealTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBStealTreasureActionPerformed
-
-        //Enviar mensaje al modelo para que se desarrolle la accion
-        napakalakiModel.getCurrentPlayer().stealTreasure();
-        //Una vez robado el tesoro se bloquea el botón de Steal
-        jBStealTreasure.setEnabled(false);
-        //Actualiza la vista
+        //Compruebo si puede robar al enemigo
+        if (napakalakiModel.getCurrentPlayer().getEnemy().canYouGiveMeATreasure()){
+            //Enviar mensaje al modelo para que se desarrolle la accion
+            napakalakiModel.getCurrentPlayer().stealTreasure();
+            //Una vez robado el tesoro se bloquea el botón de Steal
+            jBStealTreasure.setEnabled(false);
+            //Actualiza la vista
+        }else{
+            JOptionPane.showMessageDialog(this,"Tu enemigo no tiene tesoros","ERROR",JOptionPane.PLAIN_MESSAGE);
+        }
         setPlayer (napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_jBStealTreasureActionPerformed
 
