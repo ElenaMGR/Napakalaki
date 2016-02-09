@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import NapakalakiGame.CombatResult;
 import NapakalakiGame.CultistPlayer;
 import NapakalakiGame.Napakalaki;
 import NapakalakiGame.Player;
@@ -239,8 +240,11 @@ public class PlayerView extends javax.swing.JPanel {
     }//GEN-LAST:event_jBDiscardTreasuresActionPerformed
 
     private void jBStealTreasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBStealTreasureActionPerformed
+
         //Enviar mensaje al modelo para que se desarrolle la accion
         napakalakiModel.getCurrentPlayer().stealTreasure();
+        //Una vez robado el tesoro se bloquea el botón de Steal
+        jBStealTreasure.setEnabled(false);
         //Actualiza la vista
         setPlayer (napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_jBStealTreasureActionPerformed
