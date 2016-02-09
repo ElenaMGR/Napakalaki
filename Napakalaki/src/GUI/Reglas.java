@@ -30,6 +30,7 @@ public class Reglas extends javax.swing.JDialog {
         
         jTextArea1.setOpaque(false);
         jScrollPane1.setOpaque(false);
+        jScrollPane1.getViewport().setOpaque(false);
         jBback.setVisible(false);
         
         jTextArea1.setLineWrap(true);

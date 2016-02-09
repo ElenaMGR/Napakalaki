@@ -62,6 +62,7 @@ public class NapakalakiView extends JFrame {
         jBNextTurn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMReglas = new javax.swing.JMenuItem();
         jMCreditos = new javax.swing.JMenuItem();
@@ -101,6 +102,10 @@ public class NapakalakiView extends JFrame {
         jBNextTurn.setBounds(660, 610, 220, 29);
 
         jMenu1.setText("Menu");
+
+        jMExit.setText("Exit");
+        jMenu1.add(jMExit);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Help");
@@ -202,6 +207,7 @@ public class NapakalakiView extends JFrame {
     private javax.swing.JButton jBMeetMonster;
     private javax.swing.JButton jBNextTurn;
     private javax.swing.JMenuItem jMCreditos;
+    private javax.swing.JMenuItem jMExit;
     private javax.swing.JMenuItem jMReglas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
