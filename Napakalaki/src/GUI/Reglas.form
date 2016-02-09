@@ -74,6 +74,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="URW Chancery L" size="20" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
+            </Property>
             <Property name="rows" type="int" value="5"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -84,6 +87,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="jBback">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="&lt;- Atras"/>
       </Properties>
       <Events>
@@ -92,6 +98,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jBnext">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Siguiente -&gt;"/>
       </Properties>
       <Events>

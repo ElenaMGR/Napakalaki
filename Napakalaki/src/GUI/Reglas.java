@@ -31,6 +31,13 @@ public class Reglas extends javax.swing.JDialog {
         jTextArea1.setOpaque(false);
         jScrollPane1.setOpaque(false);
         jScrollPane1.getViewport().setOpaque(false);
+        jBback.setOpaque(false);
+        jBnext.setOpaque(false);
+        jBback.setContentAreaFilled(false);
+        jBback.setBorderPainted(false);
+        jBnext.setContentAreaFilled(false);
+        jBnext.setBorderPainted(false);
+        
         jBback.setVisible(false);
         
         jTextArea1.setLineWrap(true);
@@ -68,10 +75,12 @@ public class Reglas extends javax.swing.JDialog {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(10);
         jTextArea1.setFont(new java.awt.Font("URW Chancery L", 0, 20)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(254, 254, 254));
         jTextArea1.setRows(5);
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jBback.setForeground(new java.awt.Color(254, 254, 254));
         jBback.setText("<- Atras");
         jBback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +88,7 @@ public class Reglas extends javax.swing.JDialog {
             }
         });
 
+        jBnext.setForeground(new java.awt.Color(254, 254, 254));
         jBnext.setText("Siguiente ->");
         jBnext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
