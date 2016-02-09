@@ -33,6 +33,7 @@ public class NapakalakiView extends JFrame {
         jBCombat.setEnabled(false);
         jBNextTurn.setEnabled(false);
         jMReglas.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1,0));
+        jMCreditos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2,0));
     }
     
     public void setNapakalaki(Napakalaki n){
@@ -187,7 +188,11 @@ public class NapakalakiView extends JFrame {
     }//GEN-LAST:event_jMReglasActionPerformed
 
     private void jMCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCreditosActionPerformed
-        // TODO add your handling code here:
+        String texto = "Juego Realizado por: \n"
+                + "\nElena María Gómez Ríos\n"
+                + "Jose Luis Martínez Ortiz\n\n"
+                + "para la asignatura de PDOO.";
+        JOptionPane.showMessageDialog(this, texto, "Creditos", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jMCreditosActionPerformed
 
     
