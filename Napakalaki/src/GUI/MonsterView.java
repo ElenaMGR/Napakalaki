@@ -33,6 +33,7 @@ public class MonsterView extends javax.swing.JPanel {
         monsterModel = m;
         jLNombre.setText(monsterModel.getName());
         jLCombatLevel.setText("Combat Level: "+monsterModel.getCombatLevel());
+        jLCombatLCultist.setText("Combat Level vs Cultist Player: "+monsterModel.getCombatLevelAgainstCultistPlayer());
         BufferedImage imagen=null;
         try {
             String ruta = "Monsters/"+monsterModel.getName()+".jpg";
@@ -62,6 +63,7 @@ public class MonsterView extends javax.swing.JPanel {
         jLImagen4 = new javax.swing.JLabel();
         jLNombre = new javax.swing.JLabel();
         jLCombatLevel = new javax.swing.JLabel();
+        jLCombatLCultist = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Monster"));
 
@@ -83,19 +85,26 @@ public class MonsterView extends javax.swing.JPanel {
 
         jLCombatLevel.setText("jLabel1");
 
+        jLCombatLCultist.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
+                        .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLNombre)
-                            .addComponent(jLCombatLevel))))
+                            .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLNombre)
+                                    .addComponent(jLCombatLevel)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLCombatLCultist)))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(prizeView, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
@@ -111,7 +120,9 @@ public class MonsterView extends javax.swing.JPanel {
                         .addComponent(jLNombre)
                         .addGap(8, 8, 8)
                         .addComponent(jLCombatLevel)
-                        .addGap(19, 19, 19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLCombatLCultist)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPTreasure4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(prizeView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,6 +135,7 @@ public class MonsterView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.BadConsequenceView badConsequenceView;
+    private javax.swing.JLabel jLCombatLCultist;
     private javax.swing.JLabel jLCombatLevel;
     private javax.swing.JLabel jLImagen4;
     private javax.swing.JLabel jLNombre;
