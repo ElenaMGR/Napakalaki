@@ -65,7 +65,7 @@ public class CultistPlayer extends Player {
      * 
      */
     @Override
-    protected boolean canYouGiveMeATreasure(){
+    public boolean canYouGiveMeATreasure(){
         return !(super.getVisibleTreasures().isEmpty());
     }
     

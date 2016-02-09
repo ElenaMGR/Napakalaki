@@ -405,7 +405,7 @@ public class Player {
      * jugador y false en caso contrario.
      * 
      */
-    protected boolean canYouGiveMeATreasure(){
+    public boolean canYouGiveMeATreasure(){
         boolean numTreasure=false;
         if(!hiddenTreasures.isEmpty())
             numTreasure=true;
