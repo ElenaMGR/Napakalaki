@@ -146,7 +146,7 @@ public class Reglas extends javax.swing.JDialog {
     }//GEN-LAST:event_jBbackActionPerformed
     private void inicializarTextos(){
         texto.add("        Juego Napakalaki \n\n"
-                + "   El número de jugadores es de 2 a 6.\n\n"
+                + "   El número de jugadores es de 2 a 4.\n\n"
                 + "   Al inicio del juego todos los jugadores tendrán nivel 1 y el primero en "
                 + "alcanzar el nivel 10 seŕa el ganador.\n\n"
                 + "   A cada jugador se le asignará al azar un archienemigo que será uno de los "
