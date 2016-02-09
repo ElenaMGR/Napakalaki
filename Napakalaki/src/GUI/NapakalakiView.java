@@ -8,8 +8,10 @@ package GUI;
 import NapakalakiGame.CombatResult;
 import NapakalakiGame.Napakalaki;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -30,6 +32,7 @@ public class NapakalakiView extends JFrame {
         setLocation(0,0);
         jBCombat.setEnabled(false);
         jBNextTurn.setEnabled(false);
+        jMReglas.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1,0));
     }
     
     public void setNapakalaki(Napakalaki n){
@@ -60,6 +63,7 @@ public class NapakalakiView extends JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMReglas = new javax.swing.JMenuItem();
+        jMCreditos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -107,6 +111,14 @@ public class NapakalakiView extends JFrame {
             }
         });
         jMenu2.add(jMReglas);
+
+        jMCreditos.setText("About");
+        jMCreditos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMCreditosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMCreditos);
 
         jMenuBar1.add(jMenu2);
 
@@ -174,12 +186,17 @@ public class NapakalakiView extends JFrame {
         r.setVisible(true);
     }//GEN-LAST:event_jMReglasActionPerformed
 
+    private void jMCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCreditosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMCreditosActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCombat;
     private javax.swing.JButton jBMeetMonster;
     private javax.swing.JButton jBNextTurn;
+    private javax.swing.JMenuItem jMCreditos;
     private javax.swing.JMenuItem jMReglas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

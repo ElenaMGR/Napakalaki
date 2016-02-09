@@ -35,7 +35,6 @@ public class Reglas extends javax.swing.JDialog {
         jTextArea1.setText(texto.get(0));
         npagina = 1;
         
-        
         repaint();
         
     }
@@ -162,7 +161,7 @@ public class Reglas extends javax.swing.JDialog {
                 + "   El mal rollo indica el decremento de nivel y/o tesoros que perderá el jugador"
                 + "si pierde el combate contra el monstruo.\n\n"
                 + "   Existen monstruos con cualidades especiales contra jugadores sectarios.");
-        texto.add("      Jugadores Sectarios\n\n"
+        texto.add("       Jugadores Sectarios\n\n"
                 + "   Si un jugador pierde un combate tirará el dado para saber si se convierte"
                 + "en sectario, si sale un 1 se convierte.\n\n"
                 + "   Al tranformarse en sectario el jugador robará una carta de sectario que "
@@ -173,6 +172,18 @@ public class Reglas extends javax.swing.JDialog {
                 + " cuando se enfrentan a jugadores sectarios.\n\n"
                 + "   Una vez que un jugador adquiere el carácter de sectario nunca pierde esta"
                 + "condición.");
+        texto.add("        Desarollo del juego\n\n"
+                + "   Al inicio del juego se decide al azar el jugador que comenzará la partida.\n\n"
+                + "   Cada jugador lanza un dado al principio del juego o cuando se queda sin cartas"
+                + " para saber cuantas cartas robará. 1 tesoro si saca un 1, 2 tesoros si saca "
+                + "entre un 2 y un 5, y 3 tesoros si saca un 6.\n\n"
+                + "   Un jugador podrá equiparse cartas antes de conocer al monstruo o después del "
+                + "combate.");
+        texto.add("        Combate\n\n"
+                + "   Si el nivel de combate del monstruo es mayor o igual que el del jugador, el "
+                + "jugador perderá el combate y deberá cumplir su mal rollo.\n\n"
+                + "   Si por el contrario es menor, el jugador ganará el combate y obtendrá "
+                + "el buen rollo de dicho muestruo.");
     }
             
 
