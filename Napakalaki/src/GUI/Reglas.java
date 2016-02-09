@@ -4,6 +4,7 @@ package GUI;
 import java.awt.Color;
 import java.awt.Container;
 import java.util.ArrayList;
+import javax.swing.JViewport;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,9 +24,12 @@ public class Reglas extends javax.swing.JDialog {
      */
     public Reglas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();      
-        getContentPane().setBackground(Color.WHITE);
-        jTextArea1.setBackground(Color.WHITE);
+        setContentPane(new Contenedor("fondo_reglas"));       
+        initComponents();
+        
+        
+        jTextArea1.setOpaque(false);
+        jScrollPane1.setOpaque(false);
         jBback.setVisible(false);
         
         jTextArea1.setLineWrap(true);
