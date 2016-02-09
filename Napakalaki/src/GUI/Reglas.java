@@ -184,6 +184,9 @@ public class Reglas extends javax.swing.JDialog {
                 + "jugador perderá el combate y deberá cumplir su mal rollo.\n\n"
                 + "   Si por el contrario es menor, el jugador ganará el combate y obtendrá "
                 + "el buen rollo de dicho muestruo.");
+        texto.add("        Sobre el Juego\n\n"
+                + "   Basado en el conocido juego de rol diseñado por Steve Jackson llamado"
+                + " Munchkin.\n");
     }
             
 
