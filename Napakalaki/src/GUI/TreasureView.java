@@ -7,6 +7,7 @@ package GUI;
 
 import NapakalakiGame.Treasure;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -27,6 +28,26 @@ public class TreasureView extends javax.swing.JPanel {
      */
     public TreasureView() {
         initComponents();
+    }
+    
+
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        ImageIcon icono;
+        BufferedImage imagen=null;
+        try {
+            String ruta;
+            if (selected)
+                ruta= "Backgrounds/bg_card_on.png";
+            else
+                ruta= "Backgrounds/bg_card_off.png";
+            imagen = ImageIO.read(getClass().getResource(ruta));
+        } catch (IOException ex) {
+            Logger.getLogger("Error backgrounds").log(Level.SEVERE, null, ex);
+        }
+             
+        icono = new ImageIcon(imagen);
+        g.drawImage(icono.getImage(), 0, 0, this.getWidth(), this.getHeight(), this.getBackground(), this);
     }
     
     public void setTreasure (Treasure t){
@@ -76,7 +97,12 @@ public class TreasureView extends javax.swing.JPanel {
             }
         });
 
+        jLNombreTreasure.setForeground(new java.awt.Color(254, 254, 254));
+
+        jLTipoTreasure.setForeground(new java.awt.Color(254, 254, 254));
+
         jLBonusTreasure.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow"));
+        jLBonusTreasure.setForeground(new java.awt.Color(254, 254, 254));
 
         jPTreasure.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPTreasure.setPreferredSize(new java.awt.Dimension(112, 191));
@@ -130,10 +156,8 @@ public class TreasureView extends javax.swing.JPanel {
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         if (isSelected()){
             selected=false;
-            setBackground(getParent().getBackground());
         }else{
             selected=true;
-            setBackground(Color.GRAY);
         }
         repaint();
     }//GEN-LAST:event_formMouseClicked
