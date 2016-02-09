@@ -219,6 +219,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(pendingBadConsequenceView);
         pendingBadConsequenceView.setBounds(100, 420, 371, 130);
 
+        sPVisibleTreasures.setBackground(new java.awt.Color(1, 1, 1));
         sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visible Treasures"));
 
         jPVisibleTreasures.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -230,6 +231,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(sPVisibleTreasures);
         sPVisibleTreasures.setBounds(20, 100, 278, 303);
 
+        sPHiddenTreasures.setBackground(new java.awt.Color(1, 1, 1));
         sPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
 
         jPHiddenTreasures.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
