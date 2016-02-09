@@ -44,6 +44,8 @@ public class PlayerView extends javax.swing.JPanel {
         if (playerModel instanceof CultistPlayer){
             jLNombre.setText("Jugador Sectario: "+playerModel.getName());
             jLCultisBonus.setText("Bonus: "+((CultistPlayer)playerModel).getCultisGainedLevels());
+        }else{
+            jLCultisBonus.setText("");
         }
         jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
@@ -213,7 +215,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(sPHiddenTreasures);
         sPHiddenTreasures.setBounds(300, 130, 278, 303);
         add(jLCultisBonus);
-        jLCultisBonus.setBounds(310, 50, 260, 0);
+        jLCultisBonus.setBounds(320, 50, 260, 17);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBMakeVisibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMakeVisibleActionPerformed
