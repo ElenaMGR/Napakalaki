@@ -11,7 +11,14 @@ import NapakalakiGame.Player;
 import NapakalakiGame.Treasure;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -32,6 +39,22 @@ public class PlayerView extends javax.swing.JPanel {
         sPHiddenTreasures.getHorizontalScrollBar().setUnitIncrement(16);
         sPVisibleTreasures.getHorizontalScrollBar().setUnitIncrement(16); 
         jBStealTreasure.setEnabled(false); 
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        ImageIcon icono;
+        BufferedImage imagen=null;
+        try {
+        String ruta = "Backgrounds/bg_player.png";
+            imagen = ImageIO.read(getClass().getResource(ruta));
+        } catch (IOException ex) {
+            Logger.getLogger("Error backgrounds").log(Level.SEVERE, null, ex);
+        }
+             
+        icono = new ImageIcon(imagen);
+        g.drawImage(icono.getImage(), 0, 0, this.getWidth(), this.getHeight(), this.getBackground(), this);
     }
     
     public void setNapakalaki(Napakalaki n){
@@ -140,7 +163,7 @@ public class PlayerView extends javax.swing.JPanel {
         jPHiddenTreasures = new javax.swing.JPanel();
         jLCultisBonus = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Jugador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(254, 254, 254)), "Jugador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         setLayout(null);
 
         jLNombre.setForeground(new java.awt.Color(254, 254, 254));

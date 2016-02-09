@@ -6,7 +6,9 @@
       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
         <TitledBorder title="Jugador">
           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
+            <LineBorder>
+              <Color PropertyName="color" blue="fe" green="fe" red="fe" type="rgb"/>
+            </LineBorder>
           </Border>
           <Color PropertyName="color" blue="fe" green="fe" red="fe" type="rgb"/>
         </TitledBorder>
