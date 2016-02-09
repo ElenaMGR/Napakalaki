@@ -191,7 +191,7 @@ public class NapakalakiView extends JFrame {
         String texto = "Juego Realizado por: \n"
                 + "\nElena María Gómez Ríos\n"
                 + "Jose Luis Martínez Ortiz\n\n"
-                + "para la asignatura de PDOO.";
+                + "Para la asignatura de PDOO.";
         JOptionPane.showMessageDialog(this, texto, "Creditos", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jMCreditosActionPerformed
 
