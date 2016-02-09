@@ -2,6 +2,7 @@ package GUI;
 
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +16,7 @@ import java.awt.Color;
  */
 public class Reglas extends javax.swing.JDialog {
     int npagina;
+    ArrayList<String> texto= new ArrayList();
     /**
      * Creates new form Reglas
      */
@@ -25,8 +27,12 @@ public class Reglas extends javax.swing.JDialog {
         jTextArea1.setBackground(Color.WHITE);
         jBback.setVisible(false);
         
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setWrapStyleWord(true);
         
-        jTextArea1.setText("");
+        inicializarTextos();
+        jTextArea1.setText(texto.get(0));
         npagina = 1;
         repaint();
         
@@ -53,7 +59,7 @@ public class Reglas extends javax.swing.JDialog {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(10);
-        jTextArea1.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("URW Chancery L", 0, 24)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
@@ -78,13 +84,14 @@ public class Reglas extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBback, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBnext, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jBback, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addComponent(jBnext, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,36 +109,39 @@ public class Reglas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnextActionPerformed
-        npagina++;
-        switch(npagina){
-            case 2: jTextArea1.setText("");
-                    jBback.setVisible(true);
-                    break;
-            case 3: jTextArea1.setText("");
-                    break;
-            case 4: jTextArea1.setText("");
-                    break;
-            case 5: jTextArea1.setText("");
-                    jBnext.setVisible(false);
-                    break;
+        npagina++; 
+        jTextArea1.setText(texto.get(npagina-1));
+        if (npagina==2){
+            jBback.setVisible(true);
+        }else if (npagina==texto.size()){
+            jBnext.setVisible(false);
         }
-            
     }//GEN-LAST:event_jBnextActionPerformed
 
     private void jBbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbackActionPerformed
         npagina--;
-        switch(npagina){
-            case 1: jTextArea1.setText("");
-                    jBback.setVisible(false);
-                    break;
-            case 2: jTextArea1.setText("");break;
-            case 3: jTextArea1.setText("");break;
-            case 4: jTextArea1.setText("");
-                    jBnext.setVisible(true);
-                    break;
+        jTextArea1.setText(texto.get(npagina-1));    
+        if (npagina==1){
+            jBback.setVisible(false);
+        }else if (npagina==texto.size()-1){
+            jBnext.setVisible(true);
         }
     }//GEN-LAST:event_jBbackActionPerformed
-
+    private void inicializarTextos(){
+        texto.add("        Juego Napakalaki \n\n"
+                + "   El número de jugadores es de 2 a 6.\n\n"
+                + "   Al inicio del juego todos los jugadores tendrán nivel 1 y el primero en "
+                + "alcanzar el nivel 10 seŕa el ganador.\n\n"
+                + "   A cada jugador se le asignará al azar un archienemigo que será uno de los "
+                + "otros jugadores.\n");
+        texto.add("   La dinámica del juego consiste en ir combatiendo con monstruos utilizando"
+                + "una serie de armas o tesoros. Dependiendo de que se gane o se pierda el combate"
+                + "se irá incrementando o decrementando el nivel y ganando o perdiendo tesoros.\n\n"
+                + "   Por tanto hay dos barajas de cartas, una para los monstruos contra los "
+                + "que se combate y otra para los tesoros que nos sirven de ayuda en esos combates");
+        texto.add("");
+    }
+            
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBback;
