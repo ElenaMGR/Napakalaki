@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSpinner.DefaultEditor;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -84,6 +85,36 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         
         jBPlay.setEnabled(estado);
 
+    }
+    
+    //Comprobamos que los nombres de los jugadores sean distintos, para evitar
+    //errores en el juego
+    public boolean nombresErroneos(){   
+        ArrayList<String> nom= new ArrayList();
+        boolean repetidos=false;
+        nom.add(jTplayer1.getText());
+        nom.add(jTplayer2.getText());
+        for(int i=0; i<= numeroPlayers-3 ;i++){
+            nom.add(texts.get(i).getText());
+        }
+        
+
+        for (int i=0; i<nom.size()-1 && !repetidos; i++){
+            for (int j=i+1; j<nom.size(); j++){
+                if (nom.get(i).equals(nom.get(j))){
+                    JOptionPane.showMessageDialog(this,"No puede haber jugadores con el mismo nombre","ERROR",JOptionPane.PLAIN_MESSAGE);
+                    repetidos=true;
+                }
+            }
+        }
+        
+        return repetidos;
+    }
+    
+    
+    public ArrayList<String> getNames(){
+        this.setVisible(true);
+        return names;
     }
 
     /**
@@ -281,12 +312,15 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     }//GEN-LAST:event_jBCancelActionPerformed
 
     private void jBPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPlayActionPerformed
-        names.add(jTplayer1.getText());
-        names.add(jTplayer2.getText());
-        for(int i=0; i<= numeroPlayers-3 ;i++){
-            names.add(texts.get(i).getText());
+        if (!nombresErroneos()){
+        
+            names.add(jTplayer1.getText());
+            names.add(jTplayer2.getText());
+            for(int i=0; i<= numeroPlayers-3 ;i++){
+                names.add(texts.get(i).getText());
+            }
+            dispose();
         }
-        dispose();
     }//GEN-LAST:event_jBPlayActionPerformed
 
     private void jTplayer1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTplayer1KeyReleased
@@ -319,10 +353,6 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         datosVacios();
     }//GEN-LAST:event_jSNJugadoresStateChanged
 
-    public ArrayList<String> getNames(){
-        this.setVisible(true);
-        return names;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCancel;

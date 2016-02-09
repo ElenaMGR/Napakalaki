@@ -6,10 +6,8 @@
 package NapakalakiGame;
 
 import GUI.Dice;
-import GUI.MonsterView;
 import GUI.NapakalakiView;
 import GUI.PlayerNamesCapture;
-import java.awt.Dimension;
 import java.util.ArrayList;
 
 /**
@@ -33,8 +31,10 @@ public class JuegoMain {
         napakalakiView.setNapakalaki(game);
         napakalakiView.repaint();
         napakalakiView.revalidate();
+        
         //Visualiza la ventana (debe ser última línea)
         napakalakiView.setVisible(true);  
+        
     }
     
 }
