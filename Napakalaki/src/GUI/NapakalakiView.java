@@ -103,6 +103,11 @@ public class NapakalakiView extends JFrame {
             playerView.setEnabledjBStealTreasure(false);
             //Actualiza la vista
             setNapakalaki(napakalakiModel);
+        }else{
+            if (napakalakiModel.getCurrentPlayer().getHiddenTreasures().size()>4)
+                JOptionPane.showMessageDialog(this,"No se pueden tener mas de 4 tesoros ocultos","ERROR",JOptionPane.PLAIN_MESSAGE);
+            else
+                JOptionPane.showMessageDialog(this,"Tienes un mal rollo que cumplir","ERROR",JOptionPane.PLAIN_MESSAGE);
         }
     }//GEN-LAST:event_jBNextTurnActionPerformed
 
