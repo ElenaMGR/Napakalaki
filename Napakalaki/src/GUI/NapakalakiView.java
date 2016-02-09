@@ -23,7 +23,12 @@ public class NapakalakiView extends JFrame {
      * Creates new form NapakalakiView
      */
     public NapakalakiView() {
+        setContentPane(new Contenedor("bg_main")); 
         initComponents();
+        
+        playerView.setOpaque(false);
+        monsterView.setOpaque(false);
+        
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());

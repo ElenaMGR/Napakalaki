@@ -140,17 +140,20 @@ public class PlayerView extends javax.swing.JPanel {
         jPHiddenTreasures = new javax.swing.JPanel();
         jLCultisBonus = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Jugador"));
+        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Jugador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(254, 254, 254))); // NOI18N
         setLayout(null);
 
+        jLNombre.setForeground(new java.awt.Color(254, 254, 254));
         jLNombre.setText("Nombre");
         add(jLNombre);
         jLNombre.setBounds(17, 29, 562, 17);
 
+        jLLevel.setForeground(new java.awt.Color(254, 254, 254));
         jLLevel.setText("Level");
         add(jLLevel);
         jLLevel.setBounds(17, 52, 270, 17);
 
+        jLEnemy.setForeground(new java.awt.Color(254, 254, 254));
         jLEnemy.setText("Enemigo");
         add(jLEnemy);
         jLEnemy.setBounds(17, 75, 562, 17);
