@@ -56,6 +56,10 @@ public class NapakalakiView extends JFrame {
         jBMeetMonster = new javax.swing.JButton();
         jBCombat = new javax.swing.JButton();
         jBNextTurn = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMReglas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -90,6 +94,23 @@ public class NapakalakiView extends JFrame {
         });
         getContentPane().add(jBNextTurn);
         jBNextTurn.setBounds(660, 610, 220, 29);
+
+        jMenu1.setText("Menu");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Help");
+
+        jMReglas.setText("Rules");
+        jMReglas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMReglasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMReglas);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,12 +169,21 @@ public class NapakalakiView extends JFrame {
         setNapakalaki(napakalakiModel);
     }//GEN-LAST:event_jBCombatActionPerformed
 
+    private void jMReglasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMReglasActionPerformed
+        Reglas r = new Reglas (this,true);
+        r.setVisible(true);
+    }//GEN-LAST:event_jMReglasActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCombat;
     private javax.swing.JButton jBMeetMonster;
     private javax.swing.JButton jBNextTurn;
+    private javax.swing.JMenuItem jMReglas;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private GUI.MonsterView monsterView;
     private GUI.PlayerView playerView;
     // End of variables declaration//GEN-END:variables
