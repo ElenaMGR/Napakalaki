@@ -2,6 +2,7 @@ package GUI;
 
 
 import java.awt.Color;
+import java.awt.Container;
 import java.util.ArrayList;
 
 /*
@@ -22,7 +23,7 @@ public class Reglas extends javax.swing.JDialog {
      */
     public Reglas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();
+        initComponents();      
         getContentPane().setBackground(Color.WHITE);
         jTextArea1.setBackground(Color.WHITE);
         jBback.setVisible(false);
