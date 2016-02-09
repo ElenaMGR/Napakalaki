@@ -90,7 +90,7 @@ public class TreasureView extends javax.swing.JPanel {
         jPTreasure = new javax.swing.JPanel();
         jLImagen = new javax.swing.JLabel();
 
-        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setBorder(null);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
