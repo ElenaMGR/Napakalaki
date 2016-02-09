@@ -133,6 +133,12 @@ public class NapakalakiView extends JFrame {
         JOptionPane.showMessageDialog(this,texto,"Resultado",JOptionPane.PLAIN_MESSAGE);
         
         
+        //if (napakalakiModel.endOfGame(resultado)){
+            JuegoFinalizado end = new JuegoFinalizado(this,true);
+            end.setLocationRelativeTo(this);
+            end.setVisible(true);       
+       // }
+        
         playerView.setEnabledjBMakeVisible(true);
         jBNextTurn.setEnabled(true);
         jBCombat.setEnabled(false);
