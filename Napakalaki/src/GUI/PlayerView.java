@@ -43,6 +43,7 @@ public class PlayerView extends javax.swing.JPanel {
         jLNombre.setText(playerModel.getName());
         if (playerModel instanceof CultistPlayer){
             jLNombre.setText("Jugador Sectario: "+playerModel.getName());
+            jLCultisBonus.setText("Bonus: "+((CultistPlayer)playerModel).getCultisGainedLevels());
         }
         jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
@@ -51,7 +52,7 @@ public class PlayerView extends javax.swing.JPanel {
         
         pendingBadConsequenceView.setPendingBadConsequenceView(playerModel.getPendingBadConsequence()); 
         isVisiblePendingBadConsequence();
-      
+        
         repaint();
         revalidate();
     }
@@ -135,6 +136,7 @@ public class PlayerView extends javax.swing.JPanel {
         jPVisibleTreasures = new javax.swing.JPanel();
         sPHiddenTreasures = new javax.swing.JScrollPane();
         jPHiddenTreasures = new javax.swing.JPanel();
+        jLCultisBonus = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Jugador"));
         setLayout(null);
@@ -145,7 +147,7 @@ public class PlayerView extends javax.swing.JPanel {
 
         jLLevel.setText("Level");
         add(jLLevel);
-        jLLevel.setBounds(17, 52, 562, 17);
+        jLLevel.setBounds(17, 52, 270, 17);
 
         jLEnemy.setText("Enemigo");
         add(jLEnemy);
@@ -187,7 +189,7 @@ public class PlayerView extends javax.swing.JPanel {
         add(jBDiscardAll);
         jBDiscardAll.setBounds(95, 647, 190, 29);
         add(pendingBadConsequenceView);
-        pendingBadConsequenceView.setBounds(95, 437, 371, 149);
+        pendingBadConsequenceView.setBounds(100, 450, 371, 130);
 
         sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visible Treasures"));
 
@@ -198,7 +200,7 @@ public class PlayerView extends javax.swing.JPanel {
         sPVisibleTreasures.setViewportView(jPVisibleTreasures);
 
         add(sPVisibleTreasures);
-        sPVisibleTreasures.setBounds(17, 104, 278, 303);
+        sPVisibleTreasures.setBounds(20, 130, 278, 303);
 
         sPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
 
@@ -209,7 +211,9 @@ public class PlayerView extends javax.swing.JPanel {
         sPHiddenTreasures.setViewportView(jPHiddenTreasures);
 
         add(sPHiddenTreasures);
-        sPHiddenTreasures.setBounds(301, 104, 278, 303);
+        sPHiddenTreasures.setBounds(300, 130, 278, 303);
+        add(jLCultisBonus);
+        jLCultisBonus.setBounds(310, 50, 260, 0);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBMakeVisibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMakeVisibleActionPerformed
@@ -262,6 +266,7 @@ public class PlayerView extends javax.swing.JPanel {
     private javax.swing.JButton jBDiscardTreasures;
     private javax.swing.JButton jBMakeVisible;
     private javax.swing.JButton jBStealTreasure;
+    private javax.swing.JLabel jLCultisBonus;
     private javax.swing.JLabel jLEnemy;
     private javax.swing.JLabel jLLevel;
     private javax.swing.JLabel jLNombre;

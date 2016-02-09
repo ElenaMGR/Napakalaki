@@ -73,6 +73,10 @@ public class CultistPlayer extends Player {
         return totalCultistPlayers;
     }
     
+    public int getCultisGainedLevels(){
+        return myCultistCard.getGainedLevels();
+    }
+    
     @Override
     public String toString(){
         return "Judador Sectario: "+super.toString();

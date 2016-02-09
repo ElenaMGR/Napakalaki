@@ -45,7 +45,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="17" y="52" width="562" height="-1"/>
+          <AbsoluteConstraints x="17" y="52" width="270" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -114,7 +114,7 @@
     <Component class="GUI.PendingBadConsequenceView" name="pendingBadConsequenceView">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="95" y="437" width="371" height="-1"/>
+          <AbsoluteConstraints x="100" y="450" width="371" height="130"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -132,7 +132,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="17" y="104" width="278" height="303"/>
+          <AbsoluteConstraints x="20" y="130" width="278" height="303"/>
         </Constraint>
       </Constraints>
 
@@ -170,7 +170,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="301" y="104" width="278" height="303"/>
+          <AbsoluteConstraints x="300" y="130" width="278" height="303"/>
         </Constraint>
       </Constraints>
 
@@ -194,5 +194,12 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLCultisBonus">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="310" y="50" width="260" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
   </SubComponents>
 </Form>
