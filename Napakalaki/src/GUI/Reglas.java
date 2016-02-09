@@ -26,7 +26,7 @@ public class Reglas extends javax.swing.JDialog {
         jBback.setVisible(false);
         
         
-        jTextArea1.setText(Textos.Reglas1);
+        jTextArea1.setText("");
         npagina = 1;
         repaint();
         
@@ -104,14 +104,14 @@ public class Reglas extends javax.swing.JDialog {
     private void jBnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnextActionPerformed
         npagina++;
         switch(npagina){
-            case 2: jTextArea1.setText(Textos.Reglas2);
+            case 2: jTextArea1.setText("");
                     jBback.setVisible(true);
                     break;
-            case 3: jTextArea1.setText(Textos.Reglas3);
+            case 3: jTextArea1.setText("");
                     break;
-            case 4: jTextArea1.setText(Textos.Reglas4);
+            case 4: jTextArea1.setText("");
                     break;
-            case 5: jTextArea1.setText(Textos.Reglas5);
+            case 5: jTextArea1.setText("");
                     jBnext.setVisible(false);
                     break;
         }
@@ -121,12 +121,12 @@ public class Reglas extends javax.swing.JDialog {
     private void jBbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbackActionPerformed
         npagina--;
         switch(npagina){
-            case 1: jTextArea1.setText(Textos.Reglas1);
+            case 1: jTextArea1.setText("");
                     jBback.setVisible(false);
                     break;
-            case 2: jTextArea1.setText(Textos.Reglas2);break;
-            case 3: jTextArea1.setText(Textos.Reglas3);break;
-            case 4: jTextArea1.setText(Textos.Reglas4);
+            case 2: jTextArea1.setText("");break;
+            case 3: jTextArea1.setText("");break;
+            case 4: jTextArea1.setText("");
                     jBnext.setVisible(true);
                     break;
         }

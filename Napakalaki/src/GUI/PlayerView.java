@@ -162,7 +162,7 @@ public class PlayerView extends javax.swing.JPanel {
             }
         });
         add(jBStealTreasure);
-        jBStealTreasure.setBounds(95, 604, 190, 29);
+        jBStealTreasure.setBounds(90, 560, 190, 29);
 
         jBMakeVisible.setText("Make Visible");
         jBMakeVisible.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +171,7 @@ public class PlayerView extends javax.swing.JPanel {
             }
         });
         add(jBMakeVisible);
-        jBMakeVisible.setBounds(296, 604, 170, 29);
+        jBMakeVisible.setBounds(290, 560, 170, 29);
 
         jBDiscardTreasures.setText("Discard Treasures");
         jBDiscardTreasures.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +180,7 @@ public class PlayerView extends javax.swing.JPanel {
             }
         });
         add(jBDiscardTreasures);
-        jBDiscardTreasures.setBounds(296, 647, 170, 29);
+        jBDiscardTreasures.setBounds(290, 610, 170, 29);
 
         jBDiscardAll.setText("Discard All Treasures");
         jBDiscardAll.addActionListener(new java.awt.event.ActionListener() {
@@ -189,9 +189,9 @@ public class PlayerView extends javax.swing.JPanel {
             }
         });
         add(jBDiscardAll);
-        jBDiscardAll.setBounds(95, 647, 190, 29);
+        jBDiscardAll.setBounds(90, 610, 190, 29);
         add(pendingBadConsequenceView);
-        pendingBadConsequenceView.setBounds(100, 450, 371, 130);
+        pendingBadConsequenceView.setBounds(100, 420, 371, 130);
 
         sPVisibleTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Visible Treasures"));
 
@@ -202,7 +202,7 @@ public class PlayerView extends javax.swing.JPanel {
         sPVisibleTreasures.setViewportView(jPVisibleTreasures);
 
         add(sPVisibleTreasures);
-        sPVisibleTreasures.setBounds(20, 130, 278, 303);
+        sPVisibleTreasures.setBounds(20, 100, 278, 303);
 
         sPHiddenTreasures.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Hidden Treasures"));
 
@@ -213,7 +213,7 @@ public class PlayerView extends javax.swing.JPanel {
         sPHiddenTreasures.setViewportView(jPHiddenTreasures);
 
         add(sPHiddenTreasures);
-        sPHiddenTreasures.setBounds(300, 130, 278, 303);
+        sPHiddenTreasures.setBounds(300, 100, 278, 303);
         add(jLCultisBonus);
         jLCultisBonus.setBounds(320, 50, 260, 17);
     }// </editor-fold>//GEN-END:initComponents

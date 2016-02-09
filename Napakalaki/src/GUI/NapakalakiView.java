@@ -64,7 +64,7 @@ public class NapakalakiView extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(playerView);
-        playerView.setBounds(12, 12, 590, 693);
+        playerView.setBounds(12, 12, 590, 670);
         getContentPane().add(monsterView);
         monsterView.setBounds(614, 12, 650, 460);
 
