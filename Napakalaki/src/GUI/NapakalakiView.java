@@ -60,9 +60,9 @@ public class NapakalakiView extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(playerView);
-        playerView.setBounds(12, 12, 596, 693);
+        playerView.setBounds(12, 12, 590, 693);
         getContentPane().add(monsterView);
-        monsterView.setBounds(614, 12, 650, 430);
+        monsterView.setBounds(614, 12, 650, 460);
 
         jBMeetMonster.setText("Meet the Monster");
         jBMeetMonster.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +71,7 @@ public class NapakalakiView extends JFrame {
             }
         });
         getContentPane().add(jBMeetMonster);
-        jBMeetMonster.setBounds(662, 485, 220, 29);
+        jBMeetMonster.setBounds(660, 510, 220, 29);
 
         jBCombat.setText("Combat");
         jBCombat.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +80,7 @@ public class NapakalakiView extends JFrame {
             }
         });
         getContentPane().add(jBCombat);
-        jBCombat.setBounds(662, 532, 220, 29);
+        jBCombat.setBounds(660, 560, 220, 29);
 
         jBNextTurn.setText("Next Turn");
         jBNextTurn.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class NapakalakiView extends JFrame {
             }
         });
         getContentPane().add(jBNextTurn);
-        jBNextTurn.setBounds(662, 579, 220, 29);
+        jBNextTurn.setBounds(660, 610, 220, 29);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
