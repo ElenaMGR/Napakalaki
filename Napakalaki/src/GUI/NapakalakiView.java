@@ -104,6 +104,11 @@ public class NapakalakiView extends JFrame {
         jMenu1.setText("Menu");
 
         jMExit.setText("Exit");
+        jMExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMExitActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMExit);
 
         jMenuBar1.add(jMenu1);
@@ -199,6 +204,10 @@ public class NapakalakiView extends JFrame {
                 + "Para la asignatura de PDOO.";
         JOptionPane.showMessageDialog(this, texto, "Creditos", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jMCreditosActionPerformed
+
+    private void jMExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMExitActionPerformed
 
     
 
