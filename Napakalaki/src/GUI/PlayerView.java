@@ -247,10 +247,13 @@ public class PlayerView extends javax.swing.JPanel {
             napakalakiModel.getCurrentPlayer().stealTreasure();
             //Una vez robado el tesoro se bloquea el botón de Steal
             jBStealTreasure.setEnabled(false);
-            //Actualiza la vista
+            
         }else{
             JOptionPane.showMessageDialog(this,"Tu enemigo no tiene tesoros","ERROR",JOptionPane.PLAIN_MESSAGE);
+            //Una vez comprobado que no se puede robar se bloquea el botón de Steal
+            jBStealTreasure.setEnabled(false);
         }
+        //Actualiza la vista
         setPlayer (napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_jBStealTreasureActionPerformed
 
