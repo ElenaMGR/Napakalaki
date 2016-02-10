@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos y Jose Luis Martinez Ortiz
  */
 public class BadConsequenceView extends javax.swing.JPanel {
     BadConsequence badConsequenceModel;

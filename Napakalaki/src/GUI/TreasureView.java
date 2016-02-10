@@ -7,7 +7,6 @@ package GUI;
 
 import NapakalakiGame.Treasure;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,7 +16,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class TreasureView extends javax.swing.JPanel {
     Treasure treasureModel;

@@ -15,7 +15,7 @@ import javax.swing.KeyStroke;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos y Jose Luis Martinez Ortiz
  */
 public class NapakalakiView extends JFrame {
     Napakalaki napakalakiModel;

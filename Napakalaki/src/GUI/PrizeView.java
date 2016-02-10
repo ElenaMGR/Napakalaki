@@ -9,7 +9,7 @@ import NapakalakiGame.Prize;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos, Jose Luis Martínez Ortiz
  */
 public class PrizeView extends javax.swing.JPanel {
 

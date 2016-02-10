@@ -7,7 +7,7 @@ package GUI;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos y Jose Luis Martinez Ortiz
  */
 public class JuegoFinalizado extends javax.swing.JDialog {
 
