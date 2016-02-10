@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos y Jose Luis Martinez Ortiz
  */
 public class Contenedor extends Container {
 

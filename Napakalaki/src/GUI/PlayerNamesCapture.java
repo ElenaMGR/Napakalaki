@@ -16,14 +16,14 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author elena
+ * @author Elena María Gómez Ríos y Jose Luis Martinez Ortiz
  */
 public class PlayerNamesCapture extends javax.swing.JDialog {
     private ArrayList<String> names;
     
     private ArrayList <JLabel> labels;
     private ArrayList <JTextField> texts;
-    private int numeroPlayers=2;
+    private int numeroPlayers=3;
 
     /**
      * Creates new form PlayerNamesCapture
@@ -51,7 +51,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         texts.add(jTplayer3);
         texts.add(jTplayer4);
         
-        setVisiblePlayers(2);
+        setVisiblePlayers(3);
     }
     
     private void setVisiblePlayers (int numero){     
@@ -178,7 +178,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         jLNumeroJugadores.setText("Selecciona el número de jugadores: ");
 
         jSNJugadores.setFont(new java.awt.Font("Ubuntu", 0, 16)); // NOI18N
-        jSNJugadores.setModel(new javax.swing.SpinnerNumberModel(2, 2, 4, 1));
+        jSNJugadores.setModel(new javax.swing.SpinnerNumberModel(3, 2, 4, 1));
         jSNJugadores.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSNJugadoresStateChanged(evt);
