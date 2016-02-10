@@ -42,6 +42,7 @@ public class CultistPlayer extends Player {
         return false;
     }
     
+    
     /**
      * Devuelve un tesoro elegido al azar de entre los tesoros visibles del jugador
      * @return el tesoro que se devuelve

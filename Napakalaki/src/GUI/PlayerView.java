@@ -42,12 +42,13 @@ public class PlayerView extends javax.swing.JPanel {
     public void setPlayer (Player p){
         playerModel = p;
         jLNombre.setText(playerModel.getName());
-        if (playerModel instanceof CultistPlayer){
-            jLNombre.setText("Jugador Sectario: "+playerModel.getName());
+        jLNombre.setText(playerModel.getClass().getSimpleName()+": "+playerModel.getName());
+        if (playerModel.getClass().getSimpleName().equals("CultistPlayer") ){           
             jLCultisBonus.setText("Bonus: "+((CultistPlayer)playerModel).getCultisGainedLevels());
         }else{
             jLCultisBonus.setText("");
         }
+        System.out.println(playerModel.getClass().getSimpleName());
         jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
         fillTreasurePanel(jPVisibleTreasures,playerModel.getVisibleTreasures());
