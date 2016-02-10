@@ -48,7 +48,6 @@ public class PlayerView extends javax.swing.JPanel {
         }else{
             jLCultisBonus.setText("");
         }
-        System.out.println(playerModel.getClass().getSimpleName());
         jLLevel.setText("Level: "+playerModel.getLevels()+"   CombatLevel: "+playerModel.getCombatLevel());
         jLEnemy.setText("Enemy: "+playerModel.getEnemy().getName());
         fillTreasurePanel(jPVisibleTreasures,playerModel.getVisibleTreasures());
