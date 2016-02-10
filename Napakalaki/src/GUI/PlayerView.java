@@ -113,8 +113,10 @@ public class PlayerView extends javax.swing.JPanel {
     public void isVisiblePendingBadConsequence(){
         if (playerModel.getPendingBadConsequence().isEmpty()){
             pendingBadConsequenceView.setVisible(false);
+            jBMakeVisible.setEnabled(true);
         }else{
             pendingBadConsequenceView.setVisible(true);
+            jBMakeVisible.setEnabled(false);
         }
     }
 
